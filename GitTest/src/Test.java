@@ -13,6 +13,7 @@ public class Test {
 		System.out.println("仃中仄予中仃仄予");
 		System.out.println("中仄予中仄予");
 		System.out.println("六六六");
+		System.out.println("辦辦");
 	}//main
 
 }//Test
