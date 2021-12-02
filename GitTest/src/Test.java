@@ -11,6 +11,7 @@ public class Test {
 		System.out.println("안녕하냐 맨이야");
 		System.out.println("테스트2");
 		System.out.println("ㅁㄴㅇㄹㄴㅁㅇㄹ");
+		System.out.println("ㄴㅇㄹㄴㅇㄹ");
 	}//main
 
 }//Test
