@@ -9,7 +9,7 @@ public class Test {
 		// 이 내용은 팀 내 한분만 작성해주세요
 		// 혹시 충돌을 경험해보고 싶으시다면 작성해보세요!
 	
-		
+		System.out.println("dsfsdf");
 	}//main
 
 }//Test
