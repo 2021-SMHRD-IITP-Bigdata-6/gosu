@@ -11,6 +11,7 @@ public class Test {
 	
 		System.out.println("dsfsdf");
 		System.out.println("¾î·Æ½À´Ï´Ù.");
+		System.out.println("asdf sadf ");
 	}//main
 
 }//Test
