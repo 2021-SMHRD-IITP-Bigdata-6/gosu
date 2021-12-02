@@ -7,7 +7,6 @@ public class Test {
 		// 2. Tomcat 버전
 		// 3. Encoding 방식(UTF-8)
 		// 이 내용은 팀 내 한분만 작성해주세요
-	
 		System.out.println("안녕하냐 맨이야");
 		System.out.println("테스트2");
 		System.out.println("ㅁㄴㅇㄹㄴㅁㅇㄹ");
