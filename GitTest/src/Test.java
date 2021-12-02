@@ -13,6 +13,7 @@ public class Test {
 		System.out.println("ㅁㄴㅇㄹㄴㅁㅇㄹ");
 		System.out.println("ㄴㅇㄹㄴㅇㄹ");
 		System.out.println("ㅋㅋㅋ");
+		System.out.println("충돌맨이야");
 	}//main
 
 }//Test
