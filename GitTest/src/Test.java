@@ -14,6 +14,8 @@ public class Test {
 		System.out.println("ㄴㅇㄹㄴㅇㄹ");
 		System.out.println("ㅋㅋㅋ");
 		System.out.println("응응");
+		System.out.println("응응");
+		
 	}//main
 
 }//Test
