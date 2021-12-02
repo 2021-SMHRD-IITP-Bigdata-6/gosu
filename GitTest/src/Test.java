@@ -10,6 +10,7 @@ public class Test {
 		// 혹시 충돌을 경험해보고 싶으시다면 작성해보세요!
 	
 		System.out.println("dsfsdf");
+		System.out.println("어렵습니다.");
 	}//main
 
 }//Test
