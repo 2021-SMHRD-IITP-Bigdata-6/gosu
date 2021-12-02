@@ -12,6 +12,7 @@ public class Test {
 		System.out.println("Å×½ºÆ®2");
 		System.out.println("¤±¤¤¤·¤©¤¤¤±¤·¤©");
 		System.out.println("¤¤¤·¤©¤¤¤·¤©");
+		System.out.println("¤»¤»¤»");
 	}//main
 
 }//Test
