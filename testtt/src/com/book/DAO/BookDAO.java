@@ -25,9 +25,10 @@ public class BookDAO {
 			System.out.println("클래스파일 로딩완료");
 
 			// 3. DB에서 사용하는 id/pw를 인증
-			String url = "jdbc:oracle:thin:@127.0.0.1:1521";
-			String dbid = "hr";
-			String dbpw = "hr";
+			
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
+	         String dbid = "cgi_8_3_1216";
+	         String dbpw = "smhrd3";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 			if (conn != null) {
 				System.out.println("연결성공");
@@ -102,6 +103,35 @@ public class BookDAO {
 			close();
 		}
 		return dto;
+	}
+
+	public int Join(BookDTO dto) {
+
+		try {
+			getConn();
+			String sql = "insert into member_Message values (?,?,?,?,sysdate)";
+			// 5. SQL명령문을 준비
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, dto.getMem_id());
+			psmt.setString(2, dto.getMem_pw());
+			psmt.setString(3, dto.getMem_name());
+			psmt.setString(4, dto.getMem_tel());
+			psmt.setInt(5, dto.getMem_age());
+			psmt.setString(6, dto.getMem_gender());
+			
+			// 6. slq명령문 실행
+			cnt = psmt.executeUpdate();
+
+			// 7. 명령 후 처리
+
+		} catch (Exception e) {
+			System.out.println("클래스파일 로딩실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 
 }
