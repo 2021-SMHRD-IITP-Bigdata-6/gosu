@@ -19,26 +19,26 @@ public class BookDAO {
 	private boolean check;
 
 	public void getConn() {
-
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("클래스파일 로딩완료");
-
-			// 3. DB에서 사용하는 id/pw를 인증
-			String url = "jdbc:oracle:thin:@127.0.0.1:1521";
-			String dbid = "hr";
-			String dbpw = "hr";
-			conn = DriverManager.getConnection(url, dbid, dbpw);
-			if (conn != null) {
+			System.out.println("클래스 파일 로딩 완료");
+			
+		
+			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
+			String dbid = "cgi_8_3_1216";
+			String dbpw = "smhrd3";
+			
+			conn = DriverManager.getConnection(url,dbid,dbpw);
+			
+			if(conn!=null) {
 				System.out.println("연결성공");
-			} else {
+			}else {
 				System.out.println("연결실패");
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}
+	}//getConn()
 
 	public void close() {
 		System.out.println("무조건실행");
