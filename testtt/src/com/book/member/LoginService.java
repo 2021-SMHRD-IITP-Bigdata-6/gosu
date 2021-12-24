@@ -30,11 +30,11 @@ public class LoginService implements Command {
 
 			session.setAttribute("dto", dto);
 
-			nextpage = "/project/BookInfo.html";
+			nextpage = "/project/Home.jsp";
 			dto = new BookDTO(dto1.getMem_id(), nextpage, nextpage, nextpage, 0, nextpage, nextpage);
 			System.out.println("성공");
 		} else {
-			nextpage = "/project/BookInfo.html";
+			nextpage = "/project/html5up-eventually/LoginFalse.jsp";
 			System.out.println("실패");
 
 		}

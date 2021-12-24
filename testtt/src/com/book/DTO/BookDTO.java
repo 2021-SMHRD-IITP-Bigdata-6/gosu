@@ -25,6 +25,8 @@ public class BookDTO {
 		this.mem_gender = mem_gender;
 		this.date = date;
 	}
+	
+	
 
 	public String getMem_id() {
 		return mem_id;
@@ -87,4 +89,7 @@ public class BookDTO {
 		return "BookDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_tel=" + mem_tel
 				+ ", mem_age=" + mem_age + ", mem_gender=" + mem_gender + ", date=" + date + "]";
 	}
+	
+	
+	
 }

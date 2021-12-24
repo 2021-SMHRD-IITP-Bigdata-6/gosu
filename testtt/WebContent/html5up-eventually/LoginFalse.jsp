@@ -21,9 +21,8 @@
 
 		<!-- Header -->
 			<header id="header">
-				<h1>로그인</h1>
+				<h1>로그인 실패입니다</h1>
 			</header>
-
 		<!-- Signup Form -->
 			<form  method="post" action="LoginCon.do" >
 				<input type="email" name="email"  placeholder="아이디">

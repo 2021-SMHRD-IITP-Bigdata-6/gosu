@@ -1,7 +1,6 @@
 package com.book.Front;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -9,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.book.DAO.BookDAO;
 import com.book.inter.Command;
 import com.book.member.LoginService;
+import com.book.member.LogoutService;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -34,7 +33,12 @@ public class FrontController extends HttpServlet {
 		    com = new LoginService();
 			nextpage= com.execute(request,response);
 			   
+		}else if(command.equals("LogoutCon.do")) {
+			
+			com = new LogoutService();
+			nextpage =com.execute(request, response);
 		}
+		
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);
 		}
