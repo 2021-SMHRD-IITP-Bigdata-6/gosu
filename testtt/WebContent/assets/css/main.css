@@ -1779,14 +1779,14 @@ input, select, textarea {
 /* Image */
 
 	.image {
-		/*position: relative;*/
+		position: relative;
 		display: inline-block;
 		border: 0;
 		outline: 0;
 	}
 
 		.image img {
-			display: inline;
+			display: block;
 			width: 100%;
 		}
 
@@ -1796,7 +1796,7 @@ input, select, textarea {
 		}
 
 		.image.featured {
-			display: inline-block;
+			display: block;
 			width: 100%;
 			margin: 0 0 4em 0;
 		}
