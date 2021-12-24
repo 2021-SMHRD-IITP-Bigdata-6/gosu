@@ -1,13 +1,18 @@
 <!DOCTYPE HTML>
+<!--
+	Helios by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
 <html>
 	<head>
-		<title>E-BOOK 정보</title>
+		<title>Left Sidebar - Helios by HTML5 UP</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="right-sidebar is-preload">
+	<body class="left-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -16,44 +21,182 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1>E-BOOK 정보</h1>
+								<h1><a href="index.html" id="logo">Helios</a></h1>
 							</header>
 						</div>
-
+						
 					<!-- Nav -->
 						<nav id="nav">
-				<ul>
-					<li><a href="Home.html">홈</a></li>
-					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
-					<li><a href="MyPage.html">마이 페이지</a></li>
-				</ul>
-			</nav>
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">And a submenu &hellip;</a>
+											<ul>
+												<li><a href="#">Lorem ipsum dolor</a></li>
+												<li><a href="#">Phasellus consequat</a></li>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="left-sidebar.html">Left Sidebar</a></li>
+								<li><a href="right-sidebar.html">Right Sidebar</a></li>
+								<li><a href="no-sidebar.html">No Sidebar</a></li>
+							</ul>
+						</nav>
+
 				</div>
 
-			<!-- Main -->
+			<select> 
+			<option>ㅎㅇ </option>
+			<option>ㅎㅇ2 </option>
+			<option>ㅎㅇ3 </option>
+			
+			</select>
+			<select> <option>ㅎㅇ </option></select>
+			<select> <option>ㅎㅇ </option></select>
+			<h1>선택하신 장르입니다.</h1>
+			<!-- Carousel -->
+				<section class="carousel">
+					<div class="reel">
+						<h1>장르1</h1>
+						<%for(int i = 0; i <=10; i++){ %>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#"><%=i %></a></h3>
+							</header>
+						</article>
+						<%} %>
+						<br>
+						<h1>장르2</h1>
+						<%for(int i = 0; i <=10; i++){ %>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">second<%=i %></a></h3>
+							</header>
+						</article>
+						<%} %>
+						<br>
+						<h1>장르3</h1>
+						<%for(int i = 0; i <=10; i++){ %>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">thrid<%=i %></a></h3>
+							</header>
+						</article>
+						<%} %>
+
+			<!-- Main 
 				<div class="wrapper style1">
 
 					<div class="container">
 						<div class="row gtr-200">
-							<div class="col-8 col-12-mobile" id="content">
+							<div class="col-4 col-12-mobile" id="sidebar">
+								<hr class="first" />
+								<section>
+									<header>
+										<h3><a href="#">Accumsan sed penatibus</a></h3>
+									</header>
+									<p>
+										Dolor sed fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
+										porttitor phasellus tempus cubilia ultrices tempor sagittis  tellus ante diam nec penatibus dolor cras
+										magna tempus feugiat veroeros.
+									</p>
+									<footer>
+										<a href="#" class="button">Learn More</a>
+									</footer>
+								</section>
+								<hr />
+								<section>
+									<header>
+										<h3><a href="#">Sed lorem etiam consequat</a></h3>
+									</header>
+									<p>
+										Tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+									</p>
+									<div class="row gtr-50">
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div class="col-8">
+											<h4>Nibh sed cubilia</h4>
+											<p>
+												Amet nullam fringilla nibh nulla convallis tique ante proin.
+											</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div class="col-8">
+											<h4>Proin sed adipiscing</h4>
+											<p>
+												Amet nullam fringilla nibh nulla convallis tique ante proin.
+											</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div class="col-8">
+											<h4>Lorem feugiat magna</h4>
+											<p>
+												Amet nullam fringilla nibh nulla convallis tique ante proin.
+											</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div class="col-8">
+											<h4>Sed tempus fringilla</h4>
+											<p>
+												Amet nullam fringilla nibh nulla convallis tique ante proin.
+											</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div class="col-8">
+											<h4>Malesuada fermentum</h4>
+											<p>
+												Amet nullam fringilla nibh nulla convallis tique ante proin.
+											</p>
+										</div>
+									</div>
+									<footer>
+										<a href="#" class="button">Magna Adipiscing</a>
+									</footer>
+								</section>
+							</div>
+							<div class="col-8 col-12-mobile imp-mobile" id="content">
 								<article id="main">
 									<header>
-										<h2><a href="#">도서명 들어가는 부분</a></h2>
-									</header>
-									<a href="#" class="image featured">여기 책 표지 사진 들어갈거야!<img src="images/pic06.jpg" alt="" /></a>
-									
-									<section>
-										<header>
-											<h3>책 정보</h3>
-										</header>
+										<h2><a href="#">Left Sidebar</a></h2>
 										<p>
-											장르, ISBN, 저자, 출판사, 페이지수
+											Morbi convallis lectus malesuada sed fermentum dolore amet
 										</p>
-									</section>
+									</header>
+									<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+									<p>
+										Commodo id natoque malesuada sollicitudin elit suscipit. Curae suspendisse mauris posuere accumsan massa
+										posuere lacus convallis tellus interdum. Amet nullam fringilla nibh nulla convallis ut venenatis purus
+										lobortis. Auctor etiam porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum
+										consequat integer interdum integer purus sapien. Nibh eleifend nulla nascetur pharetra commodo mi augue
+										interdum tellus. Ornare cursus augue feugiat sodales velit lorem. Semper elementum ullamcorper lacinia
+										natoque aenean scelerisque vel lacinia mollis quam sodales congue.
+									</p>
 									<section>
 										<header>
-											<h3>책 소개</h3>
+											<h3>Ultrices tempor sagittis nisl</h3>
 										</header>
 										<p>
 											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
@@ -68,89 +211,26 @@
 											ut penatibus fermentum nibh erat malesuada varius.
 										</p>
 									</section>
-									
+									<section>
+										<header>
+											<h3>Augue euismod feugiat tempus</h3>
+										</header>
+										<p>
+											Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+											ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
+											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+										</p>
+									</section>
 								</article>
-							</div>
-							<div class="col-4 col-12-mobile" id="sidebar">
-								<hr class="first" />
-								<section>
-									<header>
-										<h3><a href="#">월정액</a></h3>
-									</header>
-									<div class="row gtr-50">
-										<div class="col-4">
-											<a href="https://select.ridibooks.com/home" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-											<p>리디셀렉</p>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-								<hr />
-								<section>
-									<header>
-										<h3><a href="#">구매</a></h3>
-									</header>
-									<div class="row gtr-50">
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div>
-											<p>가격정보?~ 얼마 얼마~</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div>
-											<p>가격정보?~ 얼마 얼마~</p>
-										</div>
-
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div>
-											<p>가격정보?~ 얼마 얼마~</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div>
-											<p>가격정보?~ 얼마 얼마~</p>
-										</div>
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div>
-											<p>가격정보?~ 얼마 얼마~</p>
-										</div>
-									</div>
-									<footer>
-										<a href="#" class="button">Magna Adipiscing</a>
-									</footer>
-								</section>
 							</div>
 						</div>
 						<hr />
-						<header align="center">연관도서</header>
 						<div class="row">
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">요기</a></h3>
+									<h3><a href="#">Gravida aliquam penatibus</a></h3>
 								</header>
 								<p>
 									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
@@ -180,14 +260,14 @@
 						</div>
 					</div>
 
-				</div>
+				</div>-->
 
-			<!-- Footer -->
+			<!-- Footer 
 				<div id="footer">
 					<div class="container">
-						<div class="row">
+						<div class="row">-->
 
-							<!-- Tweets -->
+							<!-- Tweets 
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
@@ -218,9 +298,9 @@
 											</article>
 										</li>
 									</ul>
-								</section>
+								</section>-->
 
-							<!-- Posts -->
+							<!-- Posts 
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
@@ -259,9 +339,9 @@
 											</article>
 										</li>
 									</ul>
-								</section>
+								</section>-->
 
-							<!-- Photos -->
+							<!-- Photos 
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
@@ -291,9 +371,9 @@
 						</div>
 						<hr />
 						<div class="row">
-							<div class="col-12">
+							<div class="col-12">-->
 
-								<!-- Contact -->
+								<!-- Contact 
 									<section class="contact">
 										<header>
 											<h3>Nisl turpis nascetur interdum?</h3>
@@ -307,9 +387,9 @@
 											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
 										</ul>
-									</section>
+									</section>-->
 
-								<!-- Copyright -->
+								<!-- Copyright 
 									<div class="copyright">
 										<ul class="menu">
 											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -322,7 +402,7 @@
 					</div>
 				</div>
 
-		</div>
+		</div>-->
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
