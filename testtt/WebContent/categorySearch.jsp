@@ -67,7 +67,7 @@
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
-
+						<h1>장르1</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
@@ -77,6 +77,7 @@
 						</article>
 						<%} %>
 						<br>
+						<h1>장르2</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
@@ -86,6 +87,7 @@
 						</article>
 						<%} %>
 						<br>
+						<h1>장르3</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
