@@ -48,7 +48,7 @@
 						<%if(dto == null){ %>
 					<p>E-BOOK 알리미에 오신걸 환영합니다.</p>
 					<%} else{%>
-					<p><%=dto.getMem_id() %>님 알리미에 오신걸 환영합니다.</p>
+					<p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다. </p>
 					<%} %>
 					<hr />
 					
@@ -58,7 +58,7 @@
 					</button>
 							&emsp;&emsp;&emsp;&emsp;&emsp;
 					<button style="background-color:#9399AB">
-						<h3><a href="#">회원가입</a></h3>
+						<h3><a href="/project/html5up-eventually/join.jsp">회원가입</a></h3>
 						
 						</button>
 								<%} else{%>
@@ -72,7 +72,7 @@
 								</button>
 							&emsp;&emsp;&emsp;&emsp;&emsp;
 							<button style="background-color:#9399AB">
-								<h3><a href="#"> 회원정보수정 </a></h3>
+								<h3><a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a></h3>
 								</button>
 								<%} %>
 								

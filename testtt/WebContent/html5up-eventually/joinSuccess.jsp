@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.book.DAO.BookDAO"%>
 <%@page import="com.book.DTO.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -19,18 +20,42 @@
 		<body class="is-preload">
 		
 
-		<!-- Header -->
 			<header id="header">
+				
 			</header>
 
-		<!-- Signup Form -->
-			<form  method="post" action="LoginCon.do" style="width: 500px; margin: 0 auto;">
-				<a align="center"><h2>로그인</h2></a>
-				<input type="email" name="email"  placeholder="아이디">
-				<input type="password" name="pw"  placeholder="비밀번호" />
-				<input type="submit" value="로그인" style="width: 500px; margin: 0 auto;">
-			</form>
-			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
+			<font size="8">회원가입성공</font><br>
+					정보를 확인하세요<br><br>
+			<%
+				BookDTO dto = (BookDTO)request.getAttribute("dto");
+		
+			
+			%>
+						<table border="1">
+							<tr>
+								<td>Email</td>
+								<td>PW</td>
+								<td>NAME</td>
+								<td>AGE</td>		
+								<td>TEL</td>
+								<td>GENDER</td>
+								<td>date</td>
+								<!-- <td>date</td>	 -->	
+							</tr>						
+								<tr>
+							 	<td><%=dto.getMem_id() %></td>
+								<td><%=dto.getMem_pw() %></td>
+								<td><%=dto.getMem_name() %></td>		
+								<td><%=dto.getMem_age() %></td>	
+								<td><%=dto.getMem_tel() %>	
+								<td><%=dto.getMem_gender() %>
+								<td><%=dto.getDate()%>
+								
+							<%-- 	//<td><%=dto.getDate() %></td>  --%>
+										
+							</tr>				
+						</table>
+			<a href="/project/join.jsp" align="center">로그인 바로가기</a>
 
 		<!-- Footer -->
 			<footer id="footer">

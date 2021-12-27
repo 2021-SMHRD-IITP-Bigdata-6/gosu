@@ -109,7 +109,7 @@ public class BookDAO {
 
 		try {
 			getConn();
-			String sql = "insert into member_Message values (?,?,?,?,sysdate)";
+			String sql = "insert into t_member values (?,?,?,?,?,?,sysdate)";
 			// 5. SQL명령문을 준비
 
 			psmt = conn.prepareStatement(sql);
@@ -127,6 +127,33 @@ public class BookDAO {
 
 		} catch (Exception e) {
 			System.out.println("클래스파일 로딩실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
+	
+
+	public int Update(String pw, String tel, String address) {
+
+		int cnt = 0;
+		try {
+			getConn();
+
+			String sql = "update t_member set pw = ?, tel=?, address=? where email = ?";
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, pw);
+			psmt.setString(2, tel);
+			psmt.setString(3, address);
+
+			cnt = psmt.executeUpdate();
+
+			System.out.println(cnt);
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			close();
