@@ -1,12 +1,9 @@
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
-		<title>Left Sidebar - Helios by HTML5 UP</title>
+		<title>E-BOOK ¿Â∏£</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -21,83 +18,271 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Helios</a></h1>
+								<h1>E-BOOK ¿Â∏£</h1>
 							</header>
 						</div>
 						
 					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">And a submenu &hellip;</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
-
+							<nav id="nav">
+				<ul>
+					<li><a href="Home.html">»®</a></li>
+					<li><a href="BookGenre.html">E-BOOK ¿Â∏£</a></li>
+					<li><a href="BookInfo.html">E-BOOK ¡§∫∏</a></li>
+					<li><a href="MyPage.html">∏∂¿Ã ∆‰¿Ã¡ˆ</a></li>
+				</ul>
+			</nav>
 				</div>
 
 			<select> 
-			<option>„Öé„Öá </option>
-			<option>„Öé„Öá2 </option>
-			<option>„Öé„Öá3 </option>
+			<option>§æ§∑ </option>
+			<option>§æ§∑2 </option>
+			<option>§æ§∑3 </option>
 			
 			</select>
-			<select> <option>„Öé„Öá </option></select>
-			<select> <option>„Öé„Öá </option></select>
-			<h1>ÏÑ†ÌÉùÌïòÏã† Ïû•Î•¥ÏûÖÎãàÎã§.</h1>
+			<select> <option>§æ§∑ </option></select>
+			<select> <option>§æ§∑ </option></select>
+			<h1>º±≈√«œΩ≈ ¿Â∏£¿‘¥œ¥Ÿ.</h1>
+			<button align='right'><a href="categoryDetail.jsp"> ¿¸√º∫∏±‚</a></button>
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
-						<h1>Ïû•Î•¥1</h1>
-						<%for(int i = 0; i <=10; i++){ %>
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#"><%=i %></a></h3>
-							</header>
-						</article>
-						<%} %>
-						<br>
-						<h1>Ïû•Î•¥2</h1>
-						<%for(int i = 0; i <=10; i++){ %>
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">second<%=i %></a></h3>
-							</header>
-						</article>
-						<%} %>
-						<br>
-						<h1>Ïû•Î•¥3</h1>
-						<%for(int i = 0; i <=10; i++){ %>
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">thrid<%=i %></a></h3>
-							</header>
-						</article>
-						<%} %>
 
-			<!-- Main 
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">√• ¡¶∏Ò</a></h3>
+							</header>
+						</article>
+					</div>
+				</section>
+				
+							<!-- Carousel -->
+				<section class="carousel">
+					<div class="reel">
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+					</div>
+				</section>
+							<!-- Carousel -->
+				<section class="carousel">
+					<div class="reel">
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Pulvinar sagittis congue</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Fermentum sagittis proin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Ultrices urna sit lobortis</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+						<article>
+							<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+							<header>
+								<h3><a href="#">Varius magnis sollicitudin</a></h3>
+							</header>
+							<p>Commodo id natoque malesuada sollicitudin elit suscipit magna.</p>
+						</article>
+
+					</div>
+				</section>
+			<!-- Main -->
 				<div class="wrapper style1">
 
 					<div class="container">
@@ -260,14 +445,14 @@
 						</div>
 					</div>
 
-				</div>-->
+				</div>
 
-			<!-- Footer 
+			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
-						<div class="row">-->
+						<div class="row">
 
-							<!-- Tweets 
+							<!-- Tweets -->
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
@@ -298,9 +483,9 @@
 											</article>
 										</li>
 									</ul>
-								</section>-->
+								</section>
 
-							<!-- Posts 
+							<!-- Posts -->
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
@@ -339,9 +524,9 @@
 											</article>
 										</li>
 									</ul>
-								</section>-->
+								</section>
 
-							<!-- Photos 
+							<!-- Photos -->
 								<section class="col-4 col-12-mobile">
 									<header>
 										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
@@ -371,9 +556,9 @@
 						</div>
 						<hr />
 						<div class="row">
-							<div class="col-12">-->
+							<div class="col-12">
 
-								<!-- Contact 
+								<!-- Contact -->
 									<section class="contact">
 										<header>
 											<h3>Nisl turpis nascetur interdum?</h3>
@@ -387,9 +572,9 @@
 											<li><a href="#" class="icon brands fa-dribbble"><span class="label">Dribbble</span></a></li>
 											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
 										</ul>
-									</section>-->
+									</section>
 
-								<!-- Copyright 
+								<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
 											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -402,7 +587,7 @@
 					</div>
 				</div>
 
-		</div>-->
+		</div>
 
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>

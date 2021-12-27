@@ -34,6 +34,14 @@
 	}else{
 		int visit = (int)session.getAttribute("visit");
 		cnt = visit;
+		
+		
+		
+		
+		
+		
+		
+		
 		session.setAttribute("visit", visit+1);
 	}
 	%>
@@ -84,7 +92,7 @@
 			<nav id="nav">
 				<ul>				
 					<li><a href="Home.html">홈</a></li>
-					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
+					<li><a href="categoryStart.jsp">E-BOOK 장르</a></li>
 					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
 					<li><a href="MyPage.html">마이 페이지</a></li>
 				</ul>

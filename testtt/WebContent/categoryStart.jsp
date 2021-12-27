@@ -23,8 +23,7 @@
 							<header>
 								<h1><a href="index.html" id="logo">click</a></h1>
 								<hr />
-								category
-								<select >
+								<select>
 									<option> choice</option>
 									<option> 1</option>
 									<option> 2</option>

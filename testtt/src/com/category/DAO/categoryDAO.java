@@ -8,5 +8,5 @@ import java.sql.ResultSet;
 import com.book.DAO.BookDAO;
 
 public class categoryDAO {
-
+			
 }//DAO
