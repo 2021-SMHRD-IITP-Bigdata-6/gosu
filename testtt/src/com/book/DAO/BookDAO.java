@@ -21,13 +21,18 @@ public class BookDAO {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("클래스파일 로딩완료");
-
-			// 3. DB에서 사용하는 id/pw를 인증
+			System.out.println("클래스 파일 로딩 완료");
+			
+		
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_8_3_1216";
 			String dbpw = "smhrd3";
-			conn = DriverManager.getConnection(url, dbid, dbpw);
+			
+			conn = DriverManager.getConnection(url,dbid,dbpw);
+			
+		
+
+			// 3. DB에서 사용하는 id/pw를 인증
 			if (conn != null) {
 				System.out.println("연결성공");
 			} else {

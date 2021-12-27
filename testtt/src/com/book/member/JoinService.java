@@ -32,7 +32,7 @@ public class JoinService implements Command{
 		String nextpage = "";
 
 		BookDAO dao = new BookDAO();
-
+		int cnt = 0;
 	//	BookDTO dto = new BookDTO(mem_id, mem_pw, mem_name, mem_tel, mem_age, mem_gender, date);
 
 	///	int cnt = dao.Join(dto);
