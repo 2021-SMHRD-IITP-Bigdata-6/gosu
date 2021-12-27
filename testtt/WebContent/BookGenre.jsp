@@ -1,3 +1,5 @@
+<%--<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 	<head>
@@ -21,14 +23,16 @@
 						</div>
 						
 					<!-- Nav -->
-							<nav id="nav">
-				<ul>
-					<li><a href="Home.html">홈</a></li>
-					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
+				<nav id="nav">
+				<ul>				
+					<li><a href="Home.jsp">홈</a></li>
+					<li><a href="BookGenre.jsp">E-BOOK 장르</a></li>
+					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+					<li><a href="categorySearch.jsp">E-BOOK 검색</a></li>
 					<li><a href="MyPage.html">마이 페이지</a></li>
 				</ul>
 			</nav>
+
 				</div>
 
 			<select> 
@@ -597,4 +601,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html>
+</html> --%>

@@ -30,7 +30,7 @@
 				<input type="password" name="pw"  placeholder="비밀번호" />
 				<input type="submit" value="로그인">
 			</form>
-			<a href="/project/Home.html" align="center">메인페이지 돌아가기</a>
+			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
 
 		<!-- Footer -->
 			<footer id="footer">

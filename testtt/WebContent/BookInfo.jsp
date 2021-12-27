@@ -1,14 +1,23 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>E-BOOK 정보</title>
+</head>
+<body>
+	
 <!DOCTYPE HTML>
-
 <html>
 	<head>
-		<title>마이 페이지</title>
+		<title>E-BOOK 정보</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="no-sidebar is-preload">
+	<body class="right-sidebar is-preload">
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -17,72 +26,143 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1>마이페이지</h1>
+								<h1>E-BOOK 정보</h1>
 							</header>
 						</div>
 
 					<!-- Nav -->
-						<nav id="nav">
-				<ul>
-					<li><a href="Home.html">홈</a></li>
-					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
-					<li><a href="MyPage.html">마이 페이지</a></li>
+			<nav id="nav">
+				<ul>				
+					<li><a href="Home.jsp">홈</a></li>
+					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
+					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+					<li><a href="MyPage.jsp">마이 페이지</a></li>
 				</ul>
 			</nav>
+
 				</div>
 
 			<!-- Main -->
 				<div class="wrapper style1">
 
 					<div class="container">
-						<article id="main" class="special">
-							<header>
-								<h2>회원 정보 관리</h2>
-							</header>
-								<br><h3>기본 정보</h3>
-								회원 이메일<br>
-								회원 비밀번호<br>
-								회원 이름<br>
-								회원 닉네임<br>
-								
-								
-							
-							<section>
-								<header>
-									<h3>Ultrices tempor sagittis nisl</h3>
-								</header>
-								<p>
-									Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-									at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-									fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-								</p>
-								<p>
-									Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-									orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-									ut penatibus fermentum nibh erat malesuada varius.
-								</p>
-							</section>
-							<section>
-								<header>
-									<h3>Augue euismod feugiat tempus</h3>
-								</header>
-								<p>
-									Pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-									feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-									ut nunc urna volutpat donec cubilia commodo risus morbi. Lobortis vestibulum velit malesuada ante
-									egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
-								</p>
-							</section>
-						</article>
+						<div class="row gtr-200">
+							<div class="col-8 col-12-mobile" id="content">
+								<article id="main">
+									<header>
+										<h2><a href="#">도서명 들어가는 부분</a></h2>
+									</header>
+									<a href="#" class="image featured">책 표지 사진<img src="images/pic06.jpg" alt="" /></a>
+									
+									<section>
+										<header>
+											<h3>책 정보</h3>
+										</header>
+										<p>
+											장르, ISBN, 저자, 출판사, 페이지수
+										</p>
+									</section>
+									<section>
+										<header>
+											<h3>책 소개</h3>
+										</header>
+										<p>
+											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
+											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
+											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
+											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
+											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+										</p>
+										<p>
+											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
+											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
+											ut penatibus fermentum nibh erat malesuada varius.
+										</p>
+									</section>
+									
+								</article>
+							</div>
+							<div class="col-4 col-12-mobile" id="sidebar">
+								<hr class="first" />
+								<section>
+									<header>
+										<h3><a href="#">월정액</a></h3>
+									</header>
+									<div class="row gtr-50">
+										<div class="col-4">
+											<a href="https://select.ridibooks.com/home" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+											<p>리디셀렉</p>
+										</div>
+										
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+									</div>
+								</section>
+								<hr />
+								<section>
+									<header>
+										<h3><a href="#">구매</a></h3>
+									</header>
+									<div class="row gtr-50">
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
+										</div>
+										<div>
+											<p>가격정보 ~ 얼마</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
+										</div>
+										<div>
+											<p>가격정보 ~ 얼마</p>
+										</div>
+
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
+										</div>
+										<div>
+											<p>가격정보 ~ 얼마</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
+										</div>
+										<div>
+											<p>가격정보 ~ 얼마</p>
+										</div>
+										<div class="col-4">
+											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
+										</div>
+										<div>
+											<p>가격정보 ~ 얼마</p>
+										</div>
+									</div>
+									<footer>
+										<a href="#" class="button">Magna Adipiscing</a>
+									</footer>
+								</section>
+							</div>
+						</div>
 						<hr />
+						<header align="center">ì°ê´ëì</header>
 						<div class="row">
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
+									<h3><a href="#">ìê¸°</a></h3>
 								</header>
 								<p>
 									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
@@ -267,4 +347,6 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+</html>
+</body>
 </html>
