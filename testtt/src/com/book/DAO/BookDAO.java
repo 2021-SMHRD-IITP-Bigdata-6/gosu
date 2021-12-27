@@ -21,7 +21,6 @@ public class BookDAO {
 	public void getConn() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-<<<<<<< HEAD
 			System.out.println("클래스 파일 로딩 완료");
 			
 		
@@ -32,7 +31,6 @@ public class BookDAO {
 			conn = DriverManager.getConnection(url,dbid,dbpw);
 			
 			if(conn!=null) {
-=======
 			System.out.println("클래스파일 로딩완료");
 
 			// 3. DB에서 사용하는 id/pw를 인증
@@ -42,7 +40,6 @@ public class BookDAO {
 	         String dbpw = "smhrd3";
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 			if (conn != null) {
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 				System.out.println("연결성공");
 			}else {
 				System.out.println("연결실패");
