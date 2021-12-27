@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.book.inter.Command;
+import com.book.member.JoinService;
 import com.book.member.LoginService;
 import com.book.member.LogoutService;
+import com.book.member.UpdateService;
 
 @WebServlet("*.do")
 public class FrontController extends HttpServlet {
@@ -37,8 +39,15 @@ public class FrontController extends HttpServlet {
 			
 			com = new LogoutService();
 			nextpage =com.execute(request, response);
+		}else if (command.equals("JoinCon.do")) {
+			
+			com  = new JoinService();
+	      com.execute(request, response);
+		}else if(command.equals("UpdateCon.do")){
+			
+			com = new UpdateService();
+			nextpage =com .execute(request, response);
 		}
-		
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);
 		}
