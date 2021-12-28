@@ -20,8 +20,8 @@
 							<header>
 								<h1>3가지 장르를 선택해주세요</h1>
 								<hr />
-								<select id="select1">
-									<option value="genre1" name="choice"> choice</option>
+								<select id="select1" name="choice">
+									<option value="genre1"> choice</option>
 									<option value="genre2"> 1</option>
 									<option value="genre3"> 2</option>
 									<option value="genre4"> 3</option>
