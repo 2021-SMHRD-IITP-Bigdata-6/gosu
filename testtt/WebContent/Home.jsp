@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Booket List</title>
 <head>
 <title>Booket List</title>
 <meta charset="utf-8" />
@@ -21,52 +20,25 @@
 
 		<!-- Header -->
 		<div id="header">
-<<<<<<< HEAD
 
-			<%
-				request.setCharacterEncoding("utf-8");
-
-			BookDTO dto = (BookDTO) session.getAttribute("dto");
-			System.out.println("session 값 : " + dto);
-			int cnt = 0;
-			if (session.getAttribute("visit") == null) {
-				session.setAttribute("visit", 1);
-			} else {
-				int visit = (int) session.getAttribute("visit");
-				cnt = visit;
-				session.setAttribute("visit", visit + 1);
-			}
-			%>
+			
 		<jsp:useBean id="user" class="com.member.DTO.MypageDTO"></jsp:useBean>
 		<jsp:setProperty property="*" name="user"/>
-=======
 		
 		<%
-	
-	
-	
-	 BookDTO dto = (BookDTO) session.getAttribute("dto");
-	System.out.println("session 값 : "+dto);
-	int cnt = 0;
-	if(session.getAttribute("visit")==null){
-		session.setAttribute("visit", 1);
-	}else{
-		int visit = (int)session.getAttribute("visit");
-		cnt = visit;
-		
-		
-		
-		
-		
-		
-		
-		
-		session.setAttribute("visit", visit+1);
-	}
-	%>
+	 	BookDTO dto = (BookDTO) session.getAttribute("dto");
+		System.out.println("session 값 : "+dto);
+		int cnt = 0;
+			if(session.getAttribute("visit")==null){
+			session.setAttribute("visit", 1);
+			}else{
+			int visit = (int)session.getAttribute("visit");
+			cnt = visit;
+			session.setAttribute("visit", visit+1);
+			}
+		%>
 		
 	
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 
 			<!-- Inner -->
 			<div class="inner">
@@ -74,116 +46,61 @@
 					<h1 style="color: #BFCCDA;">Booket List</h1>
 					<br>
 
-					<%
-						if (dto == null) {
-					%>
+					<% if (dto == null) {%>
 					<p>E-BOOK 알리미에 오신걸 환영합니다.</p>
-<<<<<<< HEAD
-					<%
-						} else {
-					%>
-					<p><%=dto.getMem_id()%>님 알리미에 오신걸 환영합니다.
-					</p>
-					<%
-						}
-					%>
-=======
 					<%} else{%>
 					<p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다. </p>
 					<%} %>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 					<hr />
 
-					<%
-						if (dto == null) {
-					%>
+					<% if (dto == null) {%>
+					
 					<button style="background-color: #9399AB">
 						<h3>
 							<a href="/project/html5up-eventually/login.jsp">로그인</a>
 						</h3>
 					</button>
-<<<<<<< HEAD
 					&emsp;&emsp;&emsp;&emsp;&emsp;
+					
 					<button style="background-color: #9399AB">
 						<h3>
-							<a href="#">회원가입</a>
+							<a href="/project/html5up-eventually/join.jsp"">회원가입</a>
 						</h3>
 
 					</button>
-					<%
-						} else {
-					%>
+					<%} else {%>
 					<button style="background-color: #9399AB">
 						<h3>
 							<a href="/project/html5up-eventually/LogoutCon.do">로그아웃</a>
 						</h3>
 					</button>
 					&emsp;&emsp;&emsp;&emsp;&emsp;
-					<%
-						if (dto.getMem_id().equals("admin@naver.com")) {
-					%>
 					<button style="background-color: #9399AB">
-						<h3>
-							<a href="#"> 회원관리페이지 </a>
-						</h3>
-					</button>
-					&emsp;&emsp;&emsp;&emsp;&emsp;
-					<button style="background-color: #9399AB">
-						<h3>
-							<a href="#"> 회원정보수정 </a>
-						</h3>
-					</button>
-					<%
-						}
-					%>
-
-
-					<%
-						}
-					%>
-=======
-							&emsp;&emsp;&emsp;&emsp;&emsp;
-					<button style="background-color:#9399AB">
-						<h3><a href="/project/html5up-eventually/join.jsp">회원가입</a></h3>
 						
-						</button>
-								<%} else{%>
-								<button style="background-color:#9399AB">
-						<h3><a href="/project/html5up-eventually/LogoutCon.do">로그아웃</a></h3>
-						</button>
-								&emsp;&emsp;&emsp;&emsp;&emsp;
-								<%if(dto.getMem_id().equals("admin@naver.com")) {%>
-						<button style="background-color:#9399AB">
-								<h3><a href="#"> 회원관리페이지 </a></h3>
-								</button>
-							&emsp;&emsp;&emsp;&emsp;&emsp;
-							<button style="background-color:#9399AB">
-								<h3><a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a></h3>
-								</button>
-								<%} %>
-								
-								
-								<%} %>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
+							<h3><a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a></h3>
+						
+					</button>
+					<% if (dto.getMem_id().equals("admin@naver.com")) {%>
+						&emsp;&emsp;&emsp;&emsp;&emsp;
+					<button style="background-color: #9399AB">
+						<h3>
+							<a href="/project/html5up-eventually/LogoutCon.do">회원관리</a>
+						</h3>
+					</button>
+						<%} %>
+					<%} %>
+						
 				</header>
 			</div>
 			<!-- Nav -->
 			<nav id="nav">
-<<<<<<< HEAD
 				<ul>
 					<li><a href="Home.jsp">홈</a></li>
 					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
 					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
 					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
 					<li><a href="MyPage.jsp">마이 페이지</a></li>
-=======
-				<ul>				
-					<li><a href="Home.html">홈</a></li>
-					<li><a href="categoryStart.jsp">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
-					<li><a href="MyPage.html">마이 페이지</a></li>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
-				</ul>
+				
 			</nav>
 
 		</div>
