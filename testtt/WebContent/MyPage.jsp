@@ -1,5 +1,5 @@
-<%@page import="com.member.DTO.MypageDTO"%>
-<%@page import="com.member.DAO.MyPageDAO"%>
+<%@page import="com.book.DTO.BookDTO"%>
+<%@page	import="com.member.DAO.MypageDAO" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -17,8 +17,19 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="no-sidebar is-preload">
-	<% MypageDTO dto = (MypageDTO)session.getAttribute("dto"); %>
-	
+	 <%
+       BookDTO dto = (BookDTO) session.getAttribute("dto");
+      System.out.println("session 값 : "+dto);
+      int cnt = 0;
+         if(session.getAttribute("visit")==null){
+         session.setAttribute("visit", 1);
+         }else{
+         int visit = (int)session.getAttribute("visit");
+         cnt = visit;
+         session.setAttribute("visit", visit+1);
+         }
+      %>
+    
 				<div id="header">
 					<!-- Inner -->
 						<div class="inner">
@@ -43,17 +54,12 @@
 			<!-- Main -->
 				<div id=""></div>
 				<div class="wrapper style1">
-		
-					<div class="container">
-						<article id="main" class="special">
-							<header>
-								<h2>회원 정보 관리</h2>
-							</header>
-								<br><h3>기본 정보</h3>
-								회원 이메일<br>
-								회원 비밀번호<br>
-								회원 이름<br>
-								회원 닉네임<br>
+			<h3><strong>내 정보</strong><button>정보 수정 </button></h3>
+            	
+						<p>회원 이메일</p><br>
+						<p>회원 비밀번호</p><br>
+						<p>회원 이름</p><br>
+						<p>회원 닉네임</p><br>
 					
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
