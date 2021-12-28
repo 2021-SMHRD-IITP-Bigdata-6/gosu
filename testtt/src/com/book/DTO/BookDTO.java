@@ -7,9 +7,13 @@ public class BookDTO {
 	String mem_tel;
 	int mem_age;
 	String mem_gender;
-	String insert_date;
-	
-	
+	String date;
+
+	public BookDTO(String mem_pw) {
+		super();
+		this.mem_pw = mem_pw;
+	}
+
 	public BookDTO(String mem_pw, String mem_name, String mem_tel) {
 		super();
 		this.mem_pw = mem_pw;
@@ -23,7 +27,7 @@ public class BookDTO {
 	}
 
 	public BookDTO(String mem_id, String mem_pw, String mem_name, String mem_tel, int mem_age, String mem_gender,
-			String insert_date) {
+			String date) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
@@ -31,10 +35,8 @@ public class BookDTO {
 		this.mem_tel = mem_tel;
 		this.mem_age = mem_age;
 		this.mem_gender = mem_gender;
-		this.insert_date = insert_date;
+		this.date = date;
 	}
-	
-	
 
 	public BookDTO(String mem_id, String mem_pw, String mem_name, String mem_tel, int mem_age) {
 		super();
@@ -104,19 +106,17 @@ public class BookDTO {
 	}
 
 	public String getDate() {
-		return insert_date;
+		return date;
 	}
 
 	public void setDate(String insert_date) {
-		this.insert_date = insert_date;
+		this.date = insert_date;
 	}
 
 	@Override
 	public String toString() {
 		return "BookDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_tel=" + mem_tel
-				+ ", mem_age=" + mem_age + ", mem_gender=" + mem_gender + ", date=" + insert_date + "]";
+				+ ", mem_age=" + mem_age + ", mem_gender=" + mem_gender + ", date=" + date + "]";
 	}
-	
-	
-	
+
 }

@@ -31,13 +31,12 @@ public class JoinService implements Command{
 		String tel = request.getParameter("tel");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String gender = request.getParameter("gender");
-		
 		String nextpage = "";
 
 		BookDAO dao = new BookDAO();
 		int cnt = 0;
-	
-			BookDTO dto = new BookDTO(email, pw, name, tel, age, gender);
+		// db조회로 변경
+		BookDTO dto = new BookDTO(email, pw, name, tel, age, gender);
 
 		 cnt = dao.Join(dto);
 

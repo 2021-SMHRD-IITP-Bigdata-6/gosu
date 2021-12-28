@@ -31,23 +31,23 @@
 					      	System.out.println("현재 로그인 한 사람의 email 값 :"+dto.getMem_id());
 			%>
 		<!-- Signup Form -->
-			<form action="UpdateCon" method="post" align="center">
+			<form action="UpdateCon.do" method="post" align="center">
 			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
 			<br>
 		<select name="select">
-			<option value="pw">name</option>
+			<option value="name">name</option>
 			<option value="pw">pw</option>
-			<option value="nick">tel</option>
+			<option value="tel">tel</option>
 			
 		</select>
 		
 		변경할 패스워드 DATA <input type="text" name="data">
 		<br>
-		<input type="submit" value="회원수정" >
+		<input type="submit"  value="회원수정" >
 	</form>
 			
 			<br>
-			<a href="/project/Home.html" align="center">메인페이지 돌아가기</a>
+			<a href="/project/html5up-eventually/Home.jsp" align="center">메인페이지 돌아가기</a>
 
 		<!-- Footer -->
 			<footer id="footer">
