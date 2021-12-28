@@ -22,7 +22,7 @@
 		<div id="header">
 
 			
-		<jsp:useBean id="user" class="com.member.DTO.MypageDTO"></jsp:useBean>
+		<jsp:useBean id="user" class="com.book.DTO.BookDTO"></jsp:useBean>
 		<jsp:setProperty property="*" name="user"/>
 		
 		<%

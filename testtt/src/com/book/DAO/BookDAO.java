@@ -4,10 +4,12 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 
 import org.apache.coyote.Request;
 
 import com.book.DTO.BookDTO;
+import com.book.DTO.BookDTO.MypageDTO;
 
 public class BookDAO {
 	Connection conn = null;
@@ -17,6 +19,10 @@ public class BookDAO {
 	ResultSet rs = null;
 
 	private boolean check;
+	private BookDTO bookDTO;
+	private String sql;
+	private BookDTO dto1;
+	private Statement stmt;
 
 	public void getConn() {
 
@@ -160,5 +166,27 @@ public class BookDAO {
 		}
 		return cnt;
 	}
+	public class DAO{
+		
+	}
+	public MypageDTO selectAccountone(MypageDTO user) {
+		String sql = "select * from account where id='%s' and pw='%s'";
+		
+		sql=String.format(sql, user.getMem_id(),user.getMem_pw());
+		
+		try {
+			stmt = conn.createStatement();
+			rs = stmt.executeQuery(sql);
+			
+			rs.next();
+			
+			
+		} catch (Exception e) {
 
+		}
+		
+		return null;
+		
+	}
+	
 }
