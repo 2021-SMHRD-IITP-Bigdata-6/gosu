@@ -61,25 +61,16 @@ public class FrontController extends HttpServlet {
 		} else if(command.equals("memberSearch.do")) {
 			String email = request.getParameter("email");
 			
-			// DAO 객체 생성
+		
+		}else if(command.equals("UpdateCon.do")){
+			  
+			 com = new UpdateService(); 
+			 nextpage =com.execute(request, response); 
+		}else if(command.equals("categorySearch.do")) {
 			
-			BookDAO dao = new BookDAO();
-			
-			// dao의 메서드 사용
-			ArrayList<BookDTO> list = dao.selectMember(email);
-			
-			// ArrayList > json
-			Gson gson = new Gson();
-			String json = gson.toJson(list);
-			// 인코딩
-			response.setCharacterEncoding("utf-8");
-			// 응답
-			
-			PrintWriter out = response.getWriter();
-			out.print(json);
 		}
-
-		if (nextpage != null) {
+			 
+		if (nextpage != null) { 
 			response.sendRedirect(nextpage);
 		}
 	}

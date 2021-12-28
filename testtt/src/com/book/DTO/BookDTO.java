@@ -9,6 +9,7 @@ public class BookDTO {
 	String mem_gender;
 	String date;
 
+
 	public BookDTO(String mem_pw) {
 		super();
 		this.mem_pw = mem_pw;
@@ -57,8 +58,8 @@ public class BookDTO {
 		this.mem_gender = mem_gender;
 	}
 
-	
-	
+
+
 	public BookDTO(String mem_id, String mem_name, String mem_tel, int mem_age, String mem_gender, String date) {
 		super();
 		this.mem_id = mem_id;
@@ -125,10 +126,5 @@ public class BookDTO {
 		this.date = insert_date;
 	}
 
-	@Override
-	public String toString() {
-		return "BookDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_tel=" + mem_tel
-				+ ", mem_age=" + mem_age + ", mem_gender=" + mem_gender + ", date=" + date + "]";
-	}
-
+	
 }

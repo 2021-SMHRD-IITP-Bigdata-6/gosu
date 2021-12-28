@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
+
 
 import com.book.DTO.BookDTO;
 
@@ -17,6 +19,10 @@ public class BookDAO {
 
 	private boolean check;
 	BookDTO dto = null;
+	private BookDTO bookDTO;
+	private String sql;
+	private BookDTO dto1;
+	private Statement stmt;
 
 	public void getConn() {
 
@@ -156,6 +162,26 @@ public class BookDAO {
 		}
 		return cnt;
 	}
+//	public class DAO{
+//		
+//	}
+//	public MypageDTO selectAccountone(MypageDTO user) {
+//		String sql = "select * from account where id='%s' and pw='%s'";
+//		
+//		sql=String.format(sql, user.getMem_id(),user.getMem_pw());
+//		
+//		try {
+//			stmt = conn.createStatement();
+//			rs = stmt.executeQuery(sql);
+//			
+//			rs.next();
+//			
+//			
+//		} catch (Exception e) {
+//			
+//		}
+//
+//	}
 
 	public int Update1(BookDTO dto, String tel) {
 
@@ -297,5 +323,9 @@ public class BookDAO {
 
 		}
 		return cnt;
+	
+	
+		
 	}
+	
 }

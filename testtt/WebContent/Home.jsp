@@ -21,6 +21,7 @@
       <!-- Header -->
       <div id="header">
 
+<<<<<<< HEAD
          
       <jsp:useBean id="user" class="com.member.DTO.MypageDTO"></jsp:useBean>
       <jsp:setProperty property="*" name="user"/>
@@ -39,6 +40,26 @@
       %>
       
    
+=======
+			
+		<jsp:useBean id="user" class="com.book.DTO.BookDTO"></jsp:useBean>
+		<jsp:setProperty property="*" name="user"/>
+		
+		<%
+	 	BookDTO dto = (BookDTO) session.getAttribute("dto");
+		System.out.println("session 값 : "+dto);
+		int cnt = 0;
+			if(session.getAttribute("visit")==null){
+			session.setAttribute("visit", 1);
+			}else{
+			int visit = (int)session.getAttribute("visit");
+			cnt = visit;
+			session.setAttribute("visit", visit+1);
+			}
+		%>
+		
+	
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 
          <!-- Inner -->
          <div class="inner">
