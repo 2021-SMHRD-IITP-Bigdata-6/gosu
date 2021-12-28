@@ -12,16 +12,31 @@
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
-
 			<!-- Header -->
 				<div id="header">
 
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1>click</h1>
+								<h1>3가지 장르를 선택해주세요</h1>
 								<hr />
-								<select>
+								<select id="select1">
+									<option value="genre1" name="choice"> choice</option>
+									<option value="genre2"> 1</option>
+									<option value="genre3"> 2</option>
+									<option value="genre4"> 3</option>
+									<option value="genre5"> 4</option>
+									<option value="genre6"> 5</option>
+								</select>
+								<select id="select2">
+									<option> choice</option>
+									<option> 1</option>
+									<option> 2</option>
+									<option> 3</option>
+									<option> 4</option>
+									<option> 5</option>
+								</select>
+								<select id="select3">
 									<option> choice</option>
 									<option> 1</option>
 									<option> 2</option>
@@ -31,7 +46,7 @@
 								</select>
 							</header>
 							<footer>
-								<a href="categorySearch.jsp" class="button circled scrolly">SEARCH</a>
+								<a href="categorySearch.jsp" class="button circled scrolly">검색</a>
 							</footer>
 						</div>
 

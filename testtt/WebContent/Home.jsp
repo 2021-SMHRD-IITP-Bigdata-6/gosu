@@ -21,7 +21,6 @@
 
 		<!-- Header -->
 		<div id="header">
-<<<<<<< HEAD
 
 			<%
 				request.setCharacterEncoding("utf-8");
@@ -39,7 +38,6 @@
 			%>
 		<jsp:useBean id="user" class="com.member.DTO.MypageDTO"></jsp:useBean>
 		<jsp:setProperty property="*" name="user"/>
-=======
 		
 		<%
 	
@@ -65,8 +63,6 @@
 	}
 	%>
 		
-	
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 
 			<!-- Inner -->
 			<div class="inner">
@@ -78,20 +74,15 @@
 						if (dto == null) {
 					%>
 					<p>E-BOOK 알리미에 오신걸 환영합니다.</p>
-<<<<<<< HEAD
 					<%
 						} else {
 					%>
 					<p><%=dto.getMem_id()%>님 알리미에 오신걸 환영합니다.
 					</p>
-					<%
-						}
-					%>
-=======
+					<%}%>
 					<%} else{%>
 					<p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다. </p>
 					<%} %>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 					<hr />
 
 					<%
@@ -102,7 +93,6 @@
 							<a href="/project/html5up-eventually/login.jsp">로그인</a>
 						</h3>
 					</button>
-<<<<<<< HEAD
 					&emsp;&emsp;&emsp;&emsp;&emsp;
 					<button style="background-color: #9399AB">
 						<h3>
