@@ -33,7 +33,7 @@ public class FrontController extends HttpServlet {
 		if (command.equals("LoginCon.do")) {
 			
 		    com = new LoginService();
-			nextpage= com.execute(request,response);
+			nextpage= com.execute(request, response);
 			   
 		}else if(command.equals("LogoutCon.do")) {
 			
@@ -43,11 +43,12 @@ public class FrontController extends HttpServlet {
 			
 			com  = new JoinService();
 	      com.execute(request, response);
-		}else if(command.equals("UpdateCon.do")){
-			
-			com = new UpdateService();
-			nextpage =com .execute(request, response);
-		}
+		} 
+			  else if(command.equals("UpdateCon.do")){
+			  
+			 com = new UpdateService(); 
+			 nextpage =com.execute(request, response); }
+			 
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);
 		}

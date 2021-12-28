@@ -31,13 +31,12 @@ public class JoinService implements Command{
 		String tel = request.getParameter("tel");
 		int age = Integer.parseInt(request.getParameter("age"));
 		String gender = request.getParameter("gender");
-		
 		String nextpage = "";
 
 		BookDAO dao = new BookDAO();
 		int cnt = 0;
-	
-			BookDTO dto = new BookDTO(email, pw, name, tel, age, gender);
+		// db조회로 변경
+		BookDTO dto = new BookDTO(email, pw, name, tel, age, gender);
 
 		 cnt = dao.Join(dto);
 
@@ -52,11 +51,8 @@ public class JoinService implements Command{
 			// JoinCon에서 joinSuccess.jsp로 값을 보낼 수 있는 두가지 방법
 			// 1. 세션활용
 			// 2. QueryString활용
-<<<<<<< HEAD
 			nextpage = "Home.jsp";
-=======
 			nextpage = "/project/Home.jsp";
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 		} else {
 
 		}

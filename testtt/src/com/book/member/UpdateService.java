@@ -22,27 +22,28 @@ public class UpdateService implements Command{
 		String nextpage = "";
 
 		BookDTO dto = (BookDTO) session.getAttribute("dto");
-		String email = dto.getMem_id();
-
-		String name = request.getParameter("name");
-		String pw = request.getParameter("pw");
-		String tel = request.getParameter("tel");
-
-		BookDAO dao = new BookDAO();
-
-		int cnt = dao.Update(pw, tel, name);
-		System.out.println(email);
-		if (cnt > 0) {
-
-		//	response.sendRedirect("main.jsp");
-			BookDTO Update_dto = new BookDTO(name, tel, pw);
-
-			session.setAttribute("dto", Update_dto);
-
-			session = request.getSession();
-			nextpage = "main.jsp";
-		} else {
-
+	
+		
+		String select = request.getParameter("select");
+		
+		if (select.equals("pw")) {
+			String data = request.getParameter("data");
+			BookDAO dao = new BookDAO();
+	
+			int cnt = dao.Update(data);
+			System.out.println(dto.getMem_id());
+			if (cnt > 0) {
+	
+				BookDTO Update_dto = new BookDTO(data);
+	
+				session.setAttribute("dto", Update_dto);
+	
+				session = request.getSession();
+				nextpage = "/project/Home.jsp";
+				
+			} else {
+				nextpage = "/project/Home.jsp";
+			}
 		}
 		return nextpage;
 	}

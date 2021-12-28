@@ -55,7 +55,7 @@
 										
 							</tr>				
 						</table>
-			<a href="/project/join.jsp" align="center">로그인 바로가기</a>
+			<a href="/project/html5up-eventually/login.jsp" align="center">로그인 바로가기</a>
 
 		<!-- Footer -->
 			<footer id="footer">
