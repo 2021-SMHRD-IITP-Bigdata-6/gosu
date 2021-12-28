@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Booket List</title>
 <head>
 <title>Booket List</title>
 <meta charset="utf-8" />
@@ -58,15 +57,31 @@
 
 
 
+			<jsp:useBean id="user" class="com.member.DTO.MypageDTO"></jsp:useBean>
+			<jsp:setProperty property="*" name="user" />
+
+			<%
+	 	BookDTO dto = (BookDTO) session.getAttribute("dto");
+		System.out.println("session 값 : "+dto);
+		int cnt = 0;
+			if(session.getAttribute("visit")==null){
+			session.setAttribute("visit", 1);
+			}else{
+			int visit = (int)session.getAttribute("visit");
+			cnt = visit;
+			session.setAttribute("visit", visit+1);
+			}
+		%>
+
+
+
 			<!-- Inner -->
 			<div class="inner">
 				<header>
 					<h1 style="color: #BFCCDA;">Booket List</h1>
 					<br>
 
-					<%
-						if (dto == null) {
-					%>
+					<% if (dto == null) {%>
 					<p>E-BOOK 알리미에 오신걸 환영합니다.</p>
 
 					<%
@@ -77,41 +92,37 @@
 					<%
 						}
 					%>
-					 <%}else{%>
+					<%}else{%>
+					<p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다.
+					</p>
+					<%} else{%>
 					<p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다.
 					</p>
 					<%} %>
-
 					<hr />
 
-					<%
-						if (dto == null) {
-					%>
+					<% if (dto == null) {%>
+
 					<button style="background-color: #9399AB">
 						<h3>
 							<a href="/project/html5up-eventually/login.jsp">로그인</a>
 						</h3>
 					</button>
-
 					&emsp;&emsp;&emsp;&emsp;&emsp;
+
 					<button style="background-color: #9399AB">
 						<h3>
-							<a href="#">회원가입</a>
+							<a href="/project/html5up-eventually/join.jsp"">회원가입</a>
 						</h3>
 
 					</button>
-					<%
-						} else {
-					%>
+					<%} else {%>
 					<button style="background-color: #9399AB">
 						<h3>
 							<a href="/project/html5up-eventually/LogoutCon.do">로그아웃</a>
 						</h3>
 					</button>
 					&emsp;&emsp;&emsp;&emsp;&emsp;
-					<%
-						if (dto.getMem_id().equals("admin@naver.com")) {
-					%>
 					<button style="background-color: #9399AB">
 						<h3>
 							<a href="#"> 회원관리페이지 </a>
@@ -140,8 +151,7 @@
 
 					</button>
 					<%
-						}else
-						{
+						}else{
 					%>
 					<button style="background-color: #9399AB">
 						<h3>
@@ -150,7 +160,7 @@
 					</button>
 					&emsp;&emsp;&emsp;&emsp;&emsp;
 					<%
-						if (dto.getMem_id().equals("admin@naver.com")) {
+						if(dto.getMem_id().equals("admin@naver.com")){
 					%>
 					<button style="background-color: #9399AB">
 						<h3>
@@ -168,6 +178,28 @@
 					%>
 
 
+					<%
+						}
+					%>
+
+
+					<h3>
+						<a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a>
+					</h3>
+
+					</button>
+					<%
+						if(dto.getMem_id().equals("admin@naver.com")){
+					%>
+					&emsp;&emsp;&emsp;&emsp;&emsp;
+					<button style="background-color: #9399AB">
+						<h3>
+							<a href="/project/html5up-eventually/LogoutCon.do">회원관리</a>
+						</h3>
+					</button>
+					<%
+						}
+					%>
 					<%
 						}
 					%>
