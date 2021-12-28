@@ -51,7 +51,11 @@ public class JoinService implements Command{
 			// JoinCon에서 joinSuccess.jsp로 값을 보낼 수 있는 두가지 방법
 			// 1. 세션활용
 			// 2. QueryString활용
+<<<<<<< HEAD
+			nextpage = "Home.jsp";
+=======
 			nextpage = "/project/Home.jsp";
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 		} else {
 
 		}

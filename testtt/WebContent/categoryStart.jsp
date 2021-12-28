@@ -1,12 +1,10 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+
 <html>
 	<head>
-		<title>Helios by HTML5 UP</title>
+		<title>E-BOOK 검색</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -21,10 +19,9 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">click</a></h1>
+								<h1>click</h1>
 								<hr />
-								category
-								<select >
+								<select>
 									<option> choice</option>
 									<option> 1</option>
 									<option> 2</option>
@@ -39,14 +36,15 @@
 						</div>
 
 					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="index.html">Home</a></li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="BookInfo.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
-							</ul>
-						</nav>
+					<nav id="nav">
+				<ul>				
+					<li><a href="Home.jsp">홈</a></li>
+					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
+					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+					<li><a href="MyPage.jsp">마이 페이지</a></li>
+				</ul>
+			</nav>
 
 				</div>
 

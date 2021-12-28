@@ -1,18 +1,9 @@
-<<<<<<< HEAD
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%--<%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-=======
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 <!DOCTYPE HTML>
 <html>
 	<head>
-<<<<<<< HEAD
-		<title>E-BOOK 검색</title>
-=======
-		<title>E-BOOK �帣</title>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
+		<title>E-BOOK 장르</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -27,48 +18,32 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-<<<<<<< HEAD
-								<h1><a href="Home.jsp" id="logo">E-BOOK 장르</a></h1>
-=======
-								<h1>E-BOOK �帣</h1>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
+								<h1>E-BOOK 장르</h1>
 							</header>
 						</div>
 						
 					<!-- Nav -->
-<<<<<<< HEAD
 				<nav id="nav">
 				<ul>				
 					<li><a href="Home.jsp">홈</a></li>
-					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
+					<li><a href="BookGenre.jsp">E-BOOK 장르</a></li>
 					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
-					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-					<li><a href="MyPage.jsp">마이 페이지</a></li>
+					<li><a href="categorySearch.jsp">E-BOOK 검색</a></li>
+					<li><a href="MyPage.html">마이 페이지</a></li>
 				</ul>
 			</nav>
 
-=======
-							<nav id="nav">
-				<ul>
-					<li><a href="Home.html">Ȩ</a></li>
-					<li><a href="BookGenre.html">E-BOOK �帣</a></li>
-					<li><a href="BookInfo.html">E-BOOK ����</a></li>
-					<li><a href="MyPage.html">���� ������</a></li>
-				</ul>
-			</nav>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
 				</div>
 
 			<select> 
-			<option>���� </option>
-			<option>����2 </option>
-			<option>����3 </option>
+			<option>ㅎㅇ </option>
+			<option>ㅎㅇ2 </option>
+			<option>ㅎㅇ3 </option>
 			
 			</select>
-			<select> <option>���� </option></select>
-			<select> <option>���� </option></select>
-			<h1>�����Ͻ� �帣�Դϴ�.</h1>
-			<button align='right'><a href="categoryDetail.jsp"> ��ü����</a></button>
+			<select> <option>ㅎㅇ </option></select>
+			<select> <option>ㅎㅇ </option></select>
+			<h1>선택하신 장르입니다.</h1>
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
@@ -76,61 +51,61 @@
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 							<header>
-								<h3><a href="#">å ����</a></h3>
+								<h3><a href="#">책 제목</a></h3>
 							</header>
 						</article>
 					</div>
@@ -626,4 +601,4 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
-</html>
+</html> --%>
