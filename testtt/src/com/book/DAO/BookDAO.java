@@ -5,6 +5,8 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.apache.coyote.Request;
+
 import com.book.DTO.BookDTO;
 
 public class BookDAO {
@@ -14,7 +16,6 @@ public class BookDAO {
 
 	ResultSet rs = null;
 
-	BookDTO dto = null;
 	private boolean check;
 
 	public void getConn() {
@@ -63,7 +64,8 @@ public class BookDAO {
 	}
 
 	public BookDTO Login(BookDTO dto1) {
-
+		BookDTO bookDTO = null;
+		
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
@@ -90,7 +92,7 @@ public class BookDAO {
 
 				if (dto1.getMem_pw().equals(getpw)) {
 
-					dto = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
+					bookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
 
 				}
 
@@ -102,7 +104,8 @@ public class BookDAO {
 		} finally {
 			close();
 		}
-		return dto;
+		
+		return bookDTO;
 	}
 
 	public int Join(BookDTO dto) {
@@ -136,22 +139,19 @@ public class BookDAO {
 
 	
 
-	public int Update(String pw, String tel, String address) {
+	public int Update(String pw) {
 
 		int cnt = 0;
 		try {
 			getConn();
-
-			String sql = "update t_member set pw = ?, tel=?, address=? where email = ?";
+			String sql = "update t_member set mem_pw = ?  where mem_id = 'admin@naver.com' ";
+			
 			psmt = conn.prepareStatement(sql);
-
 			psmt.setString(1, pw);
-			psmt.setString(2, tel);
-			psmt.setString(3, address);
-
+//			psmt.setString(2, dto.getMem_id());
 			cnt = psmt.executeUpdate();
-
-			System.out.println(cnt);
+			
+			System.out.println("cnt : " + cnt);
 
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -17,21 +17,20 @@ public class LoginService implements Command {
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
-		BookDTO dto1 = new BookDTO(email, pw);
+		
+		BookDTO bookDTO = new BookDTO(email, pw);
+		
 		BookDAO dao = new BookDAO();
 
-		BookDTO dto = dao.Login(dto1);
+		BookDTO dto = dao.Login(bookDTO);
 		String nextpage = "";
 		if (dto != null) {
-
 			HttpSession session = request.getSession();
-
 			session.setAttribute("dto", dto);
-
 			nextpage = "/project/Home.jsp";
-			dto = new BookDTO(dto1.getMem_id(), nextpage, nextpage, nextpage, 0, nextpage, nextpage);
 			System.out.println("¼º°ø");
 		} else {
 			nextpage = "/project/html5up-eventually/LoginFalse.jsp";
@@ -44,3 +43,4 @@ public class LoginService implements Command {
 	}
 
 }
+
