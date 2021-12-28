@@ -14,9 +14,6 @@ import com.book.inter.Command;
 
 public class JoinService implements Command{
 
-
-		
-
 	@Override
 	public String execute(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {

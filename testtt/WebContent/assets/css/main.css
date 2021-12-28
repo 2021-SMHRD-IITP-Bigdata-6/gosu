@@ -32,6 +32,16 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
+a .choice{
+	display: inline-block;
+	border-radius: 100%;
+	width: 4.5em;
+	height: 4.5em;
+	line-height: 4.5em;
+	text-align: center;
+	font-size: 1.25em;
+	padding: 0;
+}
 
 ol, ul {
 	list-style: none;
@@ -163,6 +173,7 @@ input, select, textarea {
 		-webkit-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		-ms-transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
+		
 	}
 
 		a:hover {

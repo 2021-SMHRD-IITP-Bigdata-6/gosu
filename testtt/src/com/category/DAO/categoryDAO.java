@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
 
 import com.book.DAO.BookDAO;
 import com.book.DTO.BookDTO;
@@ -59,39 +60,19 @@ public class categoryDAO {
 		}
 	}//close()
 	
-	public categoryDTO category(categoryDTO dto) {
-		BookDTO bookDTO = null;
-		
+	public  ArrayList<categoryDTO>category(String art) {
+		ArrayList<categoryDTO> list = new ArrayList<categoryDTO>();
 		try {
 			getConn();
 			String sql = "select * from art where lee = ?";
-			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
-
-			psmt.setString(1, dto.getArt());
+			psmt.setString(1, art);
 
 			// 6. slq명령문 실행
 			rs = psmt.executeQuery();
-
-			/* 7. 명령 후 처리
+			// 7. 명령 후 처리
 			if (rs.next()) {
-
-				String getpw = rs.getString(2);
-				String getname = rs.getString(3);
-				String gettel = rs.getString(4);
-				int getage = rs.getInt(5);
-				String getgender = rs.getString(6);
-				String date = rs.getString(7);
-
-				System.out.println(dto1.getMem_id());
-				System.out.print(getpw);
-
-				if (dto1.getMem_pw().equals(getpw)) {
-
-					bookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
-
-				}
-
+				String aart = rs.getString(1);
 			}
 
 		} catch (Exception e) {
@@ -101,10 +82,15 @@ public class categoryDAO {
 			close();
 		}
 		
-		return bookDTO;*/
+		return list;
 	}
 	
 	public void search() {
 	
+	}
+
+	public int category(categoryDTO dto) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }//DAO

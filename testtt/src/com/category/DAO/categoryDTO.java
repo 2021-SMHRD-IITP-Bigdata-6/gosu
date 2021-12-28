@@ -24,6 +24,12 @@ public class categoryDTO {
 		this.science = science;
 		this.art = art;
 	}
+	
+	public categoryDTO(String art) {
+		super();
+		this.art = art;
+	}
+
 	public String getNovel() {
 		return novel;
 	}
