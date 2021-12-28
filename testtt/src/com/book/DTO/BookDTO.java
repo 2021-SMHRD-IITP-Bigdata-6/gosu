@@ -57,6 +57,18 @@ public class BookDTO {
 		this.mem_gender = mem_gender;
 	}
 
+	
+	
+	public BookDTO(String mem_id, String mem_name, String mem_tel, int mem_age, String mem_gender, String date) {
+		super();
+		this.mem_id = mem_id;
+		this.mem_name = mem_name;
+		this.mem_tel = mem_tel;
+		this.mem_age = mem_age;
+		this.mem_gender = mem_gender;
+		this.date = date;
+	}
+
 	public String getMem_id() {
 		return mem_id;
 	}

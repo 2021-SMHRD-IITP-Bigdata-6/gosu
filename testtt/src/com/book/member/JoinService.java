@@ -51,7 +51,6 @@ public class JoinService implements Command{
 			// JoinCon에서 joinSuccess.jsp로 값을 보낼 수 있는 두가지 방법
 			// 1. 세션활용
 			// 2. QueryString활용
-			nextpage = "Home.jsp";
 			nextpage = "/project/Home.jsp";
 		} else {
 

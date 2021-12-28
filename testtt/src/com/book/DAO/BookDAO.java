@@ -4,8 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-
-import org.apache.coyote.Request;
+import java.util.ArrayList;
 
 import com.book.DTO.BookDTO;
 
@@ -17,21 +16,19 @@ public class BookDAO {
 	ResultSet rs = null;
 
 	private boolean check;
+	BookDTO dto = null;
 
 	public void getConn() {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("클래스 파일 로딩 완료");
-			
-		
+
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_8_3_1216";
 			String dbpw = "smhrd3";
-			
-			conn = DriverManager.getConnection(url,dbid,dbpw);
-			
-		
+
+			conn = DriverManager.getConnection(url, dbid, dbpw);
 
 			// 3. DB에서 사용하는 id/pw를 인증
 			if (conn != null) {
@@ -65,7 +62,7 @@ public class BookDAO {
 
 	public BookDTO Login(BookDTO dto1) {
 		BookDTO bookDTO = null;
-		
+
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
@@ -104,7 +101,7 @@ public class BookDAO {
 		} finally {
 			close();
 		}
-		
+
 		return bookDTO;
 	}
 
@@ -137,20 +134,19 @@ public class BookDAO {
 		return cnt;
 	}
 
-	
-
-	public int Update(String pw) {
+	public int Update(BookDTO dto, String pw) {
 
 		int cnt = 0;
 		try {
 			getConn();
-			String sql = "update t_member set mem_pw = ?  where mem_id = 'admin@naver.com' ";
-			
+			String sql = "update t_member set mem_pw = ?  where mem_id = ? ";
+
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pw);
-//			psmt.setString(2, dto.getMem_id());
+
+			psmt.setString(2, dto.getMem_id());
 			cnt = psmt.executeUpdate();
-			
+
 			System.out.println("cnt : " + cnt);
 
 		} catch (Exception e) {
@@ -161,4 +157,145 @@ public class BookDAO {
 		return cnt;
 	}
 
+	public int Update1(BookDTO dto, String tel) {
+
+		int cnt = 0;
+		try {
+			getConn();
+			String sql = "update t_member set mem_tel = ?  where mem_id = ? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, tel);
+
+			psmt.setString(2, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+
+			System.out.println("cnt : " + cnt);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+
+	public int Update2(BookDTO dto, String name) {
+
+		int cnt = 0;
+		try {
+			getConn();
+			String sql = "update t_member set mem_name = ?  where mem_id = ? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, name);
+
+			psmt.setString(2, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+
+			System.out.println("cnt : " + cnt);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	public ArrayList<BookDTO> selectMember() {
+
+		// Select.html 에서 보낸 id 값 받아오기
+		// String id = request.getParameter("id");
+
+		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
+
+		try {
+			getConn();
+			String sql = "select * from t_member";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+
+			// 6. slq명령문 실행
+			// executoUpdate() : DB의 내용에 변경이 일어나는경우, insert, deletd, update
+			// 리턴을 int로 해준다. 몇행이 성공 했는지
+			// executeQuery() : select문 사용시
+			// ResultSet으로 리턴한다.
+
+			rs = psmt.executeQuery();
+
+			// 명령 후 처리
+
+			while (rs.next() == true) {
+				String email = rs.getString(1);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				int age = rs.getInt(5);
+				String gender = rs.getString(6);
+				String date = rs.getString(7);
+
+				// out객체를 사용해서 출력
+				// PrintWriter 객체 생성X --> JSP 내장객체로 이미 선언되어 있음 따로 생성해줄 필요 x
+				dto = new BookDTO(email, name, tel,age,gender,date);
+				arr.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			close();
+		}
+		return arr;
+	}
+	
+	
+	public ArrayList<BookDTO> selectMember(String email) {
+		// TODO Auto-generated method stub
+		
+		// Select.html 에서 보낸 id 값 받아오기
+				// String id = request.getParameter("id");
+
+				ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
+
+				try {
+					getConn();
+					String sql = "select * from t_member where mem_id like ?";
+					// 5. SQL명령문을 준비
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, "%"+email+"%");
+					rs = psmt.executeQuery();
+					while (rs.next() == true) {
+						String memail = rs.getString(1);
+						String name = rs.getString(3);
+						String tel = rs.getString(4);
+						int age = rs.getInt(5);
+						String gender = rs.getString(6);
+						String date = rs.getString(7);
+						dto = new BookDTO(memail, name, tel,age,gender,date);
+						arr.add(dto);
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+				} finally {
+					close();
+				}
+		return arr;
+	}
+	public int Delete(String email) {
+
+		try {
+			getConn();
+			String sql = " delete from t_member where mem_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+
+			cnt = psmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+
+		}
+		return cnt;
+	}
 }

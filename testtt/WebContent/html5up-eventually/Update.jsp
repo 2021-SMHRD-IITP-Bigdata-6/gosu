@@ -26,12 +26,12 @@
 				
 			</header>
 
+		<!-- Signup Form -->
+			<form action="UpdateCon.do" method="post" align="center">
 			<%
 							BookDTO dto = (BookDTO) session.getAttribute("dto");
 					      	System.out.println("현재 로그인 한 사람의 email 값 :"+dto.getMem_id());
 			%>
-		<!-- Signup Form -->
-			<form action="UpdateCon.do" method="post" align="center">
 			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
 			<br>
 		<select name="select">
