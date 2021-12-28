@@ -72,6 +72,14 @@ input, select, textarea {
 	appearance: none;
 }
 
+/*select*/
+.inner #select1{
+	width: 30px;
+	background-color: green;
+}
+#option{
+	background-color: green;
+}
 /* Basic */
 
 	html {

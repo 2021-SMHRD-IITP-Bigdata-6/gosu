@@ -26,7 +26,6 @@ section, summary, time, mark, audio, video {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block; }
-
 body {
   line-height: 1; }
 
@@ -885,3 +884,4 @@ button,
       left: auto;
       margin: 1em 0 0 0;
       position: relative; } }
+      
