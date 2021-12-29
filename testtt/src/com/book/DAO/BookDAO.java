@@ -5,11 +5,12 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import org.apache.coyote.Request;
 
 import com.book.DTO.BookDTO;
-import com.book.DTO.BookDTO.MypageDTO;
+
 
 public class BookDAO {
 	Connection conn = null;
@@ -19,16 +20,17 @@ public class BookDAO {
 	ResultSet rs = null;
 
 	private boolean check;
-	private BookDTO bookDTO;
+	private BookDTO BookDTO;
 	private String sql;
 	private BookDTO dto1;
 	private Statement stmt;
+	private com.book.DTO.BookDTO dto;
 
 	public void getConn() {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("Å¬·¡½º ÆÄÀÏ ·Îµù ¿Ï·á");
+			System.out.println("í´ë˜ìŠ¤ íŒŒì¼ ë¡œë”© ì™„ë£Œ");
 			
 		
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
@@ -39,11 +41,11 @@ public class BookDAO {
 			
 		
 
-			// 3. DB¿¡¼­ »ç¿ëÇÏ´Â id/pw¸¦ ÀÎÁõ
+			// 3. DBì—ì„œ ì‚¬ìš©í•˜ëŠ” id/pwë¥¼ ì¸ì¦
 			if (conn != null) {
-				System.out.println("¿¬°á¼º°ø");
+				System.out.println("ì—°ê²°ì„±ê³µ");
 			} else {
-				System.out.println("¿¬°á½ÇÆĞ");
+				System.out.println("ì—°ê²°ì‹¤íŒ¨");
 			}
 
 		} catch (Exception e) {
@@ -52,7 +54,7 @@ public class BookDAO {
 	}
 
 	public void close() {
-		System.out.println("¹«Á¶°Ç½ÇÇà");
+		System.out.println("ë¬´ì¡°ê±´ì‹¤í–‰");
 		try {
 			if (rs != null) {
 				psmt.close();
@@ -70,20 +72,20 @@ public class BookDAO {
 	}
 
 	public BookDTO Login(BookDTO dto1) {
-		BookDTO bookDTO = null;
+		BookDTO BookDTO = null;
 		
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto1.getMem_id());
 
-			// 6. slq¸í·É¹® ½ÇÇà
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
 			rs = psmt.executeQuery();
 
-			// 7. ¸í·É ÈÄ Ã³¸®
+			// 7. ëª…ë ¹ í›„ ì²˜ë¦¬
 			if (rs.next()) {
 
 				String getpw = rs.getString(2);
@@ -98,20 +100,20 @@ public class BookDAO {
 
 				if (dto1.getMem_pw().equals(getpw)) {
 
-					bookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
+					BookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
 
 				}
 
 			}
 
 		} catch (Exception e) {
-			System.out.println("Å¬·¡½ºÆÄÀÏ ·Îµù½ÇÆĞ");
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”©ì‹¤íŒ¨");
 			e.printStackTrace();
 		} finally {
 			close();
 		}
 		
-		return bookDTO;
+		return BookDTO;
 	}
 
 	public int Join(BookDTO dto) {
@@ -119,7 +121,7 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "insert into t_member values (?,?,?,?,?,?,sysdate)";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getMem_id());
@@ -129,13 +131,13 @@ public class BookDAO {
 			psmt.setInt(5, dto.getMem_age());
 			psmt.setString(6, dto.getMem_gender());
 
-			// 6. slq¸í·É¹® ½ÇÇà
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
 			cnt = psmt.executeUpdate();
 
-			// 7. ¸í·É ÈÄ Ã³¸®
+			// 7. ëª…ë ¹ í›„ ì²˜ë¦¬
 
 		} catch (Exception e) {
-			System.out.println("Å¬·¡½ºÆÄÀÏ ·Îµù½ÇÆĞ");
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”©ì‹¤íŒ¨");
 			e.printStackTrace();
 		} finally {
 			close();
@@ -169,24 +171,79 @@ public class BookDAO {
 	public class DAO{
 		
 	}
-	public MypageDTO selectAccountone(MypageDTO user) {
-		String sql = "select * from account where id='%s' and pw='%s'";
+public ArrayList<BookDTO> selectMember(String user_id) {
 		
-		sql=String.format(sql, user.getMem_id(),user.getMem_pw());
+		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
 		
-		try {
-			stmt = conn.createStatement();
-			rs = stmt.executeQuery(sql);
+		try { // dbì—°ê²°ì½”ë“œ
 			
-			rs.next();
+			getConn();
+			
+			// 5 .SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„ //ì½˜ì†”ì°½ì—ì…ë ¥ ? ì¨ì•¼í•œë‹¤
+			String sql = "select * from t_member";
+			
+			psmt = conn.prepareStatement(sql);
+			rs= psmt.executeQuery(); 
+			
+			while (rs.next()) {
+				
+				String muser_id = rs.getString(1);
+				String user_pw = rs.getString(2);
+				String user_email = rs.getString(3);
+				String user_tel = rs.getString(4);
+				String user_addr = rs.getString(5);
+				String user_gender = rs.getString(6);
+				String user_joindate = rs.getString(7);
+				String user_yesno = rs.getString(8);
+
+				dto = new BookDTO(muser_id, user_pw, user_email, user_tel, user_addr, user_gender, user_joindate, user_yesno);
+				arr.add(dto);
+				
+			} 
 			
 			
 		} catch (Exception e) {
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”© ì‹¤íŒ¨");
+			e.printStackTrace();// try ë¬¸ ì•ˆì—ì„œ ì˜¤ë¥˜í™•ì¸í•˜ëŠ” ì½”ë“œ
+
+		} finally { // ì½”ë“œê°€ ì˜¤ë¥˜ê°€Â‰æ¦® ì•ˆÂ‰æ¦® ë¬´ì¡°ê±´ ì‹¤í–‰
+			
+			close();
 
 		}
 		
-		return null;
+		return arr;
 		
 	}
+	
+	public boolean emailCheck(String user_id) {
+		
+		try { 
+
+			getConn();
+			
+			String sql = "select * from t_member where mem_id = ?";
+			
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, user_id);
+			
+			rs = psmt.executeQuery();
+
+			check = rs.next();
+			
+		} catch (Exception e) {
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”© ì‹¤íŒ¨");
+			e.printStackTrace();
+
+		} finally { 
+			
+			close();
+
+		}
+		
+		return check;
+	}
+	
+
 	
 }

@@ -21,11 +21,11 @@ public class LoginService implements Command {
 		String email = request.getParameter("email");
 		String pw = request.getParameter("pw");
 		
-		BookDTO bookDTO = new BookDTO(email, pw);
+		BookDTO BookDTO = new BookDTO(email, pw);
 		
 		BookDAO dao = new BookDAO();
 
-		BookDTO dto = dao.Login(bookDTO);
+		BookDTO dto = dao.Login(BookDTO);
 		String nextpage = "";
 		if (dto != null) {
 			HttpSession session = request.getSession();
