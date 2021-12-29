@@ -36,7 +36,6 @@
 					</thead>
 			
 						<table border="1" style="width:600px">
-						<tbody id="tbody">
 							<tr >
 								<td>Email</td>
 								<td>PW</td>
@@ -47,6 +46,7 @@
 								<td>삭제</td>
 								<!-- <td>date</td>	 -->	
 							</tr>						
+						<tbody id="tbody">
 							
 								
 		<%
@@ -107,17 +107,9 @@
                   let table = "";
                for (let i = 0; i < res.length; i++) {
                   table += "<tr>";
-                  table += "<td>" + res[i].email + "</td>";
-                  table += "<td>" + res[i].name + "</td>";
-                  table += "<td>" + res[i].tel + "</td>";
-                  table += "<td>" + res[i].age + "</td>";
-                  table += "<td>" + res[i].gender + "</td>";
-                  table += "<td>" + res[i].date + "</td>";
-                  if(res[i].email=="admin"){
-                     table += "<td>관리자</td>";   
-                  }else{
-                     table += "<td><a href='DeleteCon.do?delete_email="+$('input[name=email]').val()+"'>삭제<a></td>";                        
-                  }
+                  table += "<td>" +d +"</td>";
+                 
+                 
                   table += "</tr>";
                   
                   $('tbody').append(table);

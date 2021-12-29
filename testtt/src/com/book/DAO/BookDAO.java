@@ -7,7 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
 import com.book.DTO.BookDTO;
 
 public class BookDAO {
@@ -228,6 +227,7 @@ public class BookDAO {
 		}
 		return cnt;
 	}
+
 	public ArrayList<BookDTO> selectMember() {
 
 		// Select.html 에서 보낸 id 값 받아오기
@@ -261,7 +261,7 @@ public class BookDAO {
 
 				// out객체를 사용해서 출력
 				// PrintWriter 객체 생성X --> JSP 내장객체로 이미 선언되어 있음 따로 생성해줄 필요 x
-				dto = new BookDTO(email, name, tel,age,gender,date);
+				dto = new BookDTO(email, name, tel, age, gender, date);
 				arr.add(dto);
 			}
 		} catch (Exception e) {
@@ -272,40 +272,36 @@ public class BookDAO {
 		}
 		return arr;
 	}
-	
-	
+
 	public ArrayList<BookDTO> selectMember(String email) {
-		// TODO Auto-generated method stub
-		
-		// Select.html 에서 보낸 id 값 받아오기
-				// String id = request.getParameter("id");
 
-				ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
+		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
 
-				try {
-					getConn();
-					String sql = "select * from t_member where mem_id like ?";
-					// 5. SQL명령문을 준비
-					psmt = conn.prepareStatement(sql);
-					psmt.setString(1, "%"+email+"%");
-					rs = psmt.executeQuery();
-					while (rs.next() == true) {
-						String memail = rs.getString(1);
-						String name = rs.getString(3);
-						String tel = rs.getString(4);
-						int age = rs.getInt(5);
-						String gender = rs.getString(6);
-						String date = rs.getString(7);
-						dto = new BookDTO(memail, name, tel,age,gender,date);
-						arr.add(dto);
-					}
-				} catch (Exception e) {
-					e.printStackTrace();
-				} finally {
-					close();
-				}
+		try {
+			getConn();
+			String sql = "select * from t_member where mem_id like ?";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, "%" + email + "%");
+			rs = psmt.executeQuery();
+			while (rs.next() == true) {
+				String memail = rs.getString(1);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				int age = rs.getInt(5);
+				String gender = rs.getString(6);
+				String date = rs.getString(7);
+				dto = new BookDTO(memail, name, tel, age, gender, date);
+				arr.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
 		return arr;
 	}
+
 	public int Delete(String email) {
 
 		try {
@@ -323,9 +319,7 @@ public class BookDAO {
 
 		}
 		return cnt;
-	
-	
-		
+
 	}
-	
+
 }
