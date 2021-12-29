@@ -11,7 +11,6 @@ import org.apache.coyote.Request;
 
 import com.book.DTO.BookDTO;
 
-
 public class BookDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
@@ -31,15 +30,12 @@ public class BookDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			System.out.println("클래스 파일 로딩 완료");
-			
-		
+
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_8_3_1216";
 			String dbpw = "smhrd3";
-			
-			conn = DriverManager.getConnection(url,dbid,dbpw);
-			
-		
+
+			conn = DriverManager.getConnection(url, dbid, dbpw);
 
 			// 3. DB에서 사용하는 id/pw를 인증
 			if (conn != null) {
@@ -73,7 +69,7 @@ public class BookDAO {
 
 	public BookDTO Login(BookDTO dto1) {
 		BookDTO BookDTO = null;
-		
+
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
@@ -100,7 +96,7 @@ public class BookDAO {
 
 				if (dto1.getMem_pw().equals(getpw)) {
 
-					BookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
+					BookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, getage, getgender, date);
 
 				}
 
@@ -112,7 +108,7 @@ public class BookDAO {
 		} finally {
 			close();
 		}
-		
+
 		return BookDTO;
 	}
 
@@ -145,20 +141,18 @@ public class BookDAO {
 		return cnt;
 	}
 
-	
-
 	public int Update(String pw) {
 
 		int cnt = 0;
 		try {
 			getConn();
 			String sql = "update t_member set mem_pw = ?  where mem_id = 'admin@naver.com' ";
-			
+
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pw);
 //			psmt.setString(2, dto.getMem_id());
 			cnt = psmt.executeUpdate();
-			
+
 			System.out.println("cnt : " + cnt);
 
 		} catch (Exception e) {
@@ -168,82 +162,80 @@ public class BookDAO {
 		}
 		return cnt;
 	}
-	public class DAO{
-		
+
+	public class DAO {
+
 	}
-public ArrayList<BookDTO> selectMember(String user_id) {
-		
+
+	public ArrayList<BookDTO> selectMember(String user_id) {
+
 		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
-		
+
 		try { // db연결코드
-			
+
 			getConn();
-			
+
 			// 5 .SQL명령문을 준비 //콘솔창에입력 ? 써야한다
 			String sql = "select * from t_member";
-			
-			psmt = conn.prepareStatement(sql);
-			rs= psmt.executeQuery(); 
-			
-			while (rs.next()) {
-				
-				String muser_id = rs.getString(1);
-				String user_pw = rs.getString(2);
-				String user_email = rs.getString(3);
-				String user_tel = rs.getString(4);
-				String user_addr = rs.getString(5);
-				String user_gender = rs.getString(6);
-				String user_joindate = rs.getString(7);
-				String user_yesno = rs.getString(8);
 
-				dto = new BookDTO(muser_id, user_pw, user_email, user_tel, user_addr, user_gender, user_joindate, user_yesno);
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+
+				String mem_id = rs.getString(1);
+				String mem_pw = rs.getString(2);
+				String mem_name = rs.getString(3);
+				String mem_tel = rs.getString(4);
+				int mem_age = rs.getInt(4);
+				String mem_gender = rs.getString(6);
+				String date = rs.getString(8);
+
+				dto = new BookDTO(mem_id, mem_pw, mem_name, mem_tel, mem_gender, date);
 				arr.add(dto);
-				
-			} 
-			
-			
+
+			}
+
 		} catch (Exception e) {
 			System.out.println("클래스파일 로딩 실패");
 			e.printStackTrace();// try 문 안에서 오류확인하는 코드
 
 		} finally { // 코드가 오류가榮 안榮 무조건 실행
-			
+
 			close();
 
 		}
-		
+
 		return arr;
-		
+
 	}
-	
+
 	public boolean emailCheck(String user_id) {
-		
-		try { 
+
+		try {
 
 			getConn();
-			
-			String sql = "select * from t_member where mem_id = ?";
-			
+
+			String sql = "select * from t_mem_pw where user_id = ?";
+
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, user_id);
-			
+
 			rs = psmt.executeQuery();
 
 			check = rs.next();
-			
+
 		} catch (Exception e) {
 			System.out.println("클래스파일 로딩 실패");
 			e.printStackTrace();
 
-		} finally { 
-			
+		} finally {
+
 			close();
 
 		}
-		
+
 		return check;
 	}
-	
 
-	
 }
