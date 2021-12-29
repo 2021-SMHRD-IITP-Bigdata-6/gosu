@@ -1,3 +1,4 @@
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.book.DAO.BookDAO"%>
 <%@page import="com.book.DTO.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -12,17 +13,11 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
 		<body class="is-preload">
-		<!-- Header -->
 			<header id="header">
-				<h1>로그인 실패입니다</h1>
 			</header>
-		<!-- Signup Form -->
-			<form  method="post" action="LoginCon.do" >
-				<input type="email" name="email"  placeholder="아이디">
-				<input type="password" name="pw"  placeholder="비밀번호" />
-				<input type="submit" value="로그인">
-			</form>
-			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
+			<font size="8">회원가입실패</font><br>
+			<a href="/project/html5up-eventually/join.jsp" align="center">회원가입 다시하기</a>
+			<a href="/project/Home.jsp" align="center">메인페이지 바로가기</a>
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -35,8 +30,8 @@
 					<li>&copy; Untitled.</li><li>Credits: <a>대표 김진우</a></li>
 				</ul>
 			</footer>
+
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>

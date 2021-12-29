@@ -13,29 +13,13 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		
 	</head>
-
-
-
 		<body class="is-preload">
-		
-
 			<header id="header">
-				
 			</header>
-
 			<font size="8">회원관리페이지</font><br>
 					정보를 확인하세요<br><br>
-					<thaed>
-				
-					<h1 colspan="2" ><input type="text"name="email" placeholder="검생어입력하세여" style="width: 500px; margin: 0;"></h1>
-					<h1><button onclick="memberSearch()">검색</button></h1>
-			
-					</thead>
-			
-						<table border="1" style="width:600px">
+						<table border="1" style="width:800px">
 							<tr >
 								<td>Email</td>
 								<td>PW</td>
@@ -43,35 +27,31 @@
 								<td>AGE</td>		
 								<td>TEL</td>
 								<td>GENDER</td>
-								<td>삭제</td>
-								<!-- <td>date</td>	 -->	
+								<td>탈퇴</td>
 							</tr>						
-						<tbody id="tbody">
-							
-								
 		<%
 		BookDAO dao = new BookDAO();
 		ArrayList<BookDTO> arr = dao.selectMember();
+		
 		for (int i = 0; i < arr.size(); i++) {
-	 	out.print("<tr>");
-		out.print("<td>" + arr.get(i).getMem_id() + "</td>");
-		out.print("<td>" + arr.get(i).getMem_name() + "</td>");
-		out.print("<td>" + arr.get(i).getMem_tel()+ "</td>");
-		out.print("<td>" + arr.get(i).getMem_age()+ "</td>");
-		out.print("<td>" + arr.get(i).getMem_gender()+ "</td>");
-		out.print("<td><a href='DeleteCon.do?delete_email="+arr.get(i).getMem_id()+"'></a></td>");
-		out.print("<td><a href='DeleteCon.do?delete_email="+arr.get(i).getMem_id()+"'>삭제</a></td>");
+	 		out.print("<tr>");
+			out.print("<td>" + arr.get(i).getMem_id() + "</td>");
+			out.print("<td>" +"**********" + "</td>");
+			out.print("<td>" + arr.get(i).getMem_name() + "</td>");
+			out.print("<td>" + arr.get(i).getMem_tel()+ "</td>");
+			out.print("<td>" + arr.get(i).getMem_age()+ "</td>");
+			out.print("<td>" + arr.get(i).getMem_gender()+ "</td>");
+			
+		if(arr.get(i).getMem_id().equals("admin@naver.com")){
+			out.print("<td><a href='DeleteCon.do?delete_email="+arr.get(i).getMem_id()+"'></a></td>");
+		}else{
+			out.print("<td><a href='DeleteCon.do?delete_email="+arr.get(i).getMem_id()+"'>회원삭제</a></td>");
 		}
-		out.print("</tr>");
+			out.print("</tr>");
+		}
 		%>
-							
-								
-								
-										
-										</tbody>		
 						</table>
-			<a href="/project/html5up-eventually/login.jsp" align="center">로그인 바로가기</a>
-
+			<a href="/project/Home.jsp" align="center">메인페이지 바로가기</a>
 		<!-- Footer -->
 		<br><br><br><br><br><br><br><br>
 			<footer id="footer1">
@@ -87,42 +67,8 @@
 			</footer>
 
 		<!-- Scripts -->
-		<script src="/project/html5up-eventually/assets/js/jquery-3.6.0.min.js"></script>
+		<script src="assets/js/main.js"></script>
 			<script type="text/javascript">
-	function memberSearch() {
-	    $.ajax({
-            
-            url : "memberSearch.do",
-            type : "get", 
-            data : {
-               "email" : $('input[name=email]').val()
-            },
-            dataType : "json",
-            success : function(res){
-               
-               console.log(res);
-               
-               $('#tbody').html("");
-               
-                  let table = "";
-               for (let i = 0; i < res.length; i++) {
-                  table += "<tr>";
-                  table += "<td>" +d +"</td>";
-                 
-                 
-                  table += "</tr>";
-                  
-                  $('tbody').append(table);
-               }
-                  
-            },
-            error : function(){
-               alert("요청실패");
-            }
-            
-         });
-	}
-	
 	</script>
 
 	</body>

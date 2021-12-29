@@ -16,12 +16,11 @@ public class BookDAO {
 
 	ResultSet rs = null;
 
-	private boolean check;
+ boolean check;
 	BookDTO dto = null;
-	private BookDTO bookDTO;
-	private String sql;
-	private BookDTO dto1;
-	private Statement stmt;
+	 BookDTO bookDTO;
+	 BookDTO dto1;
+ Statement stmt;
 
 	public void getConn() {
 
@@ -320,6 +319,31 @@ public class BookDAO {
 		}
 		return cnt;
 
+	}
+
+	public boolean emailCheck(String email) {
+
+		try {
+			getConn();
+			String sql = "select * from t_member where mem_id = ?";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+
+			psmt.setString(1, email);
+
+			// 6. slq명령문 실행
+			rs = psmt.executeQuery();
+
+			check = rs.next();
+
+		} catch (Exception e) {
+			System.out.println("클래스파일 로딩실패");
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return check;
 	}
 
 }

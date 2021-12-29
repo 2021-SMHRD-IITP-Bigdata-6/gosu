@@ -17,56 +17,46 @@
 </head>
 <body class="homepage is-preload">
    <div id="page-wrapper">
-
       <!-- Header -->
       <div id="header">
-
-
-			
-		
 		
 		<%
-	 	BookDTO dto = (BookDTO) session.getAttribute("dto");
-		System.out.println("session 값 : "+dto);
-		int cnt = 0;
+	 		BookDTO dto = (BookDTO) session.getAttribute("dto");
+			System.out.println("session 값 : "+dto);
+			
+			int cnt = 0;
+			
 			if(session.getAttribute("visit")==null){
-			session.setAttribute("visit", 1);
+				session.setAttribute("visit", 1);
+			
 			}else{
-			int visit = (int)session.getAttribute("visit");
-			cnt = visit;
-			session.setAttribute("visit", visit+1);
+				int visit = (int)session.getAttribute("visit");
+				cnt = visit;
+				session.setAttribute("visit", visit+1);
 			}
 		%>
-		
-	
-
          <!-- Inner -->
          <div class="inner">
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
-
                <% if (dto == null) {%>
                <p>E-BOOK 알리미에 오신걸 환영합니다.</p>
                <%} else{%>
                <p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다. </p>
                <%} %>
                <hr />
-
             <% if (dto == null) {%>
-               
                <button style="background-color: #9399AB">
                   <h3>
                      <a href="/project/html5up-eventually/login.jsp">로그인</a>
                   </h3>
                </button>
                &emsp;&emsp;&emsp;&emsp;&emsp;
-               
                <button style="background-color: #9399AB">
                   <h3>
                      <a href="/project/html5up-eventually/join.jsp"">회원가입</a>
                   </h3>
-
                </button>
             <%} else {%>
                <button style="background-color: #9399AB">
@@ -76,18 +66,13 @@
                </button>
                &emsp;&emsp;&emsp;&emsp;&emsp;
                <button style="background-color: #9399AB">
-                  
                      <h3><a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a></h3>
-                  
                </button>
             <% if (dto.getMem_id().equals("admin@naver.com")){ %>
-            
                   &emsp;&emsp;&emsp;&emsp;&emsp;
-                  
                <button style="background-color: #9399AB">
                   <h3><a href="/project/html5up-eventually/selectMember.jsp">회원관리</a></h3>
                </button>
-               
                <%} else{ %>
                
                
@@ -105,9 +90,7 @@
                <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
                <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
                <li><a href="MyPage.jsp">마이 페이지</a></li>
-            
          </nav>
-
       </div>
 
       <!-- Banner -->
@@ -119,7 +102,6 @@
             <p></p>
          </header>
       </section>
-
       <!-- Carousel -->
       <section class="carousel">
          <div class="reel">
@@ -142,7 +124,6 @@
                   <h3>
                      <strong><a href="#">책 정보</a></strong>
                   </h3>
-
                </header>
             </article>
             <article>

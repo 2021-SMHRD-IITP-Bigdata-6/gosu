@@ -50,7 +50,8 @@ public class JoinService implements Command{
 			// 2. QueryStringÈ°¿ë
 			nextpage = "/project/Home.jsp";
 		} else {
-
+			RequestDispatcher dis = request.getRequestDispatcher("joinFalse.jsp");
+			dis.forward(request, response);
 		}
 		return nextpage;
 	}
