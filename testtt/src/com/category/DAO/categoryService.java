@@ -22,7 +22,7 @@ public class categoryService implements Command{
 
 		
 		// ¼öÁ¤
-		String[] buttonlist = request.getParameterValues("buttonlist");
+		String[] buttonlist = request.getParameterValues("checklist");
 
 		for(int i =0; i<buttonlist.length; i++) {
 			System.out.println(buttonlist[i]);

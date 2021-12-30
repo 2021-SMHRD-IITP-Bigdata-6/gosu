@@ -32,13 +32,13 @@
 						<button class="btn">경제/경영</button>
 						<button class="btn">역사/문화</button>
 						<button class="btn">예술/대중문화</button>
-						<button class="btn">검색</button>
+						<button class="btn">1</button>
 						<br>
-						<button class="btn">검색</button>
-						<button class="btn">검색</button>
-						<button class="btn">검색</button>
-						<button class="btn">검색</button>
-						<button class="btn">검색</button>
+						<button class="btn">2</button>
+						<button class="btn">3</button>
+						<button class="btn">4</button>
+						<button class="btn">5</button>
+						<button class="btn">6</button>
 				</header>
 				<footer>
 					<button id="send_btn" class="search">검색</button>
@@ -100,20 +100,25 @@
 			
 			// 검색버튼 누르면 ajax로 servlet으로 이동
 			$('#send_btn').on('click', function(){
-				$.ajax({
-					url : 'categorySearch.do',
+				
+				location.href="categorySearch.jsp?data="+buttonlist;
+				
+				
+				/* $.ajax({
+					url : 'categorySearch.jsp',
+					type : 'post',
 					traditional : true,
 					data : {
-						buttonlist : buttonlist
+						checklist : buttonlist
 					},
-					type : 'post',
 					success : function(){
 						alert('성공');
+						location.href="categorySearch.jsp";
 					},
 					error : function(){
-						alert('실패');
+					 	alert('실패');
 					}
-				})
+				})*/
 			})
 	
 		</script>
