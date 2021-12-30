@@ -12,6 +12,12 @@
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
 </noscript>
+
+<style>
+	.choice{
+		background-color: yellow;
+	}
+</style>
 </head>
 <body class="homepage is-preload">
 	<div id="page-wrapper">
@@ -22,23 +28,20 @@
 				<header>
 					<h1>장르를 선택해주세요</h1>
 					<hr />
-						<button class="choice">시/에세이</button>
-						<button class="choice">경제/경영</button>
-						<button class="choice">역사/문화</button>
-						<button class="choice">예술/대중문화</button>
-						<button class="choice">검색</button>
+						<button class="btn">시/에세이</button>
+						<button class="btn">경제/경영</button>
+						<button class="btn">역사/문화</button>
+						<button class="btn">예술/대중문화</button>
+						<button class="btn">검색</button>
 						<br>
-						<button class="choice">검색</button>
-						<button class="choice">검색</button>
-						<button class="choice">검색</button>
-						<button class="choice">검색</button>
-						<button class="choice">검색</button>
+						<button class="btn">검색</button>
+						<button class="btn">검색</button>
+						<button class="btn">검색</button>
+						<button class="btn">검색</button>
+						<button class="btn">검색</button>
 				</header>
 				<footer>
-				<form action="categorySearch.jsp">
-					<input type="hidden" name="book">
-					<button class="search">검색</button>
-				</form>
+					<button id="send_btn" class="search">검색</button>
 				</footer>
 			</div>
 
@@ -56,24 +59,62 @@
 		<script src="assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
 			var count = 0;
-			let buttonlist = []
+			var check = false;
+			let buttonlist = [];
 			
-			$('.choice').on('click',function(){
+			
+			$('.btn').on('click',function(){
+				// 선택한 button의 내용을 가지고 온다. 
+				var text = $(this).text();
 				
-				$(this).css({
-					background : 'yellow'
-				})
-		
-	            //클릭한것의 text를 가져옴
-	            //가져온것을 빈 리스트에 append()
-	            
-	            //로컬스토리지에 set,get 중에서 여기서는 set
-	            //개발자 도구- Appication - localstorage에서 확인할 수 있음
-	            
-	            //search 페이지에서는 get해서 가져옴
-	            
-
+				// 만약에 그 버튼의 class에 choice가 있으면(=이미 선택 되었다는 의미)
+				if($(this).hasClass('choice')){
+					console.log('선택취소');
+					$(this).removeClass("choice");
+					
+					// buttonlist에 선택된 값의 인덱스 번호를 찾아내는 for문 
+					for(var i =0; i<buttonlist.length; i++){
+						if(buttonlist[i]==text){
+							// 해당 인덱스 번호로부터 i개를 지우겠다.
+							buttonlist.splice(i, 1);
+							i--;
+						}
+					}
+				}else{ // 만약에 그 버튼의 class에 choice가 없으면(=선택안되어있다는)
+					$(this).addClass("choice");
+					console.log('선택');
+					for(var i=0; i<buttonlist.length; i++){
+						if(buttonlist[i]==text){
+							check = true;
+							break;
+						}
+					}
+					if(check == false){
+						buttonlist.push(text);
+					}
+					
+				}
+				
+				console.log(buttonlist);
 			});
+			
+			// 검색버튼 누르면 ajax로 servlet으로 이동
+			$('#send_btn').on('click', function(){
+				$.ajax({
+					url : 'categorySearch.do',
+					traditional : true,
+					data : {
+						buttonlist : buttonlist
+					},
+					type : 'post',
+					success : function(){
+						alert('성공');
+					},
+					error : function(){
+						alert('실패');
+					}
+				})
+			})
 	
 		</script>
 </body>

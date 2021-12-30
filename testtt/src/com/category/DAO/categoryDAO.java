@@ -60,37 +60,18 @@ public class categoryDAO {
 		}
 	}//close()
 	
-	public  ArrayList<categoryDTO>category(String art) {
-		ArrayList<categoryDTO> list = new ArrayList<categoryDTO>();
-		try {
-			getConn();
-			String sql = "select * from art where lee = ?";
-			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, art);
-
-			// 6. slq명령문 실행
-			rs = psmt.executeQuery();
-			// 7. 명령 후 처리
-			if (rs.next()) {
-				String aart = rs.getString(1);
-			}
-
-		} catch (Exception e) {
-			System.out.println("클래스파일 로딩실패");
-			e.printStackTrace();
-		} finally {
-			close();
-		}
-		
-		return list;
-	}
-	
-	public void search() {
-	
-	}
-
-	public int category(categoryDTO dto) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+	/*
+	 * public ArrayList<categoryDTO> category(String[] buttonlist) {
+	 * 
+	 * try { getConn(); String sql = "select * from t_book  = ?"; psmt =
+	 * conn.prepareStatement(sql); psmt.setString(1, art);
+	 * 
+	 * // 6. slq명령문 실행 rs = psmt.executeQuery(); // 7. 명령 후 처리 if (rs.next()) {
+	 * String aart = rs.getString(1); }
+	 * 
+	 * } catch (Exception e) { System.out.println("클래스파일 로딩실패");
+	 * e.printStackTrace(); } finally { close(); }
+	 * 
+	 * return list; }
+	 */
 }//DAO
