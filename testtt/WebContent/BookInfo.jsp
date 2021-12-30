@@ -32,13 +32,13 @@
 
 					<!-- Nav -->
 			<nav id="nav">
-				<ul>				
-					<li><a href="Home.jsp">홈</a></li>
-					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
-					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-					<li><a href="MyPage.jsp">마이 페이지</a></li>
-				</ul>
+				   <ul>
+               <li><a href="Home.jsp">홈</a></li>
+               <li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
+               <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+               <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+               <li><a href="MyPage.jsp">마이 페이지</a></li>
+       		</ul>
 			</nav>
 
 				</div>

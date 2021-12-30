@@ -16,6 +16,7 @@
 <link rel="stylesheet" href="assets/css/main.css" />
 <noscript>
 	<link rel="stylesheet" href="assets/css/noscript.css" />
+
 </noscript>
 </head>
 <body class="no-sidebar is-preload">
@@ -46,24 +47,33 @@
 	</div>
 
 	<!-- Main -->
-	<div id=""></div>
-	<div class="wrapper style1">
-		<h3>
-			<strong>내 정보</strong>
-			<button>정보 수정</button>
-		</h3>
-
-		<p>회원 이메일</p>
-		<br>
-		<p>회원 비밀번호</p>
-		<br>
-		<p>회원 이름</p>
-		<br>
-		<p>회원 닉네임</p>
-		<br>
-		
-
-
+<article id="work" class="wrapper style2">
+				<div class="container">
+					<br><br><br><br>					  
+					<div class="row aln-center">
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+						
+						<ul>
+					<a href="">
+					<button style="color:black;">내 정보 관리</button></a>								
+						
+							</section>
+						</ul>
+						</div>
+						<div class="col-4 col-6-medium col-12-small">
+							<section class="box style1">
+									<ul>
+					<a href="WishList.jsp">
+						<button style="color:black;">찜 목록 보기</button></a>								
+						
+						</section>
+						</ul>
+						</div>
+					
+					</div>
+				</div>
+			</article>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
 		<script src="assets/js/jquery.scrolly.min.js"></script>
@@ -72,5 +82,11 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
+		
+		<ul class="copyright">
+					<p>&copy; Untitled.</p>Credits: <a>대표 김진우</a>
+				</ul>
+			</footer>
+		
 </body>
 </html>

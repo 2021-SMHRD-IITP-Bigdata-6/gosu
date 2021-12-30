@@ -9,6 +9,7 @@ public class BookDTO {
 	String mem_gender;
 	String date;
 
+
 	public BookDTO(String mem_pw) {
 		super();
 		this.mem_pw = mem_pw;
@@ -26,7 +27,7 @@ public class BookDTO {
 		this.mem_pw = mem_pw;
 	}
 
-	public BookDTO(String mem_id, String mem_pw, String mem_name, String mem_tel, String mem_gender,
+	public BookDTO(String mem_id, String mem_pw, String mem_name, String mem_tel, int mem_age, String mem_gender,
 			String date) {
 		super();
 		this.mem_id = mem_id;
@@ -58,6 +59,7 @@ public class BookDTO {
 	}
 
 
+
 	public BookDTO(String mem_id, String mem_name, String mem_tel, int mem_age, String mem_gender, String date) {
 		super();
 		this.mem_id = mem_id;
@@ -67,7 +69,6 @@ public class BookDTO {
 		this.mem_gender = mem_gender;
 		this.date = date;
 	}
-
 
 	public String getMem_id() {
 		return mem_id;

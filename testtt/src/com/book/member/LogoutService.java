@@ -11,14 +11,10 @@ import com.book.inter.Command;
 
 public class LogoutService implements Command {
 
-	public String execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
+	public String execute(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession();
-		// 세션 3가지 있음 가져오고 저장하고 삭제하고
 		session.removeAttribute("dto");
-
-		return  "/project/Home.jsp";
-				
+		return "/project/Home.jsp";
 	}
-
 }
