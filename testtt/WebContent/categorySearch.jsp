@@ -7,7 +7,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>E-BOOK 寃���</title>
 <title>E-BOOK 장르</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -40,21 +39,6 @@
 				</ul>
 			</nav>
 		</div>
-
-		<select>
-			<option>ㅎㅇ</option>
-			<option>ㅎㅇ2</option>
-			<option>ㅎㅇ3</option>
-
-		</select> <select>
-			<option>ㅎㅇ</option>
-		</select> <select>
-			<option>ㅎㅇ</option>
-		</select>
-		<h1>선택하신 장르입니다.</h1>
-		<button align='right'>
-			<a href="categoryDetail.jsp"> 전체보기</a>
-		</button>
 		<!-- Carousel -->
 
 		<%
@@ -86,7 +70,9 @@
             %>
 		<%String bt = "";
             	for(int i = 0; i <strArr.length; i++){%>
-
+		<button align='right'>
+			<a href="categoryDetail.jsp" align="right"> 전체보기</a>
+		</button>
 		<h1><%=strArr[i] %></h1>
 
 		<section class="carousel">
