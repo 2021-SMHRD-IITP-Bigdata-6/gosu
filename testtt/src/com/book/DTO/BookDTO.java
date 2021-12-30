@@ -1,13 +1,15 @@
 package com.book.DTO;
 
 public class BookDTO {
-	String mem_id;
-	String mem_pw;
-	String mem_name;
-	String mem_tel;
-	int mem_age;
-	String mem_gender;
-	String date;
+	
+	
+	private String mem_id = null;
+	private String mem_pw = null;
+	private String mem_name = null;
+	private String mem_tel = null;
+	private int mem_age;
+	private String mem_gender = null;
+	private String date = null;
 
 
 	public BookDTO(String mem_pw) {

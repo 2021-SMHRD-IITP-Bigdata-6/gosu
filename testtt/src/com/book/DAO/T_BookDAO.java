@@ -1,4 +1,4 @@
-package com.category.DAO;
+package com.book.DAO;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,18 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 
-import com.book.DAO.BookDAO;
-import com.book.DTO.BookDTO;
 import com.book.DTO.T_BookDTO;
 
-public class categoryDAO {
+public class T_BookDAO {
+
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	int cnt = 0;
-	T_BookDTO dto = null;
-
 	ResultSet rs = null;
-
+	T_BookDTO dto = null;
 	public void getConn() {
 
 		try {
@@ -41,7 +37,6 @@ public class categoryDAO {
 			e.printStackTrace();
 		}
 	}
-
 	public void close() {
 		System.out.println("무조건실행");
 		try {
@@ -58,8 +53,7 @@ public class categoryDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-	}// close()
-
+	}
 	public ArrayList<T_BookDTO> selectbook() {
 
 		// Select.html 에서 보낸 id 값 받아오기
@@ -85,11 +79,21 @@ public class categoryDAO {
 
 			while (rs.next() == true) {
 				String book_nmae = rs.getString(2);
+				int book_price = rs.getInt(3);
+				int book_grade = rs.getInt(4);
+				String book_publisher = rs.getString(5);
+				String book_category = rs.getString(6);
+				String book_explain = rs.getString(7);
+				String book_author = rs.getString(8);
+				int book_pages = rs.getInt(9);
 				String book_img = rs.getString(10);
+				String book_isbn = rs.getString(11);
+				String book_brief = rs.getString(12);
+				String book_date = rs.getString(13);
 
 				// out객체를 사용해서 출력
 				// PrintWriter 객체 생성X --> JSP 내장객체로 이미 선언되어 있음 따로 생성해줄 필요 x
-				dto = new T_BookDTO(book_nmae, book_img);
+				dto = new T_BookDTO(book_nmae, book_price, book_grade, book_publisher, book_category, book_explain, book_author, book_pages, book_img, book_isbn, book_brief, book_date);
 				arr.add(dto);
 			}
 		} catch (Exception e) {
@@ -100,7 +104,6 @@ public class categoryDAO {
 		}
 		return arr;
 	}
-	
 	public ArrayList<T_BookDTO> selectbook(String name) {
 
 		ArrayList<T_BookDTO> arr = new ArrayList<T_BookDTO>();
@@ -135,5 +138,4 @@ public class categoryDAO {
 		}
 		return arr;
 	}
-	
-}// DAO
+}
