@@ -25,9 +25,6 @@
 			<!-- Inner -->
 			<div class="inner">
 				<header>
-					<h1>
-						<a href="Home.jsp" id="logo">E-BOOK �λⅤ</a>
-					</h1>
 					<h1>E-BOOK 장르</h1>
 				</header>
 			</div>
@@ -42,13 +39,13 @@
 				</ul>
 			</nav>
 		</div>
-
-		<h1>선택하신 장르입니다.</h1>
-		<button align='right'>
-			<a href="categoryDetail.jsp"> 전체보기</a>
-		</button>
+		
+		</select>
+		<h1>찜</h1>
+		
 		<!-- Carousel -->
 		
+		<%
              request.setCharacterEncoding("UTF-8");
 
             T_BookDAO dao = new T_BookDAO();
@@ -82,6 +79,38 @@
 						</article>
 			<%} %>
 			</div>
+			<script type="text/javascript">
+				$(document).ready(function(){
+					$(".hide").hide();
+					$("#favorite").click(function(){
+						
+					$.post(
+						"/favorite"
+						,{"articleId" : "${article.articleId}"}
+						, function(data){
+							
+							var text = $("#favorite").text();
+							if(text == "♡"){
+								$("#favorite").text("♥");
+							}
+							else if (text == "♥"){
+								$("#favorite").text("♡");
+							
+							}
+						}
+						)
+					
+					
+					})
+					
+					
+				});
+			
+			
+			
+			</script>
+			
+			
 		</section>
 		<%} %>
 
