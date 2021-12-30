@@ -22,9 +22,6 @@
 			<!-- Inner -->
 			<div class="inner">
 				<header>
-					<h1>
-						<a href="Home.jsp" id="logo">E-BOOK �λⅤ</a>
-					</h1>
 					<h1>E-BOOK 장르</h1>
 				</header>
 			</div>
