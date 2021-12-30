@@ -1,5 +1,4 @@
 <%@page import="com.book.DTO.BookDTO"%>
-<%@page import="com.book.DAO.BookDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -20,18 +19,10 @@
 </noscript>
 </head>
 <body class="no-sidebar is-preload">
-	<%
-		BookDTO dto = (BookDTO) session.getAttribute("dto");
-	System.out.println("session 값 : " + dto);
-	int cnt = 0;
-	if (session.getAttribute("visit") == null) {
-		session.setAttribute("visit", 1);
-	} else {
-		int visit = (int) session.getAttribute("visit");
-		cnt = visit;
-		session.setAttribute("visit", visit + 1);
-	}
-	%>
+		<%
+			BookDTO dto = (BookDTO)session.getAttribute("dto");
+		
+		%>
 
 	<div id="header">
 		<!-- Inner -->
@@ -70,6 +61,8 @@
 		<br>
 		<p>회원 닉네임</p>
 		<br>
+		
+
 
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>

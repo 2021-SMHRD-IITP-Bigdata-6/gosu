@@ -26,7 +26,7 @@ public class BookDAO {
 
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			System.out.println("Å¬·¡½º ÆÄÀÏ ·Îµù ¿Ï·á");
+			System.out.println("í´ë˜ìŠ¤ íŒŒì¼ ë¡œë”© ì™„ë£Œ");
 
 			String url = "jdbc:oracle:thin:@project-db-stu.ddns.net:1524";
 			String dbid = "cgi_8_3_1216";
@@ -34,11 +34,11 @@ public class BookDAO {
 
 			conn = DriverManager.getConnection(url, dbid, dbpw);
 
-			// 3. DB¿¡¼­ »ç¿ëÇÏ´Â id/pw¸¦ ÀÎÁõ
+			// 3. DBì—ì„œ ì‚¬ìš©í•˜ëŠ” id/pwë¥¼ ì¸ì¦
 			if (conn != null) {
-				System.out.println("¿¬°á¼º°ø");
+				System.out.println("ì—°ê²°ì„±ê³µ");
 			} else {
-				System.out.println("¿¬°á½ÇÆĞ");
+				System.out.println("ì—°ê²°ì‹¤íŒ¨");
 			}
 
 		} catch (Exception e) {
@@ -47,7 +47,7 @@ public class BookDAO {
 	}
 
 	public void close() {
-		System.out.println("¹«Á¶°Ç½ÇÇà");
+		System.out.println("ë¬´ì¡°ê±´ì‹¤í–‰");
 		try {
 			if (rs != null) {
 				psmt.close();
@@ -70,15 +70,15 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, dto1.getMem_id());
 
-			// 6. slq¸í·É¹® ½ÇÇà
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
 			rs = psmt.executeQuery();
 
-			// 7. ¸í·É ÈÄ Ã³¸®
+			// 7. ëª…ë ¹ í›„ ì²˜ë¦¬
 			if (rs.next()) {
 
 				String getpw = rs.getString(2);
@@ -100,7 +100,7 @@ public class BookDAO {
 			}
 
 		} catch (Exception e) {
-			System.out.println("Å¬·¡½ºÆÄÀÏ ·Îµù½ÇÆĞ");
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”©ì‹¤íŒ¨");
 			e.printStackTrace();
 		} finally {
 			close();
@@ -114,7 +114,7 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "insert into t_member values (?,?,?,?,?,?,sysdate)";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, dto.getMem_id());
@@ -124,13 +124,13 @@ public class BookDAO {
 			psmt.setInt(5, dto.getMem_age());
 			psmt.setString(6, dto.getMem_gender());
 
-			// 6. slq¸í·É¹® ½ÇÇà
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
 			cnt = psmt.executeUpdate();
 
-			// 7. ¸í·É ÈÄ Ã³¸®
+			// 7. ëª…ë ¹ í›„ ì²˜ë¦¬
 
 		} catch (Exception e) {
-			System.out.println("Å¬·¡½ºÆÄÀÏ ·Îµù½ÇÆĞ");
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”©ì‹¤íŒ¨");
 			e.printStackTrace();
 		} finally {
 			close();
@@ -229,7 +229,7 @@ public class BookDAO {
 
 	public ArrayList<BookDTO> selectMember() {
 
-		// Select.html ¿¡¼­ º¸³½ id °ª ¹Ş¾Æ¿À±â
+		// Select.html ì—ì„œ ë³´ë‚¸ id ê°’ ë°›ì•„ì˜¤ê¸°
 		// String id = request.getParameter("id");
 
 		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
@@ -237,18 +237,18 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "select * from t_member";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 			psmt = conn.prepareStatement(sql);
 
-			// 6. slq¸í·É¹® ½ÇÇà
-			// executoUpdate() : DBÀÇ ³»¿ë¿¡ º¯°æÀÌ ÀÏ¾î³ª´Â°æ¿ì, insert, deletd, update
-			// ¸®ÅÏÀ» int·Î ÇØÁØ´Ù. ¸îÇàÀÌ ¼º°ø Çß´ÂÁö
-			// executeQuery() : select¹® »ç¿ë½Ã
-			// ResultSetÀ¸·Î ¸®ÅÏÇÑ´Ù.
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
+			// executoUpdate() : DBì˜ ë‚´ìš©ì— ë³€ê²½ì´ ì¼ì–´ë‚˜ëŠ”ê²½ìš°, insert, deletd, update
+			// ë¦¬í„´ì„ intë¡œ í•´ì¤€ë‹¤. ëª‡í–‰ì´ ì„±ê³µ í–ˆëŠ”ì§€
+			// executeQuery() : selectë¬¸ ì‚¬ìš©ì‹œ
+			// ResultSetìœ¼ë¡œ ë¦¬í„´í•œë‹¤.
 
 			rs = psmt.executeQuery();
 
-			// ¸í·É ÈÄ Ã³¸®
+			// ëª…ë ¹ í›„ ì²˜ë¦¬
 
 			while (rs.next() == true) {
 				String email = rs.getString(1);
@@ -258,8 +258,8 @@ public class BookDAO {
 				String gender = rs.getString(6);
 				String date = rs.getString(7);
 
-				// out°´Ã¼¸¦ »ç¿ëÇØ¼­ Ãâ·Â
-				// PrintWriter °´Ã¼ »ı¼ºX --> JSP ³»Àå°´Ã¼·Î ÀÌ¹Ì ¼±¾ğµÇ¾î ÀÖÀ½ µû·Î »ı¼ºÇØÁÙ ÇÊ¿ä x
+				// outê°ì²´ë¥¼ ì‚¬ìš©í•´ì„œ ì¶œë ¥
+				// PrintWriter ê°ì²´ ìƒì„±X --> JSP ë‚´ì¥ê°ì²´ë¡œ ì´ë¯¸ ì„ ì–¸ë˜ì–´ ìˆìŒ ë”°ë¡œ ìƒì„±í•´ì¤„ í•„ìš” x
 				dto = new BookDTO(email, name, tel, age, gender, date);
 				arr.add(dto);
 			}
@@ -279,7 +279,7 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id like ?";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%" + email + "%");
 			rs = psmt.executeQuery();
@@ -326,18 +326,18 @@ public class BookDAO {
 		try {
 			getConn();
 			String sql = "select * from t_member where mem_id = ?";
-			// 5. SQL¸í·É¹®À» ÁØºñ
+			// 5. SQLëª…ë ¹ë¬¸ì„ ì¤€ë¹„
 			psmt = conn.prepareStatement(sql);
 
 			psmt.setString(1, email);
 
-			// 6. slq¸í·É¹® ½ÇÇà
+			// 6. slqëª…ë ¹ë¬¸ ì‹¤í–‰
 			rs = psmt.executeQuery();
 
 			check = rs.next();
 
 		} catch (Exception e) {
-			System.out.println("Å¬·¡½ºÆÄÀÏ ·Îµù½ÇÆĞ");
+			System.out.println("í´ë˜ìŠ¤íŒŒì¼ ë¡œë”©ì‹¤íŒ¨");
 			e.printStackTrace();
 		} finally {
 			close();
