@@ -59,8 +59,7 @@
 			let buttonlist = []
 			
 			$('.choice').on('click',function(){
-				count++;
-				alert(count +"회 클릭하셨습니다.")
+				
 				$(this).css({
 					background : 'yellow'
 				})

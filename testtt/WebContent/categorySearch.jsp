@@ -32,7 +32,7 @@
 			<!-- Nav -->
 			<nav id="nav">
 				<ul>
-					<li><a href="Home.html">홈</a></li>
+					<li><a href="Home.jsp">홈</a></li>
 					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
 					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
 					<li><a href="MyPage.html">마이 페이지</a></li>
@@ -56,9 +56,7 @@
 		</button>
 		<!-- Carousel -->
 			<%
-				String count = request.getParameter("count");
-				int num = Integer.parseInt(count);
-			for(int i = 0; i <=num; i++) {%>
+			for(int i = 0; i <=5; i++) {%>
 		<section class="carousel">
 			<div class="reel">
 			<%for(int j = 0; j <=10; j++){ %>
