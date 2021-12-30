@@ -34,6 +34,16 @@ public class T_BookDTO {
 		this.book_brief = book_brief;
 		this.book_date = book_date;
 	}
+	
+	
+
+	public T_BookDTO(String book_nmae, String book_img) {
+		super();
+		this.book_nmae = book_nmae;
+		this.book_img = book_img;
+	}
+
+
 
 	public int getBook_seq() {
 		return book_seq;

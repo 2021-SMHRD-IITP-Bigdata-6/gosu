@@ -13,8 +13,6 @@
 </head>
 <body>
 
-	<!DOCTYPE HTML>
-<html>
 <head>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -25,11 +23,7 @@
 </noscript>
 </head>
 <body class="left-sidebar is-preload">
-	<%
-		BookDTO dto = (BookDTO) session.getAttribute("dto");
-
-	ListDTO ldto = (ListDTO) session.getAttribute("ldto");
-	%>
+	
 
 	<div id="page-wrapper">
 
@@ -75,7 +69,7 @@
 		<section>
 			<div class="row gtr-50">
 				<div class="col-4">
-					<a href="#" class="image fit"><img src="images/pic10.jpg"
+					<a href="#" class="image fit"><img src="images/pic01.jpg"
 						alt="" /></a>
 				</div>
 				<div class="col-8">
@@ -115,6 +109,7 @@
 					<p>간단한 설명</p>
 				</div>
 			</div>
+			
 			<footer>
 				<div>
 				<h4 align="center">
