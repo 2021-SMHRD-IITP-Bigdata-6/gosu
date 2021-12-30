@@ -61,9 +61,9 @@
 		<!-- 반복문 -->
 		<%
 		ListDAO ldao = new ListDAO();
-		ArrayList<ListDTO> list_ar = ldao.selectList();
+		ArrayList<ListDTO> book_ar = ldao.selectList();
 		
-		for(int i=0; i<list_ar.size(); i++){
+		for(int i=0; i<book_ar.size(); i++){
 			out.print("<div class='row get-50'>");
 			out.print("<div class='col-4'>");
 			out.print("<a href='categoryDetail.jsp'>");
