@@ -16,11 +16,11 @@ public class BookDAO {
 
 	ResultSet rs = null;
 
- boolean check;
+	boolean check;
 	BookDTO dto = null;
-	 BookDTO bookDTO;
-	 BookDTO dto1;
- Statement stmt;
+	BookDTO bookDTO;
+	BookDTO dto1;
+	Statement stmt;
 
 	public void getConn() {
 
@@ -160,26 +160,6 @@ public class BookDAO {
 		}
 		return cnt;
 	}
-//	public class DAO{
-//		
-//	}
-//	public MypageDTO selectAccountone(MypageDTO user) {
-//		String sql = "select * from account where id='%s' and pw='%s'";
-//		
-//		sql=String.format(sql, user.getMem_id(),user.getMem_pw());
-//		
-//		try {
-//			stmt = conn.createStatement();
-//			rs = stmt.executeQuery(sql);
-//			
-//			rs.next();
-//			
-//			
-//		} catch (Exception e) {
-//			
-//		}
-//
-//	}
 
 	public int Update1(BookDTO dto, String tel) {
 

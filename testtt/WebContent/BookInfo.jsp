@@ -1,3 +1,6 @@
+<%@page import="com.book.DTO.T_BookDTO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.book.DAO.T_BookDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,7 +16,7 @@
 	<head>
 		<title>E-BOOK 정보</title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
@@ -22,6 +25,33 @@
 
 			<!-- Header -->
 				<div id="header">
+				
+				
+				<%
+				 request.setCharacterEncoding("UTF-8");
+
+				T_BookDAO dao = new T_BookDAO();
+				ArrayList<T_BookDTO> arr = dao.selectbook();
+				
+				for (int i = 0; i < arr.size(); i++) {
+					 
+					
+				}
+					 String name = arr.get(0).getBook_nmae(); 			// 책 제목
+					 int price = arr.get(0).getBook_price(); 			// 책 가격
+					 int grade = arr.get(0).getBook_grade(); 			// 책 평점
+					String publisher = arr.get(0).getBook_publisher();  // 책 출판사 
+					String category = arr.get(0).getBook_category();	// 책 분류
+					String explain =arr.get(0).getBook_explain();		// 책 소개
+					String author =arr.get(0).getBook_author(); 		// 책 저자
+					int pages =arr.get(0).getBook_pages (); 			// 책 페이지수
+					String img = arr.get(0).getBook_img (); 			// 책 표지
+					String isbn = arr.get(0).getBook_isbn ();			// 책 ISBN
+					String brief =arr.get(0).getBook_brief ();			// 책 줄거리
+					String date = arr.get(0).getBook_date();			// 책 등록일자
+
+					 
+				%>
 
 					<!-- Inner -->
 						<div class="inner">
@@ -51,16 +81,22 @@
 							<div class="col-8 col-12-mobile" id="content">
 								<article id="main">
 									<header>
-										<h2><a href="#">도서명 들어가는 부분</a></h2>
+										<h2><a href="1"><%=name%></a></h2>
+										<%=name%>
 									</header>
 									<a href="#" class="image featured">책 표지 사진<img src="images/pic06.jpg" alt="" /></a>
 									
 									<section>
 										<header>
-											<h3>책 정보</h3>
+											<h3>책 제목 <%=name%></h3> <!-- 책정보 -->
 										</header>
 										<p>
-											장르, ISBN, 저자, 출판사, 페이지수
+											장르 <br>
+											<%= category%><br>
+											 ISBN : <%=isbn %><br> 
+											 저자 : <%= author%> <br>
+											 출판사 : <%= publisher %><br>
+											 페이지수 : <%= pages%>
 										</p>
 									</section>
 									<section>
@@ -68,17 +104,9 @@
 											<h3>책 소개</h3>
 										</header>
 										<p>
-											Nascetur volutpat nibh ullamcorper vivamus at purus. Cursus ultrices porttitor sollicitudin imperdiet
-											at pretium tellus in euismod a integer sodales neque. Nibh quis dui quis mattis eget imperdiet venenatis
-											feugiat. Neque primis ligula cum erat aenean tristique luctus risus ipsum praesent iaculis. Fermentum elit
-											fringilla consequat dis arcu. Pellentesque mus tempor vitae pretium sodales porttitor lacus. Phasellus
-											egestas odio nisl duis sociis purus faucibus morbi. Eget massa mus etiam sociis pharetra magna.
+											''
 										</p>
-										<p>
-											Eleifend auctor turpis magnis sed porta nisl pretium. Aenean suspendisse nulla eget sed etiam parturient
-											orci cursus nibh. Quisque eu nec neque felis laoreet diam morbi egestas. Dignissim cras rutrum consectetur
-											ut penatibus fermentum nibh erat malesuada varius.
-										</p>
+										
 									</section>
 									
 								</article>
