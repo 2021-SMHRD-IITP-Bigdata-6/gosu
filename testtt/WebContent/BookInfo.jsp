@@ -38,7 +38,7 @@
 					
 				}
 					 String name = arr.get(0).getBook_nmae(); 			// 책 제목
-					 int price = arr.get(0).getBook_price(); 			// 책 가격
+					 int price = (int)arr.get(0).getBook_price(); 			// 책 가격
 					 int grade = arr.get(0).getBook_grade(); 			// 책 평점
 					String publisher = arr.get(0).getBook_publisher();  // 책 출판사 
 					String category = arr.get(0).getBook_category();	// 책 분류
@@ -49,7 +49,8 @@
 					String isbn = arr.get(0).getBook_isbn ();			// 책 ISBN
 					String brief =arr.get(0).getBook_brief ();			// 책 줄거리
 					String date = arr.get(0).getBook_date();			// 책 등록일자
-
+					
+					
 					 
 				%>
 
@@ -81,30 +82,27 @@
 							<div class="col-8 col-12-mobile" id="content">
 								<article id="main">
 									<header>
-										<h2><a href="1"><%=name%></a></h2>
-										<%=name%>
+										<h2><a href="#"><%=name%></a></h2>
 									</header>
-									<a href="#" class="image featured">책 표지 사진<img src="images/pic06.jpg" alt="" /></a>
+									<a href="/project/Home.jsp" class="image featured">책 표지 사진<img src="images/pic06.jpg" alt="" /></a>
 									
 									<section>
 										<header>
 											<h3>책 제목 <%=name%></h3> <!-- 책정보 -->
 										</header>
-										<p>
-											장르 <br>
-											<%= category%><br>
-											 ISBN : <%=isbn %><br> 
-											 저자 : <%= author%> <br>
-											 출판사 : <%= publisher %><br>
-											 페이지수 : <%= pages%>
-										</p>
 									</section>
+											장르 : <%= category%> <br>
+											
+											 ISBN : <%=isbn %><br> 
+											 저자 : <%= author %> <br>
+											 출판사 : <%= publisher %><br>
+											페이지수 : <%= pages %>										
 									<section>
 										<header>
-											<h3>책 소개</h3>
+													<h3>책소개 : <%= explain %></h3>
 										</header>
 										<p>
-											''
+									
 										</p>
 										
 									</section>
@@ -185,7 +183,7 @@
 							</div>
 						</div>
 						<hr />
-						<header align="center">ì°ê´ëì</header>
+						<header align="center">추천도서</header>
 						<div class="row">
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
@@ -219,120 +217,15 @@
 							</article>
 						</div>
 					</div>
-
 				</div>
-
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
 						<div class="row">
-
-							<!-- Tweets -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon brands fa-twitter circled"><span class="label">Tweets</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="tweet">
-												Amet nullam fringilla nibh nulla convallis tique ante sociis accumsan.
-												<span class="timestamp">5 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Hendrerit rutrum quisque.
-												<span class="timestamp">30 minutes ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Curabitur donec nulla massa laoreet nibh. Lorem praesent montes.
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="tweet">
-												Lacus natoque cras rhoncus curae dignissim ultricies. Convallis orci aliquet.
-												<span class="timestamp">5 hours ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
-
-							<!-- Posts -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-file circled"><span class="label">Posts</span></h2>
-									</header>
-									<ul class="divided">
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Nisl fermentum integer</a></h3>
-												</header>
-												<span class="timestamp">3 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Phasellus portitor lorem</a></h3>
-												</header>
-												<span class="timestamp">6 hours ago</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Magna tempus consequat</a></h3>
-												</header>
-												<span class="timestamp">Yesterday</span>
-											</article>
-										</li>
-										<li>
-											<article class="post stub">
-												<header>
-													<h3><a href="#">Feugiat lorem ipsum</a></h3>
-												</header>
-												<span class="timestamp">2 days ago</span>
-											</article>
-										</li>
-									</ul>
-								</section>
-
-							<!-- Photos -->
-								<section class="col-4 col-12-mobile">
-									<header>
-										<h2 class="icon solid fa-camera circled"><span class="label">Photos</span></h2>
-									</header>
-									<div class="row gtr-25">
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div>
-										<div class="col-6">
-											<a href="#" class="image fit"><img src="images/pic15.jpg" alt="" /></a>
-										</div>
-									</div>
-								</section>
-
 						</div>
 						<hr />
 						<div class="row">
 							<div class="col-12">
-
 								<!-- Contact -->
 									<section class="contact">
 										<header>
@@ -348,22 +241,17 @@
 											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
 										</ul>
 									</section>
-
 								<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+											<li>&copy; Untitled. All rights reserved.</li><li>Designer: <a href="http://html5up.net">대표 김진우</a></li>
 										</ul>
 									</div>
-
 							</div>
-
 						</div>
 					</div>
 				</div>
-
 		</div>
-
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
