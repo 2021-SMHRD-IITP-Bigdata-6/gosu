@@ -72,6 +72,8 @@
 
       <!-- Scripts -->
          <script src="assets/js/main.js"></script>
+         <script
+            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상

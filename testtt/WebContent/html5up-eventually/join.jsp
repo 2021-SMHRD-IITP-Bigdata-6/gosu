@@ -73,7 +73,9 @@
 				});
 			}
 			</script>
-			<script>
+			<script
+            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상
                count : 90, // 갯수
