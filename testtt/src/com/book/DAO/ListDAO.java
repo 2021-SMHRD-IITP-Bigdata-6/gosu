@@ -64,36 +64,38 @@ public class ListDAO {
 
 	public ArrayList<ListDTO> selectList() {
 
-		ArrayList<ListDTO> list_ar = new ArrayList<ListDTO>();
+		ArrayList<ListDTO> book_ar = new ArrayList<ListDTO>();
 
 		try {
 
 			getConn();
 
-			String sql = "select * from t_list";
+			String sql = "select * from t_book";
 
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
 			while (rs.next()) {
 
-				String list_name = rs.getString(2);
-				String list_writer = rs.getString(3);
-				String list_link = rs.getString(4);
-				String list_genre = rs.getString(5);
+				String book_name = rs.getString(2);
+				int book_price = rs.getInt(3);
+				int book_grade = rs.getInt(4);
+				String book_publisher = rs.getString(5);
+				String book_category = rs.getString(6);
+				String book_author = rs.getString(7);
 
-				ldto = new ListDTO(list_name, list_writer, list_link, list_genre);
-				list_ar.add(ldto);
+				ldto = new ListDTO(book_name, book_price, book_grade, book_publisher, book_category, book_author);
+				book_ar.add(ldto);
 				
 			}
-
+			
 		} catch (Exception e) {
 			System.out.println("클래스 파일 오류");
 			e.printStackTrace();
 		} finally {
 			close();
 		}
-		return list_ar;
+		return book_ar;
 	}
 
 	public ArrayList<ListDTO> searchList(String list_name) {
@@ -112,14 +114,16 @@ public class ListDAO {
 
 			while (rs.next()) {
 
-				String wlist_name = rs.getString(2);
-				String list_writer = rs.getString(3);
-				String list_link = rs.getString(4);
-				String list_genre = rs.getString(5);
+				String book_name = rs.getString(2);
+				int book_price = rs.getInt(3);
+				int book_grade = rs.getInt(4);
+				String book_publisher = rs.getString(5);
+				String book_category = rs.getString(6);
+				String book_author = rs.getString(7);
 
-				ldto = new ListDTO(wlist_name, list_writer, list_link, list_genre);
+				ldto = new ListDTO(book_name, book_price, book_grade, book_publisher, book_category, book_author);
 				list_ar.add(ldto);
-				System.out.println(wlist_name);
+				System.out.println(book_name);
 			}
 
 		} catch (Exception e) {

@@ -22,13 +22,18 @@ public class categoryService implements Command{
 
 		
 		// 수정
-		String art = request.getParameter("art");
-		String nextpage = "";
+		String[] buttonlist = request.getParameterValues("buttonlist");
 
-		categoryDAO dao = new categoryDAO();
+		for(int i =0; i<buttonlist.length; i++) {
+			System.out.println(buttonlist[i]);
+		}
+		
+		String nextpage = "";
+		return nextpage;
+
+		/*categoryDAO dao = new categoryDAO();
 		int cnt = 0;
 		// db조회로 변경
-		categoryDTO dto = new categoryDTO(art);
 
 		 cnt = dao.category(dto);
 
@@ -48,8 +53,8 @@ public class categoryService implements Command{
 		} else {
 
 		}
-		return nextpage;
+		return nextpage;*/
 	}
 
 	
-}
+}//command

@@ -18,6 +18,7 @@ import com.book.member.JoinService;
 import com.book.member.LoginService;
 import com.book.member.LogoutService;
 import com.book.member.UpdateService;
+import com.category.DAO.categoryService;
 import com.google.gson.Gson;
 
 @WebServlet("*.do")
@@ -32,7 +33,7 @@ public class FrontController extends HttpServlet {
 		String path = request.getContextPath();
 		System.out.println(path);
 
-		String command = uri.substring(path.length() + 20);
+		String command = uri.substring(path.length()+1);
 		System.out.println("요청기능" + command);
 
 		Command com = null;
@@ -59,12 +60,9 @@ public class FrontController extends HttpServlet {
 			com = new DeleteSerivce();
 		    nextpage = com.execute(request, response); // 호출하고 불러줌
 		
-		
-		}else if(command.equals("UpdateCon.do")){
-			  
-			 com = new UpdateService(); 
-			 nextpage =com.execute(request, response); 
 		}else if(command.equals("categorySearch.do")) {
+			com = new categoryService();
+			nextpage = com.execute(request, response);
 			
 		}else if(command.equals("memberSearch.do")) {
 			String email = request.getParameter("email");
