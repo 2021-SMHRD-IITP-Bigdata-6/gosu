@@ -134,6 +134,26 @@ public class categoryDAO {
 			close();
 		}
 		return arr;
-	}
-	
+	}//selectbook()
+	public ArrayList<T_BookDTO> category(String category) {
+
+		ArrayList<T_BookDTO> arr = new ArrayList<T_BookDTO>();
+		
+		try {
+			getConn();
+			String sql = "select * from t_book where book_category like ?";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, "%" + category + "%");
+			rs = psmt.executeQuery();
+			while (rs.next() == true) {
+				String book_category = rs.getString(6);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return arr;
+	}//selectbook()
 }// DAO
