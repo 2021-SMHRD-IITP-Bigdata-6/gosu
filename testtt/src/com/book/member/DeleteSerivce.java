@@ -16,5 +16,6 @@ public class DeleteSerivce implements Command {
 		System.out.println("삭제하는 이메일 :" + email);
 		BookDAO dao = new BookDAO();
 		int cnt = dao.Delete(email);
+		return "/project/html5up-eventually/selectMember.jsp";
 	}
 }
