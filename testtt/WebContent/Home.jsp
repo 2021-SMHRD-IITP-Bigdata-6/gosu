@@ -110,7 +110,7 @@
 
       </div>
 
-      <!-- Banner -->
+      <!--
       <section id="banner">
          <header>
             <h2>
@@ -120,7 +120,7 @@
          </header>
       </section>
 
-      <!-- Carousel -->
+
       <section class="carousel">
          <div class="reel">
             <h3>
@@ -223,7 +223,7 @@
             </article>
 
          </div>
-
+			-->
          <script src="assets/js/jquery.min.js"></script>
          <script src="assets/js/jquery.dropotron.min.js"></script>
          <script src="assets/js/jquery.scrolly.min.js"></script>
