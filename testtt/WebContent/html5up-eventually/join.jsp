@@ -73,5 +73,14 @@
 				});
 			}
 			</script>
+			<script>
+            var sf = new Snowflakes({
+               color : "#ffffff", // 색상
+               count : 90, // 갯수
+               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+               maxOpacity : 0.3
+            // 최대 투명도
+            });
+         </script>
 	</body>
 </html>

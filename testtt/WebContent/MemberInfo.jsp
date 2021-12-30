@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<title>Eventually by HTML5 UP</title>
+		<title>회원 정보 보기 </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,22 +16,12 @@
 			<header id="header">
 			</header>
 		<!-- Signup Form -->
-			<form action="UpdateCon.do" method="post" align="center">
-			<%
-							BookDTO dto = (BookDTO) session.getAttribute("dto");
-					      	System.out.println("현재 로그인 한 사람의 email 값 :"+dto.getMem_id());
-			%>
-			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
-			<br>
-		<select name="select">
-			<option value="name">name</option>
-			<option value="pw">pw</option>
-			<option value="tel">tel</option>
-		</select>
-		변경할 패스워드 DATA <input type="text" name="data">
-		<br>
-		<input type="submit"  value="회원수정" >
-	</form>
+			<form  method="post" action="LoginCon.do" style="width: 500px; margin: 0 auto;">
+				<a align="center"><h2>로그인</h2></a>
+				<input type="email" name="email"  placeholder="아이디">
+				<input type="password" name="pw"  placeholder="비밀번호" />
+				<input type="submit" value="로그인" style="width: 500px; margin: 0 auto;">
+			</form>
 			<br>
 			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
 		<!-- Footer -->
@@ -48,6 +38,16 @@
 			</footer>
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
-
+			<script
+            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script>
+            var sf = new Snowflakes({
+               color : "#ffffff", // 색상
+               count : 90, // 갯수
+               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+               maxOpacity : 0.3
+            // 최대 투명도
+            });
+         </script>
 	</body>
 </html>
