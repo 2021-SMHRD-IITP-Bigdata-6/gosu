@@ -33,7 +33,7 @@ public class FrontController extends HttpServlet {
 		String path = request.getContextPath();
 		System.out.println(path);
 
-		String command = uri.substring(path.length()+1);
+		String command = uri.substring(path.length()+20);
 		System.out.println("요청기능" + command);
 
 		Command com = null;

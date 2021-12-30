@@ -16,22 +16,22 @@
 			<header id="header">
 			</header>
 		<!-- Signup Form -->
-			<form action="UpdateCon.do" method="post" align="center">
-			<%
-							BookDTO dto = (BookDTO) session.getAttribute("dto");
-					      	System.out.println("현재 로그인 한 사람의 email 값 :"+dto.getMem_id());
-			%>
-			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
-			<br>
-		<select name="select">
-			<option value="name">name</option>
-			<option value="pw">pw</option>
-			<option value="tel">tel</option>
-		</select>
-		변경할 패스워드 DATA <input type="text" name="data">
-		<br>
-		<input type="submit"  value="회원수정" >
-	</form>
+			<form  method="post" action="JoinCon.do"style="width: 500px; margin: 0 auto;" >
+				<a align="center"><h1>회원가입</h1></a>
+				이메일<input type="email" name="email"  placeholder="아이디">
+				<button type="button" id="Check" align="center" onclick="emailCheck()">중복체크</button>
+									<p id="result"></p>
+				비밀번호<input type="password" name="pw"  placeholder="비밀번호" />
+				이름<input type="text" name="name"  placeholder="이름" />
+				전화번호<input type="text" name="tel"  placeholder="전화번호" />
+				나이<input type="text" name="age"  placeholder="나이" />
+				<br>
+				<input type="radio" name="gender" value="M" checked  id="man">
+				<label for="man">남자</label> 
+				<input type="radio" name="gender" value="W" checked  id="woman">
+				<label for="woman">여자</label>
+				<div align="center"><input id="su" type="submit" value="회원가입"></div>
+			</form>
 			<br>
 			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
 		<!-- Footer -->
@@ -48,6 +48,31 @@
 			</footer>
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
+			<script src="/project/html5up-eventually/assets/js/jquery-3.6.0.min.js"></script>
+					<script type="text/javascript">
+			function emailCheck() {
+				$.ajax({
+					url : 'check.do',
+					type : 'get',
+					data : {
+						"email" : $('input[name=email]').val()
+					},
+				success : function (res) {
+					console.log(res);
+					if(res == 'true'){
+						$('#result').html("중복된 아이디입니다").css('color','red');
+						alert("아이디 중복입니다");
+					}else{
+						$('#result').html("사용가능한 아이디 입니다").css('color','green');
+						alert("사용가능한 아이디 입니다");
+					}
+				},
+				error : function() {
+					alert('요청 실패');
+				}
+				});
+			}
+			</script>
 			<script
             src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
