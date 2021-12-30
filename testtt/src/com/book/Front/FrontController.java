@@ -85,11 +85,22 @@ public class FrontController extends HttpServlet {
 			
 			PrintWriter out = response.getWriter();
 			out.print(json);
-		}
+		}else if(command.equals("check.do")) {
+			// 1. 파라미터 수집
+			
+			String email = request.getParameter("email");
+			// 2. DAO 객체 생성
+			BookDAO dao = new BookDAO();
+			// 3, DAO 객체의 메서드 사용
+			boolean check = dao.emailCheck(email);
+			// 4. PrintWriter 객체 생성
+			PrintWriter out = response.getWriter();
+			// 5. 응답
+			out.print(check);
 			 
+		}
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);
 		}
 	}
-
 }

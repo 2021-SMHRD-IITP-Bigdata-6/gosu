@@ -10,19 +10,11 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		
-		
 	</head>
-
-
-
 		<body class="is-preload">
-		
-
 		<!-- Header -->
 			<header id="header">
 			</header>
-
 		<!-- Signup Form -->
 			<form  method="post" action="LoginCon.do" style="width: 500px; margin: 0 auto;">
 				<a align="center"><h2>로그인</h2></a>
@@ -30,8 +22,8 @@
 				<input type="password" name="pw"  placeholder="비밀번호" />
 				<input type="submit" value="로그인" style="width: 500px; margin: 0 auto;">
 			</form>
+			<br>
 			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
-
 		<!-- Footer -->
 			<footer id="footer">
 				<ul class="icons">
@@ -44,7 +36,6 @@
 					<li>&copy; Untitled.</li><li>Credits: <a>대표 김진우</a></li>
 				</ul>
 			</footer>
-
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
 

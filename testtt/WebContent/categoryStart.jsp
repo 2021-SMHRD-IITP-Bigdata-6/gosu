@@ -20,7 +20,7 @@
 			<!-- Inner -->
 			<div class="inner">
 				<header>
-					<h1>3가지 장르를 선택해주세요</h1>
+					<h1>장르를 선택해주세요</h1>
 					<hr />
 						<button class="choice">시/에세이</button>
 						<button class="choice">경제/경영</button>
@@ -55,17 +55,27 @@
 		</div>
 		<script src="assets/js/jquery.min.js"></script>
 		<script type="text/javascript">
+			var count = 0;
+			let buttonlist = []
+			
 			$('.choice').on('click',function(){
+				count++;
+				alert(count +"회 클릭하셨습니다.")
 				$(this).css({
 					background : 'yellow'
 				})
+		
+	            //클릭한것의 text를 가져옴
+	            //가져온것을 빈 리스트에 append()
+	            
+	            //로컬스토리지에 set,get 중에서 여기서는 set
+	            //개발자 도구- Appication - localstorage에서 확인할 수 있음
+	            
+	            //search 페이지에서는 get해서 가져옴
+	            
+
 			});
-			var list = [];
-			$('.search').on('click', function(){
-				list = [];
-				
-				
-			});
+	
 		</script>
 </body>
 </html>

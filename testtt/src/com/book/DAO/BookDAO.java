@@ -7,8 +7,6 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-import org.apache.coyote.Request;
-
 import com.book.DTO.BookDTO;
 
 public class BookDAO {
@@ -18,12 +16,11 @@ public class BookDAO {
 
 	ResultSet rs = null;
 
-	private boolean check;
-	private BookDTO BookDTO;
-	private String sql;
-	private BookDTO dto1;
-	private Statement stmt;
-	private com.book.DTO.BookDTO dto;
+ boolean check;
+	BookDTO dto = null;
+	 BookDTO bookDTO;
+	 BookDTO dto1;
+ Statement stmt;
 
 	public void getConn() {
 
@@ -68,7 +65,7 @@ public class BookDAO {
 	}
 
 	public BookDTO Login(BookDTO dto1) {
-		BookDTO BookDTO = null;
+		BookDTO bookDTO = null;
 
 		try {
 			getConn();
@@ -96,7 +93,7 @@ public class BookDAO {
 
 				if (dto1.getMem_pw().equals(getpw)) {
 
-					BookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, getage, getgender, date);
+					bookDTO = new BookDTO(dto1.getMem_id(), getpw, getname, gettel, getage, getgender, date);
 
 				}
 
@@ -109,7 +106,7 @@ public class BookDAO {
 			close();
 		}
 
-		return BookDTO;
+		return bookDTO;
 	}
 
 	public int Join(BookDTO dto) {
@@ -141,16 +138,60 @@ public class BookDAO {
 		return cnt;
 	}
 
-	public int Update(String pw) {
+	public int Update(BookDTO dto, String pw) {
 
 		int cnt = 0;
 		try {
 			getConn();
-			String sql = "update t_member set mem_pw = ?  where mem_id = 'admin@naver.com' ";
+			String sql = "update t_member set mem_pw = ?  where mem_id = ? ";
 
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, pw);
-//			psmt.setString(2, dto.getMem_id());
+
+			psmt.setString(2, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+
+			System.out.println("cnt : " + cnt);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+//	public class DAO{
+//		
+//	}
+//	public MypageDTO selectAccountone(MypageDTO user) {
+//		String sql = "select * from account where id='%s' and pw='%s'";
+//		
+//		sql=String.format(sql, user.getMem_id(),user.getMem_pw());
+//		
+//		try {
+//			stmt = conn.createStatement();
+//			rs = stmt.executeQuery(sql);
+//			
+//			rs.next();
+//			
+//			
+//		} catch (Exception e) {
+//			
+//		}
+//
+//	}
+
+	public int Update1(BookDTO dto, String tel) {
+
+		int cnt = 0;
+		try {
+			getConn();
+			String sql = "update t_member set mem_tel = ?  where mem_id = ? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, tel);
+
+			psmt.setString(2, dto.getMem_id());
 			cnt = psmt.executeUpdate();
 
 			System.out.println("cnt : " + cnt);
@@ -163,76 +204,143 @@ public class BookDAO {
 		return cnt;
 	}
 
-	public class DAO {
+	public int Update2(BookDTO dto, String name) {
 
+		int cnt = 0;
+		try {
+			getConn();
+			String sql = "update t_member set mem_name = ?  where mem_id = ? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, name);
+
+			psmt.setString(2, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+
+			System.out.println("cnt : " + cnt);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
 	}
 
-	public ArrayList<BookDTO> selectMember(String user_id) {
+	public ArrayList<BookDTO> selectMember() {
+
+		// Select.html 에서 보낸 id 값 받아오기
+		// String id = request.getParameter("id");
 
 		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
 
-		try { // db연결코드
-
+		try {
 			getConn();
-
-			// 5 .SQL명령문을 준비 //콘솔창에입력 ? 써야한다
 			String sql = "select * from t_member";
-
+			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
+
+			// 6. slq명령문 실행
+			// executoUpdate() : DB의 내용에 변경이 일어나는경우, insert, deletd, update
+			// 리턴을 int로 해준다. 몇행이 성공 했는지
+			// executeQuery() : select문 사용시
+			// ResultSet으로 리턴한다.
+
 			rs = psmt.executeQuery();
 
-			while (rs.next()) {
+			// 명령 후 처리
 
-				String mem_id = rs.getString(1);
-				String mem_pw = rs.getString(2);
-				String mem_name = rs.getString(3);
-				String mem_tel = rs.getString(4);
-				int mem_age = rs.getInt(4);
-				String mem_gender = rs.getString(6);
-				String date = rs.getString(8);
+			while (rs.next() == true) {
+				String email = rs.getString(1);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				int age = rs.getInt(5);
+				String gender = rs.getString(6);
+				String date = rs.getString(7);
 
-				dto = new BookDTO(mem_id, mem_pw, mem_name, mem_tel, mem_gender, date);
+				// out객체를 사용해서 출력
+				// PrintWriter 객체 생성X --> JSP 내장객체로 이미 선언되어 있음 따로 생성해줄 필요 x
+				dto = new BookDTO(email, name, tel, age, gender, date);
 				arr.add(dto);
-
 			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+
+			close();
+		}
+		return arr;
+	}
+
+	public ArrayList<BookDTO> selectMember(String email) {
+
+		ArrayList<BookDTO> arr = new ArrayList<BookDTO>();
+
+		try {
+			getConn();
+			String sql = "select * from t_member where mem_id like ?";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, "%" + email + "%");
+			rs = psmt.executeQuery();
+			while (rs.next() == true) {
+				String memail = rs.getString(1);
+				String name = rs.getString(3);
+				String tel = rs.getString(4);
+				int age = rs.getInt(5);
+				String gender = rs.getString(6);
+				String date = rs.getString(7);
+				dto = new BookDTO(memail, name, tel, age, gender, date);
+				arr.add(dto);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return arr;
+	}
+
+	public int Delete(String email) {
+
+		try {
+			getConn();
+			String sql = " delete from t_member where mem_id = ?";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, email);
+
+			cnt = psmt.executeUpdate();
 
 		} catch (Exception e) {
-			System.out.println("클래스파일 로딩 실패");
-			e.printStackTrace();// try 문 안에서 오류확인하는 코드
-
-		} finally { // 코드가 오류가榮 안榮 무조건 실행
-
+			e.printStackTrace();
+		} finally {
 			close();
 
 		}
-
-		return arr;
+		return cnt;
 
 	}
 
-	public boolean emailCheck(String user_id) {
+	public boolean emailCheck(String email) {
 
 		try {
-
 			getConn();
-
-			String sql = "select * from t_mem_pw where user_id = ?";
-
+			String sql = "select * from t_member where mem_id = ?";
+			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
-			psmt.setString(1, user_id);
 
+			psmt.setString(1, email);
+
+			// 6. slq명령문 실행
 			rs = psmt.executeQuery();
 
 			check = rs.next();
 
 		} catch (Exception e) {
-			System.out.println("클래스파일 로딩 실패");
+			System.out.println("클래스파일 로딩실패");
 			e.printStackTrace();
-
 		} finally {
-
 			close();
-
 		}
 
 		return check;
