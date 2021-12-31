@@ -38,7 +38,8 @@
          <!-- Inner -->
          <div class="inner">
          <div>
-         	<input type="text" name="book" placeholder="책 이름을 검색해주세요" onclick="gogo" id="searchsearch">
+         	<input type="text" name="book" placeholder="책 이름을 검색해주세요" id="searchsearch">
+         	<input type="button" onclick="gogo()">
          </div>
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
@@ -112,5 +113,22 @@
                maxOpacity : 0.3
             // 최대 투명도
             });
+         </script>
+         <script type="text/javascript">
+         function gogo() {
+				$.ajax({
+					url : 'check.do',
+					type : 'get',
+					data : {
+						"book" : $('input[name=book]').val()
+					},
+				success : function (res) {
+					console.log(res);
+				},
+				error : function() {
+					alert('요청 실패');
+				}
+				});
+			}
          </script>
 </body>

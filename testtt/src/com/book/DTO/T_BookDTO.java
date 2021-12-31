@@ -37,10 +37,11 @@ public class T_BookDTO {
 	
 	
 
-	public T_BookDTO(String book_nmae, String book_img) {
+	public T_BookDTO(String book_nmae, String book_img,String book_category) {
 		super();
 		this.book_nmae = book_nmae;
 		this.book_img = book_img;
+		this.book_category = book_category;
 	}
 
 
