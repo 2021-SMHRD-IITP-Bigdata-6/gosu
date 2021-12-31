@@ -21,10 +21,10 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="right-sidebar is-preload">
-		<div id="page-wrapper">
+		<div id="footer">
 
 			<!-- Header -->
-				<div id="header">
+				<div id="footer">
 				
 				
 				<%
@@ -55,7 +55,7 @@
 				%>
 
 					<!-- Inner -->
-						<div class="inner">
+						<div id="footer">
 							<header>
 								<h1>E-BOOK 정보</h1>
 							</header>
@@ -75,8 +75,7 @@
 				</div>
 
 			<!-- Main -->
-				<div class="wrapper style1">
-
+				<div id="footer">
 					<div class="container">
 						<div class="row gtr-200">
 							<div class="col-8 col-12-mobile" id="content">
@@ -289,6 +288,4 @@
             });
          </script>
 	</body>
-</html>
-</body>
 </html>
