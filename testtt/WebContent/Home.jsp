@@ -37,6 +37,9 @@
 		%>
          <!-- Inner -->
          <div class="inner">
+         <div>
+         	<input type="text" name="book" placeholder="책 이름을 검색해주세요" onclick="gogo" id="searchsearch">
+         </div>
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
@@ -85,9 +88,6 @@
          <!-- Nav -->
          <nav id="nav">
             <ul>
-               <li><a href="Home.jsp">홈</a></li>
-               <li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-               <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
                <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
                <li><a href="MyPage.jsp">마이 페이지</a></li>
         	</ul>

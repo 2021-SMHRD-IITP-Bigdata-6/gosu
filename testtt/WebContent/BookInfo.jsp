@@ -30,13 +30,12 @@
 				<%
 				 request.setCharacterEncoding("UTF-8");
 				String info =  request.getParameter("info");
-				ArrayList<T_BookDTO>;
-				//arr = dao.selectbook();
-				//T_BookDAO dao = new T_BookDAO();
-				if(info.equals(arr.get(i).getBook_category())){
+				T_BookDAO dao = new T_BookDAO();
+				ArrayList<T_BookDTO> arr = dao.selectbook();
+				/* if(info.equals(arr.get(i).getBook_category())){
 					
 				}
-				
+				 */
 				for (int i = 0; i < arr.size(); i++) {
 					 
 					
