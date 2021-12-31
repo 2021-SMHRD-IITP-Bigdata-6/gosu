@@ -40,11 +40,11 @@
 		<div class="inner">
 			<header>
 				<% if (dto == null) {%>
-               <p>마이 페이지</p>
+               <h2><a>마이 페이지</a></h2>
                <%} else{%>
-               <p><%= dto.getMem_name() %>님 </p>
+               <h2><a><%= dto.getMem_name() %>님의 마이페이지</a></h2>
                <%} %>
-				<h1>마이페이지</h1>
+			
 			</header>
 		</div>
 
@@ -73,7 +73,7 @@
 				<div class="col-4 col-6-medium col-12-small">
 					<section class="box style1">
 
-						<a href="/project/html5up-eventually/Update.jsp">
+						<a href="MemberInfo.jsp">
 							<button style="color: black;">내 정보 관리</button>
 						</a>
 					</section>
@@ -99,7 +99,17 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
+		<script
+            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script>
+            var sf = new Snowflakes({
+               color : "#ffffff", // 색상
+               count : 90, // 갯수
+               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+               maxOpacity : 0.3
+            // 최대 투명도
+            });
+         </script>
 		
 			<p>&copy; Untitled.</p>
 			Credits:
