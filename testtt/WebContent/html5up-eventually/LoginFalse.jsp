@@ -13,14 +13,18 @@
 	</head>
 		<body class="is-preload">
 		<!-- Header -->
-			<header id="header">
+			<header id="header" align="center">
 				<h1>로그인 실패입니다</h1>
 			</header>
 		<!-- Signup Form -->
-			<form  method="post" action="LoginCon.do" >
+			<form  method="post" action="LoginCon.do" style="width: 500px; margin: 0 auto;" >
 				<input type="email" name="email"  placeholder="아이디">
+				<div>
+				</div>
 				<input type="password" name="pw"  placeholder="비밀번호" />
-				<input type="submit" value="로그인">
+				
+				<br>
+				<div align="center"><input type="submit" value="로그인" ></div>
 			</form>
 			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
 		<!-- Footer -->

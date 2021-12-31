@@ -32,7 +32,7 @@
 						<button class="btn">경제/경영</button>
 						<button class="btn">역사/문화</button>
 						<button class="btn">예술/대중문화</button>
-						<button class="btn">1</button>
+						<button class="btn">과학</button>
 						<br>
 						<button class="btn">2</button>
 						<button class="btn">3</button>

@@ -26,10 +26,12 @@
 				전화번호<input type="text" name="tel"  placeholder="전화번호" />
 				나이<input type="text" name="age"  placeholder="나이" />
 				<br>
+				<div align="center">
 				<input type="radio" name="gender" value="M" checked  id="man">
 				<label for="man">남자</label> 
 				<input type="radio" name="gender" value="W" checked  id="woman">
 				<label for="woman">여자</label>
+				</div>
 				<div align="center"><input id="su" type="submit" value="회원가입"></div>
 			</form>
 			<br>
