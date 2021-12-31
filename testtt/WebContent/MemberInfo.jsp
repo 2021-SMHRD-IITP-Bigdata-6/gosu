@@ -5,8 +5,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>내 정보 보기</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+
+</noscript>
+</head>
 <meta charset="UTF-8">
-		<title>회원 정보 보기 </title>
+		<title>내 정보 보기</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -16,29 +26,41 @@
 			<header id="header">
 			</header>
 		<!-- Signup Form -->
-			<form  method="post" action="LoginCon.do" style="width: 500px; margin: 0 auto;">
-				<a align="center"><h2>로그인</h2></a>
-				<input type="email" name="email"  placeholder="아이디">
-				<input type="password" name="pw"  placeholder="비밀번호" />
-				<input type="submit" value="로그인" style="width: 500px; margin: 0 auto;">
+			<form  method="post" action="UpdateCon.do"style="width: 500px; margin: 0 auto;" >
+				<a align="center"><h1>내 정보 수정</h1></a>
+				이메일<input type="email" name="email"  placeholder="아이디">
+				비밀번호<input type="password" name="pw"  placeholder="비밀번호" />
+				이름<input type="text" name="name"  placeholder="이름" />
+				전화번호<input type="text" name="tel"  placeholder="전화번호" />
+				나이<input type="text" name="age"  placeholder="나이" />
+				<br>
+				<button><a href="/project/Home.jsp" align="center">정보 수정 완료</a></button>
 			</form>
 			<br>
-			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
 		<!-- Footer -->
 			<footer id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
+
 				<ul class="copyright">
-					<li>&copy; Untitled.</li><li>Credits: <a>대표 김진우</a></li>
+					<a>&copy; Untitled.</a>
+						<br>			
+					 <a>Credits:대표 김진우</a>
 				</ul>
 			</footer>
 		<!-- Scripts -->
-			<script src="assets/js/main.js"></script>
-			<script
+			
+			<script src="/project/html5up-eventually/assets/js/jquery-3.6.0.min.js"></script>
+					<script type="text/javascript">
+			
+			</script>
+			<script src="assets/js/jquery.min.js"></script>
+         <script src="assets/js/jquery.dropotron.min.js"></script>
+         <script src="assets/js/jquery.scrolly.min.js"></script>
+         <script src="assets/js/jquery.scrollex.min.js"></script>
+         <script src="assets/js/browser.min.js"></script>
+         <script src="assets/js/breakpoints.min.js"></script>
+         <script src="assets/js/util.js"></script>
+         <script src="assets/js/main.js"></script>
+        <script
             src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({

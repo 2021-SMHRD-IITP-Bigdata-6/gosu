@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="com.book.DTO.T_BookDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.book.DAO.T_BookDAO"%>
@@ -6,7 +7,6 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>E-BOOK 寃���</title>
 <title>E-BOOK 장르</title>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -25,23 +25,25 @@
 			<!-- Inner -->
 			<div class="inner">
 				<header>
-					<h1>E-BOOK 장르</h1>
+					<h1>찜 목록</h1>
 				</header>
 			</div>
 
 			<!-- Nav -->
 			<nav id="nav">
-				<ul>
-					<li><a href="Home.jsp">홈</a></li>
-					<li><a href="BookGenre.html">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.html">E-BOOK 정보</a></li>
-					<li><a href="MyPage.html">마이 페이지</a></li>
-				</ul>
-			</nav>
+            <ul>
+               <li><a href="Home.jsp">홈</a></li>
+               <li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
+               <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+               <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+               <li><a href="MyPage.jsp">마이 페이지</a></li>
+        	</ul>
+         </nav>
+			
 		</div>
-		
-		</select>
-		<h1>찜</h1>
+
+
+		<h3>내가 찜한 E-BOOK</h3>
 		
 		<!-- Carousel -->
 		
@@ -54,7 +56,7 @@
             for (int i = 0; i < arr.size(); i++) {
                
             }
-                String name = arr.get(0).getBook_nmae();          // 책 제목
+               	String name = arr.get(0).getBook_nmae();          // 책 제목
                 int price = arr.get(0).getBook_price();          // 책 가격
                 int grade = arr.get(0).getBook_grade();          // 책 평점
                String publisher = arr.get(0).getBook_publisher();  // 책 출판사 
@@ -79,37 +81,6 @@
 						</article>
 			<%} %>
 			</div>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$(".hide").hide();
-					$("#favorite").click(function(){
-						
-					$.post(
-						"/favorite"
-						,{"articleId" : "${article.articleId}"}
-						, function(data){
-							
-							var text = $("#favorite").text();
-							if(text == "♡"){
-								$("#favorite").text("♥");
-							}
-							else if (text == "♥"){
-								$("#favorite").text("♡");
-							
-							}
-						}
-						)
-					
-					
-					})
-					
-					
-				});
-			
-			
-			
-			</script>
-			
 			
 		</section>
 		<%} %>
@@ -123,6 +94,16 @@
 	<script src="assets/js/breakpoints.min.js"></script>
 	<script src="assets/js/util.js"></script>
 	<script src="assets/js/main.js"></script>
-
+	<script
+            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script>
+            var sf = new Snowflakes({
+               color : "#ffffff", // 색상
+               count : 90, // 갯수
+               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+               maxOpacity : 0.3
+            // 최대 투명도
+            });
+         </script>
 </body>
 </html>

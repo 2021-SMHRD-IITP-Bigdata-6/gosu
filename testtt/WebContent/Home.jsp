@@ -43,7 +43,7 @@
                <% if (dto == null) {%>
                <p>E-BOOK 알리미에 오신걸 환영합니다.</p>
                <%} else{%>
-               <p><%= dto.getMem_name() %>님 알리미에 오신걸 환영합니다. </p>
+               <p><%= dto.getMem_name() %>님 E-BOOK 알리미에 오신걸 환영합니다. </p>
                <%} %>
                <hr />
             <% if (dto == null) {%>
@@ -90,6 +90,7 @@
                <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
                <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
                <li><a href="MyPage.jsp">마이 페이지</a></li>
+        	</ul>
          </nav>
       </div>
 
