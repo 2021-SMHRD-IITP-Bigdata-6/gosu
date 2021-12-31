@@ -34,7 +34,8 @@
 				전화번호<input type="text" name="tel"  placeholder="전화번호" />
 				나이<input type="text" name="age"  placeholder="나이" />
 				<br>
-				<button><a href="/project/Home.jsp" align="center">정보 수정 완료</a></button>
+			
+				<button href="/project/Home.jsp" align="center">정보 수정 완료</button>
 			</form>
 			<br>
 		<!-- Footer -->

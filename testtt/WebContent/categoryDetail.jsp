@@ -31,7 +31,7 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1>Helios</h1>
+								<h1><%=search %>&nbsp의 모든 책입니다.</h1>
 							</header>
 						</div>
 						
@@ -46,19 +46,19 @@
 
 				</div>
 
-			<h1>선택하신 장르입니다.</h1>
 			<!-- Carousel -->
 				<section class="carousel">
-					<div class="reel">
 						<%for(int i = 0; i < arr.size(); i++){ 
 							if(search.equals(arr.get(i).getBook_category())){%>
-							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="300">
+							<article>
+							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="400">
 							<header>
-								 <a href="BookInfo.jsp" id="info"><%=arr.get(i).getBook_nmae() %> ♡</a>
+								 <a href="BookInfo.jsp" id="info"><%=arr.get(i).getBook_nmae() %></a>
 							</header>
-						</article>
+							</article>
 							<%} %>
 						<%} %>
+						</section>
 <%-- 						<br>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
