@@ -33,10 +33,7 @@
 			<nav id="nav">
             <ul>
                <li><a href="Home.jsp">홈</a></li>
-               <li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-               <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
-               <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-               <li><a href="MyPage.jsp">마이 페이지</a></li>
+               <li><a href="categoryStart.jsp">검색 창으로</a></li>
         	</ul>
          </nav>
 		</div>
@@ -54,8 +51,8 @@
             
             %>
 		<%for(int i = 0; i <strArr.length; i++){%>
-		<button id="detail">전체보기</button>
-		<h1><%=strArr[i] %></h1>
+		<button class="detail" onclick="asdf(<%=i%>)">전체보기</button>
+		<h1 id="category_go<%=i%>"><%=strArr[i] %></h1>
 
 		<section class="carousel">
 			<div class="reel">
@@ -83,16 +80,8 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script type="text/javascript">
-		$('#detail').on('click',function(){
-			location.href="categoryDetail.jsp";
-			$('h1').text();
-			var content = document.getElementById("h1");
-			console.log(content.innerText);
-		});
-		
-		</script>
-         <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'>
+         <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상
                count : 90, // 갯수
@@ -101,6 +90,16 @@
             // 최대 투명도
             });
          </script>
+		<script type="text/javascript">
+		//$('.detail').on('click',
+		function asdf(i){
+			//location.href="categoryDetail.jsp";
+			var dsearch = $('#category_go'+i).html();
+			console.log(dsearch);
+			
+		};
+		
+		</script>
 
 </body>
 </html>

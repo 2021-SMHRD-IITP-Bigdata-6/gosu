@@ -25,10 +25,6 @@
 				String info =  request.getParameter("info");
 				T_BookDAO dao = new T_BookDAO();
 				ArrayList<T_BookDTO> arr = dao.selectbook();
-/* 				if(info.equals(arr.get(i).getBook_category())){
-					
-				}
- */				
 				for (int i = 0; i < arr.size(); i++) {
 					 
 					
