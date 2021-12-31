@@ -7,36 +7,28 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>E-BOOK 정보</title>
+<title>대표 김진우</title>
 </head>
 <body>
 	
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>E-BOOK 정보</title>
 		<meta charset="utf-8" />
-		
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
 	<body class="right-sidebar is-preload">
 		<div id="footer">
 
-			<!-- Header -->
-				<div id="footer">
-				
-				
 				<%
 				 request.setCharacterEncoding("UTF-8");
 				String info =  request.getParameter("info");
-				ArrayList<T_BookDTO>;
-				//arr = dao.selectbook();
-				//T_BookDAO dao = new T_BookDAO();
-				if(info.equals(arr.get(i).getBook_category())){
+				T_BookDAO dao = new T_BookDAO();
+				ArrayList<T_BookDTO> arr = dao.selectbook();
+/* 				if(info.equals(arr.get(i).getBook_category())){
 					
 				}
-				
+ */				
 				for (int i = 0; i < arr.size(); i++) {
 					 
 					
@@ -57,15 +49,7 @@
 					
 					 
 				%>
-
-					<!-- Inner -->
-						<div id="footer">
-							<header>
-								<h1>E-BOOK 정보</h1>
-							</header>
-						</div>
-
-					<!-- Nav -->
+				<div id="footer">
 			<nav id="nav">
 				   <ul>
                <li><a href="Home.jsp">홈</a></li>
@@ -87,8 +71,10 @@
 									<header>
 										<h2><a href="#"><%=name%></a></h2>
 									</header>
-									<a href="/project/Home.jsp" class="image featured">책 표지 사진<img src="images/pic06.jpg" alt="" /></a>
-									
+									<div align= center>
+									<img  align="center" src="<%=img %>" alt=""  width="200" height="300"/>
+									<a href="/project/Home.jsp" class="image featured">책 표지 사진</a>
+									</div>
 									<section>
 										<header>
 											<h3>책 제목 <%=name%></h3> <!-- 책정보 -->
