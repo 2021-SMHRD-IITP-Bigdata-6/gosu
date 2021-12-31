@@ -1,13 +1,17 @@
+<%@page import="com.book.DAO.T_EvaluationDAO"%>
+<%@page import="com.book.DTO.T_EvaluationDTO"%>
+<%@page import="com.sun.xml.internal.txw2.Document"%>
 <%@page import="java.util.Arrays"%>
 <%@page import="com.book.DTO.T_BookDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.book.DAO.T_BookDAO"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>E-BOOK 장르</title>
+<title>찜 목록</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -31,79 +35,76 @@
 
 			<!-- Nav -->
 			<nav id="nav">
-            <ul>
-               <li><a href="Home.jsp">홈</a></li>
-               <li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-               <li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
-               <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-               <li><a href="MyPage.jsp">마이 페이지</a></li>
-        	</ul>
-         </nav>
-			
+				<ul>
+					<li><a href="Home.jsp">홈</a></li>
+					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
+					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+					<li><a href="MyPage.jsp">마이 페이지</a></li>
+				</ul>
+			</nav>
+
 		</div>
 
 
 		<h3>내가 찜한 E-BOOK</h3>
-		
-		<!-- Carousel -->
-		
-		<%
-             request.setCharacterEncoding("UTF-8");
 
-            T_BookDAO dao = new T_BookDAO();
-            ArrayList<T_BookDTO> arr = dao.selectbook();
-            
-            for (int i = 0; i < arr.size(); i++) {
-               
-            }
-               	String name = arr.get(0).getBook_nmae();          // 책 제목
-                int price = arr.get(0).getBook_price();          // 책 가격
-                int grade = arr.get(0).getBook_grade();          // 책 평점
-               String publisher = arr.get(0).getBook_publisher();  // 책 출판사 
-               String category = arr.get(0).getBook_category();   // 책 분류
-               String explain =arr.get(0).getBook_explain();      // 책 소개
-               String author =arr.get(0).getBook_author();       // 책 저자
-               int pages =arr.get(0).getBook_pages ();          // 책 페이지수
-               String img = arr.get(0).getBook_img ();          // 책 표지
-               String isbn = arr.get(0).getBook_isbn ();         // 책 ISBN
-               String brief =arr.get(0).getBook_brief ();         // 책 줄거리
-               String date = arr.get(0).getBook_date();         // 책 등록일자
-            %>
-			<%for(int i = 0; i <=5; i++) {%>
+		<!-- Carousel -->
+
+		<%
+			request.setCharacterEncoding("UTF-8");
+
+		T_EvaluationDAO dao = new T_EvaluationDAO();
+
+		ArrayList<T_EvaluationDTO> arr = dao.wishbook();
+
+		%>
+
+		<%
+			for (int i = 0; i < arr.size(); i++) {
+		
+			String name = arr.get(0).getMem_id(); //회원ID
+			String wish = arr.get(0).getWish_yn(); //찜 목록
+		%>
+
 		<section class="carousel">
 			<div class="reel">
-			<% for (int j = 0; j <= 1; j++){ %>
-						<article>
-							<a href="BookInfo.jsp" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#"><%=arr.get(0).getBook_nmae() %></a></h3>
-							</header>
-						</article>
-			<%} %>
-			</div>
-			
-		</section>
-		<%} %>
+				<%
+					for (int j = 0; j <= i; j++) {
+				%>
+				<article>
+					<a href="BookInfo.jsp" id="info"><%=arr.get(i).getMem_id()%></a>
 
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-         <script>
-            var sf = new Snowflakes({
-               color : "#ffffff", // 색상
-               count : 90, // 갯수
-               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
-               maxOpacity : 0.3
-            // 최대 투명도
-            });
-         </script>
+				</article>
+				<%
+					}
+				%>
+			</div>
+
+		</section>
+		<%
+			}
+		%>
+
+		<!-- Scripts -->
+
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script
+			src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+		<script>
+			var sf = new Snowflakes({
+				color : "#ffffff", // 색상
+				count : 90, // 갯수
+				minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+				maxOpacity : 0.3
+			// 최대 투명도
+			});
+		</script>
 </body>
 </html>
