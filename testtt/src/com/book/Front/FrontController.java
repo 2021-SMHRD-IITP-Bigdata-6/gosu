@@ -96,6 +96,8 @@ public class FrontController extends HttpServlet {
 			// 5. ¿¿¥‰
 			out.print(check);
 			 
+		}else if(command.equals("book.do")) {
+			
 		}
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);

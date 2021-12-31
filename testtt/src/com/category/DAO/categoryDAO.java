@@ -85,11 +85,12 @@ public class categoryDAO {
 
 			while (rs.next() == true) {
 				String book_nmae = rs.getString(2);
+				String book_category = rs.getString(6);
 				String book_img = rs.getString(10);
 
 				// out객체를 사용해서 출력
 				// PrintWriter 객체 생성X --> JSP 내장객체로 이미 선언되어 있음 따로 생성해줄 필요 x
-				dto = new T_BookDTO(book_nmae, book_img);
+				dto = new T_BookDTO(book_nmae, book_img,book_category);
 				arr.add(dto);
 			}
 		} catch (Exception e) {
