@@ -34,7 +34,7 @@
 						<button class="btn">과학</button>
 						<button class="btn">여행/기행</button>
 						<br>
-						<button class="btn">역사문화</button>
+						<button class="btn">역사/문화</button>
 						<button class="btn">예술/대중문화</button>
 						<button class="btn">인문</button>
 						<button class="btn">자기계발</button>

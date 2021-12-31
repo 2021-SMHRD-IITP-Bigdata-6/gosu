@@ -90,7 +90,10 @@
          <nav id="nav">
             <ul>
                <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
+               <% if (dto == null) {%>
+               <%} else{%>
                <li><a href="MyPage.jsp">마이 페이지</a></li>
+               <%}%>
         	</ul>
          </nav>
       </div>

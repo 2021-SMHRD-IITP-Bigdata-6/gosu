@@ -74,11 +74,11 @@
             src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({
-               color : "#ffffff", // 색상
-               count : 90, // 갯수
-               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
-               maxOpacity : 0.3
-            // 최대 투명도
+            	  color : "#ffffff", // 색상
+                  count : 1000, // 갯수
+                  minOpacity : 0.5, // 최소 투명도 0: 투명 | 1: 불투명
+                  maxOpacity : 0.5
+               // 최대 투명도
             });
          </script>
 	</body>
