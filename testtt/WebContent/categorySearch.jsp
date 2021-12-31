@@ -25,7 +25,7 @@
 			<!-- Inner -->
 			<div class="inner">
 				<header>
-					<h1>E-BOOK 장르</h1>
+					<h1> 선택하신 E-BOOK 목록입니다</h1>
 				</header>
 			</div>
 
@@ -52,28 +52,9 @@
             T_BookDAO dao = new T_BookDAO();
             ArrayList<T_BookDTO> arr = dao.selectbook();
             
-           /*  for (int i = 0; i < arr.size(); i++) {
-               
-           
-                String name = arr.get(0).getBook_nmae();          // 책 제목
-                int price = arr.get(0).getBook_price();          // 책 가격
-                int grade = arr.get(0).getBook_grade();          // 책 평점
-               String publisher = arr.get(0).getBook_publisher();  // 책 출판사 
-               String category = arr.get(0).getBook_category();   // 책 분류
-               String explain =arr.get(0).getBook_explain();      // 책 소개
-               String author =arr.get(0).getBook_author();       // 책 저자
-               int pages =arr.get(0).getBook_pages ();          // 책 페이지수
-               String img = arr.get(0).getBook_img ();          // 책 표지
-               String isbn = arr.get(0).getBook_isbn ();         // 책 ISBN
-               String brief =arr.get(0).getBook_brief ();         // 책 줄거리
-               String date = arr.get(0).getBook_date();         // 책 등록일자
-            } */
             %>
-		<%String bt = "";
-            	for(int i = 0; i <strArr.length; i++){%>
-		<button align='right'>
-			<a href="categoryDetail.jsp" align="right"> 전체보기</a>
-		</button>
+		<%for(int i = 0; i <strArr.length; i++){%>
+		<button id="detail">전체보기</button>
 		<h1><%=strArr[i] %></h1>
 
 		<section class="carousel">
@@ -81,9 +62,10 @@
 				<% for (int j = 0; j <arr.size(); j++){ %>
 				<%if(strArr[i].equals(arr.get(j).getBook_category())){%>
 				<article>
-					<a href="BookInfo.jsp" class="image featured"><%=arr.get(j).getBook_img() %></a>
+					<img src="<%=arr.get(j).getBook_img()%>" id="image" width="300" height="300">
+					<!--  <a href="BookInfo.jsp" class="image featured" ><%=arr.get(j).getBook_img() %></a>-->
 					<header>
-						<a href="#"><%=arr.get(j).getBook_nmae() %></a>
+						<a href="BookInfo.jsp" id="info"><%=arr.get(j).getBook_nmae() %> ♡</a>
 					</header>
 				</article>
 				<%} %>
@@ -92,19 +74,25 @@
 		</section>
 		<%} %>
 
-
-	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.dropotron.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
-	<script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-         <script>
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script type="text/javascript">
+		$('#detail').on('click',function(){
+			location.href="categoryDetail.jsp";
+			$('h1').text();
+			var content = document.getElementById("h1");
+			console.log(content.innerText);
+		});
+		
+		</script>
+         <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상
                count : 90, // 갯수

@@ -55,19 +55,10 @@
 
 				</div>
 
-			<select> 
-			<option>ㅎㅇ </option>
-			<option>ㅎㅇ2 </option>
-			<option>ㅎㅇ3 </option>
-			
-			</select>
-			<select> <option>ㅎㅇ </option></select>
-			<select> <option>ㅎㅇ </option></select>
 			<h1>선택하신 장르입니다.</h1>
 			<!-- Carousel -->
 				<section class="carousel">
 					<div class="reel">
-						<h1>장르1</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
@@ -77,7 +68,6 @@
 						</article>
 						<%} %>
 						<br>
-						<h1>장르2</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
@@ -87,7 +77,6 @@
 						</article>
 						<%} %>
 						<br>
-						<h1>장르3</h1>
 						<%for(int i = 0; i <=10; i++){ %>
 						<article>
 							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
