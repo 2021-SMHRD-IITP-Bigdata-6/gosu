@@ -217,15 +217,28 @@
 							</article>
 						</div>
 					</div>
+
 				</div>
+
 			<!-- Footer -->
 				<div id="footer">
 					<div class="container">
 						<div class="row">
+
+							<!-- Tweets -->
+								
+
+							<!-- Posts -->
+								
+
+							<!-- Photos -->
+							
+
 						</div>
 						<hr />
 						<div class="row">
 							<div class="col-12">
+
 								<!-- Contact -->
 									<section class="contact">
 										<header>
@@ -241,17 +254,22 @@
 											<li><a href="#" class="icon brands fa-linkedin-in"><span class="label">Linkedin</span></a></li>
 										</ul>
 									</section>
+
 								<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
 											<li>&copy; Untitled. All rights reserved.</li><li>Designer: <a href="http://html5up.net">대표 김진우</a></li>
 										</ul>
 									</div>
+
 							</div>
+
 						</div>
 					</div>
 				</div>
+
 		</div>
+
 		<!-- Scripts -->
 			<script src="assets/js/jquery.min.js"></script>
 			<script src="assets/js/jquery.dropotron.min.js"></script>
