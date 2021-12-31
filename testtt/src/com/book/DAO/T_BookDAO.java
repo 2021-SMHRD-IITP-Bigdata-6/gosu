@@ -138,4 +138,39 @@ public class T_BookDAO {
 		}
 		return arr;
 	}
+	
+	public ArrayList<T_BookDTO> ISBN(String ISBN) {
+
+		ArrayList<T_BookDTO> arr = new ArrayList<T_BookDTO>();
+
+		try {
+			getConn();
+			String sql = "select * from t_book where BOOK_ISBN = ?";
+			// 5. SQL명령문을 준비
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1,ISBN );
+			rs = psmt.executeQuery();
+			while (rs.next() == true) {
+				String book_nmae = rs.getString(2);
+				int book_price = rs.getInt(3);
+				int book_grade = rs.getInt(4);
+				String book_publisher = rs.getString(5);
+				String book_category = rs.getString(6);
+				String book_explain = rs.getString(7);
+				String book_author = rs.getString(8);
+				int book_pages = rs.getInt(9);
+				String book_img = rs.getString(10);
+				String book_isbn = rs.getString(11);
+				String book_brief = rs.getString(12);
+				String book_date = rs.getString(13);
+				
+				 dto = new T_BookDTO(book_nmae, book_price, book_grade, book_publisher, book_category, book_explain, book_author, book_pages, book_img, book_isbn, book_brief, book_date);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return arr;
+	}
 }

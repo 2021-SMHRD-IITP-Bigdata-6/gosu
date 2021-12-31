@@ -19,8 +19,10 @@
 			request.setCharacterEncoding("UTF-8");
 		String info = request.getParameter("info");
 		T_BookDAO dao = new T_BookDAO();
+		String ISBN = request.getParameter("ISBN");
 		ArrayList<T_BookDTO> arr = dao.selectbook();
-		for (int i = 0; i < arr.size(); i++) {
+		
+	/* 	for (int i = 0; i < arr.size(); i++) {
 		}
 		String name = arr.get(0).getBook_nmae(); // 책 제목
 		int price = (int) arr.get(0).getBook_price(); // 책 가격
@@ -71,7 +73,7 @@
 
 		String img1 = arr.get(LottoNumber[0]).getBook_img();
 		String img2 = arr.get(LottoNumber[1]).getBook_img();
-		String img3 = arr.get(LottoNumber[2]).getBook_img();
+		String img3 = arr.get(LottoNumber[2]).getBook_img(); */
 		%>
 		<div id="footer">
 			<nav id="nav">
@@ -94,28 +96,32 @@
 							<section>
 								<header>
 									<h2>
-										<a><%=name%></a>
+									<%for(int i =0; i < arr.size();i++) {
+										if(ISBN.equals(arr.get(i).getBook_isbn())){%>
+										<a><%out.print(arr.get(i).getBook_nmae());%></a>
 									</h2>
-									<br> <img align="center" src="<%=img%>" alt="" width="200"
+									<br> <img align="center" src="<%=arr.get(i).getBook_img()%>" width="200"
 										height="300" />
 								</header>
 							</section>
 							<header>
-								<a> 장르 : <%=category%> <br>
-								</a> <a> ISBN : <%=isbn%><br>
-								</a> <a> 저자 : <%=author%> <br>
-								</a> <a> 출판사 : <%=publisher%><br>
-								</a> <a> 페이지수 : <%=pages%>
+								<a> 장르 : <%=arr.get(i).getBook_category()%> <br>
+								</a> <a> ISBN : <%=arr.get(i).getBook_isbn()%><br>
+								</a> <a> 저자 : <%=arr.get(i).getBook_author()%> <br>
+								</a> <a> 출판사 : <%=arr.get(i).getBook_publisher()%><br>
+								</a> <a> 페이지수 : <%=arr.get(i).getBook_pages()%>
 								</a>
 							</header>
 							<section>
 								<header>
 									<h3>
-										<a>책소개 : <%=explain%></a>
+										<a>책소개 : <%=arr.get(i).getBook_explain()%></a>
 									</h3>
 								</header>
 							</section>
 						</article>
+						<%} %>
+						<%} %>
 					</div>
 					<div class="col-4 col-12-mobile" id="sidebar">
 						<hr class="first" />
@@ -204,7 +210,7 @@
 				</div>
 				<hr />
 				<header align="center">추천도서</header>
-				<div class="row">
+				<%-- <div class="row">
 
 					<article class="col-4 col-12-mobile special">
 						<a href="#" class="image featured"><img src="<%=img1%>"
@@ -248,7 +254,7 @@
 				</div>
 			</div>
 
-		</div>
+		</div> --%>
 
 		<!-- Footer -->
 		<div id="footer">
