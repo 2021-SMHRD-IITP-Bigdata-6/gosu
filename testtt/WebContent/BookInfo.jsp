@@ -119,6 +119,7 @@
 										<div class="col-4">
 											<a href="https://select.ridibooks.com/home" class="image fit"><img src="images/pic10.jpg" alt="" /></a>
 											<p>리디셀렉</p>
+											<img src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAMmOE%2FbtqCX8G2rdr%2FHEr6HIanLRV1PDEIQI4KtK%2Fimg.png" width="100" height="100">
 										</div>
 										
 										<div class="col-4">
@@ -188,31 +189,28 @@
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">ìê¸°</a></h3>
+									<h3><a href="#">추천 도서명 1</a></h3>
 								</header>
 								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+									줄거리1
 								</p>
 							</article>
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
+									<h3><a href="#">추천 도서명2</a></h3>
 								</header>
 								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+									줄거리2
 								</p>
 							</article>
 							<article class="col-4 col-12-mobile special">
 								<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
 								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
+									<h3><a href="#">주천 도서명 3</a></h3>
 								</header>
 								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+									줄거리3
 								</p>
 							</article>
 						</div>
