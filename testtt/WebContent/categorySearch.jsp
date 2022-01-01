@@ -59,10 +59,10 @@
             <% for (int j = 0; j < arr.size(); j++){ %>
             <%if(strArr[i].equals(arr.get(j).getBook_category())){%>
             <article>
-               <img src="<%=arr.get(j).getBook_img()%>" id="image" width="350" height="300">
-               <!--  <a href="BookInfo.jsp" class="image featured" ><%=arr.get(j).getBook_img() %></a>-->
+               <img src="<%=arr.get(j).getBook_img()%>" id="image" width="300" height="300">
                <header>
-                  <a href="BookInfo.jsp" id="info"><%=arr.get(j).getBook_nmae() %> ♡</a>
+                  <a id="info"><%=arr.get(j).getBook_nmae() %> ♡</a>
+                  <button onclick="a(<%=j %>)" id="b<%=j%>"><%=arr.get(j).getBook_isbn()%></button>
                </header>
             </article>
             <%} %>
@@ -96,7 +96,11 @@
     	 var dsearch = $('#category_go'+i).html();
         location.href="categoryDetail.jsp?search="+dsearch;         
       };
-      
+     function a(i) {
+		var ISBN = $('#b'+i).html();
+		location.href="BookInfo.jsp?ISBN="+ISBN;
+		//console.log(ISBN);
+	}
       </script>
 
 </body>
