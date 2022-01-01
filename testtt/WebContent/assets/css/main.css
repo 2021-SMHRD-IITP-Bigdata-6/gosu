@@ -106,7 +106,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #f0f4f4;
+		/*background: #f0f4f4;*/
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -135,7 +135,8 @@ input, select, textarea {
 	h1, h2, h3, h4, h5, h6 {
 		font-weight: 400;
 		color: #483949;
-		line-height: 1.25em;
+		line-height: 2.25em;
+		font-size: 40px;
 	}
 
 	h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -182,6 +183,7 @@ input, select, textarea {
 	}
 	#info{
 	text-overflow: ellipsis;
+	overflow: hidden;
 	}
 
 		a:hover {

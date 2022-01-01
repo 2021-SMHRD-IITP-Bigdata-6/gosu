@@ -59,7 +59,7 @@
             <% for (int j = 0; j < arr.size(); j++){ %>
             <%if(strArr[i].equals(arr.get(j).getBook_category())){%>
             <article>
-               <img src="<%=arr.get(j).getBook_img()%>" id="image" width="300" height="300">
+               <img src="<%=arr.get(j).getBook_img()%>" id="image" width="350" height="300">
                <!--  <a href="BookInfo.jsp" class="image featured" ><%=arr.get(j).getBook_img() %></a>-->
                <header>
                   <a href="BookInfo.jsp" id="info"><%=arr.get(j).getBook_nmae() %> ♡</a>
