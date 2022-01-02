@@ -159,6 +159,49 @@ body {
     left: 0px;
     top: 10px;
 }
+header {
+    margin: 0 0 4em 0;
+}
+
+
+
+button {
+  background: #6cad9e;
+    color: #fff;
+    border: none;
+    position: relative;
+    height: 50px
+    font-size: 1.0em;
+    padding: 1px 2em;
+    cursor: pointer;
+    transition: 800ms ease all;
+    outline: none;
+}
+button:hover{
+  background:#fff;
+  color:#1AAB8A;
+}
+button:before,button:after{
+  content:'';
+  position:absolute;
+  top:0;
+  right:0;
+  height:2px;
+  width:0;
+  background: #1AAB8A;
+  transition:400ms ease all;
+}
+button:after{
+  right:inherit;
+  top:inherit;
+  left:0;
+  bottom:0;
+}
+button:hover:before,button:hover:after{
+  width:100%;
+  transition:800ms ease all;
+}
+
 
 </style>
 </head>
@@ -187,7 +230,7 @@ body {
          <div>
          <div class="search-wrapper">
     <div class="input-holder">
-        <input type="text" class="search-input" placeholder="Type to search" />
+        <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" />
         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
     </div>
     <span class="close" onclick="searchToggle(this, event);"></span>
@@ -198,35 +241,40 @@ body {
                <br>
                <% if (dto == null) {%>
                <p>E-BOOK 알리미에 오신걸 환영합니다.</p>
+               <br><br>
+               <br>
                <%} else{%>
                <p><%= dto.getMem_name() %>님 E-BOOK 알리미에 오신걸 환영합니다. </p>
+               <br>
+               <br>
+               <br>
                <%} %>
                <hr />
             <% if (dto == null) {%>
-               <button style="background-color: #9399AB">
+               <button>
                   <h3>
                      <a href="/project/html5up-eventually/login.jsp">로그인</a>
                   </h3>
                </button>
                &emsp;&emsp;&emsp;&emsp;&emsp;
-               <button style="background-color: #9399AB">
+               <button>
                   <h3>
                      <a href="/project/html5up-eventually/join.jsp"">회원가입</a>
                   </h3>
                </button>
             <%} else {%>
-               <button style="background-color: #9399AB">
+               <button>
                   <h3>
                      <a href="/project/html5up-eventually/LogoutCon.do">로그아웃</a>
                   </h3>
                </button>
                &emsp;&emsp;&emsp;&emsp;&emsp;
-               <button style="background-color: #9399AB">
+               <button >
                      <h3><a href="/project/html5up-eventually/Update.jsp"> 회원정보수정 </a></h3>
                </button>
             <% if (dto.getMem_id().equals("admin@naver.com")){ %>
                   &emsp;&emsp;&emsp;&emsp;&emsp;
-               <button style="background-color: #9399AB">
+               <button>
                   <h3><a href="/project/html5up-eventually/selectMember.jsp">회원관리</a></h3>
                </button>
                <%} else{ %>
@@ -297,5 +345,71 @@ body {
         	            container.find('.search-input').val('');
         	        }
         	}
+         
+         <script type="text/javascript">
+         var count = 0;
+         var check = false;
+         let buttonlist = [];
+         
+         
+         $('.btn').on('click',function(){
+            // 선택한 button의 내용을 가지고 온다. 
+            var text = $(this).text();
+            
+            // 만약에 그 버튼의 class에 choice가 있으면(=이미 선택 되었다는 의미)
+            if($(this).hasClass('choice')){
+               console.log('선택취소');
+               $(this).removeClass("choice");
+               
+               // buttonlist에 선택된 값의 인덱스 번호를 찾아내는 for문 
+               for(var i =0; i<buttonlist.length; i++){
+                  if(buttonlist[i]==text){
+                     // 해당 인덱스 번호로부터 i개를 지우겠다.
+                     buttonlist.splice(i, 1);
+                     i--;
+                  }
+               }
+            }else{ // 만약에 그 버튼의 class에 choice가 없으면(=선택안되어있다는)
+               $(this).addClass("choice");
+               console.log('선택');
+               for(var i=0; i<buttonlist.length; i++){
+                  if(buttonlist[i]==text){
+                     check = true;
+                     break;
+                  }
+               }
+               if(check == false){
+                  buttonlist.push(text);
+               }
+               
+            }
+            
+            console.log(buttonlist);
+         });
+         
+         // 검색버튼 누르면 ajax로 servlet으로 이동
+         $('#send_btn').on('click', function(){
+            
+            location.href="categorySearch.jsp?data="+buttonlist;
+            
+            
+            /* $.ajax({
+               url : 'categorySearch.jsp',
+               type : 'post',
+               traditional : true,
+               data : {
+                  checklist : buttonlist
+               },
+               success : function(){
+                  alert('성공');
+                  location.href="categorySearch.jsp";
+               },
+               error : function(){
+                   alert('실패');
+               }
+            })*/
+         })
+   
+      </script>
          </script>
 </body>
