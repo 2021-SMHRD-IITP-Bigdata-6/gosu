@@ -26,17 +26,22 @@
 			<header id="header">
 			</header>
 		<!-- Signup Form -->
-			<form  method="post" action="UpdateCon.do"style="width: 500px; margin: 0 auto;" >
-				<a align="center"><h1>내 정보 수정</h1></a>
-				이메일<input type="email" name="email"  placeholder="아이디">
-				비밀번호<input type="password" name="pw"  placeholder="비밀번호" />
-				이름<input type="text" name="name"  placeholder="이름" />
-				전화번호<input type="text" name="tel"  placeholder="전화번호" />
-				나이<input type="text" name="age"  placeholder="나이" />
-				<br>
-			
-				<button href="/project/Home.jsp" align="center">정보 수정 완료</button>
-			</form>
+			<form action="UpdateCon.do" method="post" align="center">
+			<%
+							BookDTO dto = (BookDTO) session.getAttribute("dto");
+					      	System.out.println("현재 로그인 한 사람의 email 값 :"+dto.getMem_id());
+			%>
+			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
+			<br>
+		<select name="select">
+			<option value="name">name</option>
+			<option value="pw">pw</option>
+			<option value="tel">tel</option>
+		</select>
+		변경할 패스워드 DATA <input type="text" name="data">
+		<br>
+		<input type="submit"  value="회원수정" >
+	</form>
 			<br>
 		<!-- Footer -->
 			<footer id="footer">
