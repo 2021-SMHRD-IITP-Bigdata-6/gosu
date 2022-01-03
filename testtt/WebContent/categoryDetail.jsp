@@ -55,8 +55,8 @@
 							<article>
 							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="400">
 							<header>
-								 <a href="BookInfo.jsp" id="info"><%=arr.get(i).getBook_nmae() %></a>
-								 <button onclick="a(<%=i %>)" id="b<%=i%>"><%=arr.get(i).getBook_isbn()%></button>
+							<button onclick="a(<%=i %>)" id="b<%=i%>" style="display: none;"><%=arr.get(i).getBook_isbn()%></button>
+                			 <p onclick="a(<%=i %>)" style=""><%=arr.get(i).getBook_nmae() %></p>
 							</header>
 							</article>
 							<%} %>
