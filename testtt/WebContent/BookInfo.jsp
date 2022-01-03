@@ -1,3 +1,5 @@
+<%@page import="com.book.DTO.T_PlatformDTO"%>
+<%@page import="com.book.DAO.T_PlatfromDAO"%>
 <%@page import="java.util.Random"%>
 <%@page import="com.book.DTO.T_BookDTO"%>
 <%@page import="java.util.ArrayList"%>
@@ -128,18 +130,40 @@
 						<section>
 							<header>
 								<h3>
+								<%
+									T_PlatfromDAO dao1 = new T_PlatfromDAO();
+									ArrayList<T_PlatformDTO> arr1 = dao1.plat();
+									
+								%>
 									<a href="#">월정액</a>
+								<%for(int i =0; i < arr1.size();i++) {
+										if(ISBN.equals(arr1.get(i).getIsbn())){%>
 								</h3>
 							</header>
 							<div class="row gtr-50">
 								<div class="col-4">
-									<a href="https://select.ridibooks.com/home" class="image fit"><img
-										src="images/pic10.jpg" alt="" /></a>
-									<p>리디셀렉</p>
-									<img
-										src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAMmOE%2FbtqCX8G2rdr%2FHEr6HIanLRV1PDEIQI4KtK%2Fimg.png"
-										width="100" height="100">
+									<%-- <a href="<%=arr1.get(i).getBook_name() %>"></a> --%>
+									<%-- <a href="<%=arr1.get(i).getPlatform_url() %>" class="image fit">
+									<img src="<%=arr1.get(i).getPlatform_img() %>"/></a> --%>
+									<%if(arr1.get(i).getPlatform_url().equals("리디셀렉트")){%>
+									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAMmOE%2FbtqCX8G2rdr%2FHEr6HIanLRV1PDEIQI4KtK%2Fimg.png"
+                              width="100" height="100"></a>
+										<p><%=arr1.get(i).getPlatform_name() %></p>
+									<%}else if(arr1.get(i).getPlatform_url().equals("sam베이직")){ %>
+									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
+										<p><%=arr1.get(i).getPlatform_name() %></p>
+									<%}else if(arr1.get(i).getPlatform_url().equals("sam무제한")){ %>
+									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
+										<p><%=arr1.get(i).getPlatform_name() %></p>
+									<%}else if(arr1.get(i).getPlatform_url().equals("yes24북클럽")){ %>
+									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
+										<p><%=arr1.get(i).getPlatform_name() %></p>
+									<%} %>
+									
 								</div>
+								<%} %>
+								<%} %>
+								
 								<!-- <div class="col-4">
 											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
 										</div>
