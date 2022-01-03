@@ -202,9 +202,10 @@
 									<p>가격정보 ~ 얼마</p>
 								</div>
 							</div>
-							<footer>
-								<a href="#" class="button">Magna Adipiscing</a>
-							</footer>
+								<form  method="post" action="WishList.jsp"style="width: 500px; margin: 0 auto;" >
+							
+				<div align="center"><input id="su" type="submit" value="찜 추가"></div>
+			</form>
 						</section>
 					</div>
 				</div>

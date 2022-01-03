@@ -40,7 +40,8 @@
 					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
 					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
 					<li><a href="MyPage.jsp">마이 페이지</a></li>
-				</ul>
+		
+			</ul>
 			</nav>
 
 		</div>
@@ -50,29 +51,26 @@
 
 		<!-- Carousel -->
 
-		<%
-			request.setCharacterEncoding("UTF-8");
-
-		T_EvaluationDAO dao = new T_EvaluationDAO();
-
-		ArrayList<T_EvaluationDTO> arr = dao.wishbook();
-
+		<% 
+		request.setCharacterEncoding("UTF-8");
+		String book = request.getParameter("book");
+		T_BookDAO dao = new T_BookDAO();
+		String wish = request.getParameter("wish");
+		ArrayList<T_BookDTO> arr = dao.selectbook();
 		%>
-
 		<%
 			for (int i = 0; i < arr.size(); i++) {
 		
 			String name = arr.get(0).getMem_id(); //회원ID
-			String wish = arr.get(0).getWish_yn(); //찜 목록
+					
 		%>
-
 		<section class="carousel">
 			<div class="reel">
 				<%
 					for (int j = 0; j <= i; j++) {
 				%>
 				<article>
-					<a href="BookInfo.jsp" id="info"><%=arr.get(i).getMem_id()%></a>
+					<a href="BookInfo.jsp" id="su"><%=arr.get(i).getMem_id()%></a>
 
 				</article>
 				<%
@@ -82,9 +80,9 @@
 
 		</section>
 		<%
-			}
+		}
 		%>
-
+		
 		<!-- Scripts -->
 
 		<script src="assets/js/jquery.min.js"></script>
