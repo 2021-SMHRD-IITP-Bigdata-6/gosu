@@ -95,7 +95,7 @@ button:hover:before,button:hover:after{
 						</h3>
 				</header>
 				<footer>
-					<button id="send_btn" class="search" ">검색</button>
+					<button id="send_btn" class="search" >검색</button>
 				</footer>
 					<a href="Home.jsp">메인페이지 돌아가기</a>
 			</div>

@@ -1,3 +1,9 @@
+<%@page import="com.book.DTO.T_BookDTO"%>
+<%@page import="com.book.DAO.T_BookDAO"%>
+<%@page import="com.category.DAO.categoryDTO"%>
+<%@page import="com.category.DAO.categoryDAO"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.book.DAO.BookDAO"%>
 <%@page import="com.book.DTO.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
    pageEncoding="UTF-8"%>
@@ -225,13 +231,17 @@ button:hover:before,button:hover:after{
 				session.setAttribute("visit", visit+1);
 			}
 		%>
+		
+		
          <!-- Inner -->
          <div class="inner">
          <div>
          <div class="search-wrapper">
     <div class="input-holder">
-        <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" />
+        <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" name="book"/>
         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
+        
+        
     </div>
     <span class="close" onclick="searchToggle(this, event);"></span>
 </div>
@@ -334,6 +344,7 @@ button:hover:before,button:hover:after{
 				});
 			}
          function searchToggle(obj, evt){
+        	
         	    var container = $(obj).closest('.search-wrapper');
         	        if(!container.hasClass('active')){
         	            container.addClass('active');
@@ -346,47 +357,15 @@ button:hover:before,button:hover:after{
         	        }
         	}
          
-         <script type="text/javascript">
+       
+         </script>
+           <script type="text/javascript">
          var count = 0;
          var check = false;
          let buttonlist = [];
          
          
-         $('.btn').on('click',function(){
-            // 선택한 button의 내용을 가지고 온다. 
-            var text = $(this).text();
-            
-            // 만약에 그 버튼의 class에 choice가 있으면(=이미 선택 되었다는 의미)
-            if($(this).hasClass('choice')){
-               console.log('선택취소');
-               $(this).removeClass("choice");
-               
-               // buttonlist에 선택된 값의 인덱스 번호를 찾아내는 for문 
-               for(var i =0; i<buttonlist.length; i++){
-                  if(buttonlist[i]==text){
-                     // 해당 인덱스 번호로부터 i개를 지우겠다.
-                     buttonlist.splice(i, 1);
-                     i--;
-                  }
-               }
-            }else{ // 만약에 그 버튼의 class에 choice가 없으면(=선택안되어있다는)
-               $(this).addClass("choice");
-               console.log('선택');
-               for(var i=0; i<buttonlist.length; i++){
-                  if(buttonlist[i]==text){
-                     check = true;
-                     break;
-                  }
-               }
-               if(check == false){
-                  buttonlist.push(text);
-               }
-               
-            }
-            
-            console.log(buttonlist);
-         });
-         
+      
          // 검색버튼 누르면 ajax로 servlet으로 이동
          $('#send_btn').on('click', function(){
             
@@ -409,7 +388,24 @@ button:hover:before,button:hover:after{
                }
             })*/
          })
+         
+          function book() {
+				$.ajax({
+					url : 'html5up-eventually/book.do',
+					type : 'get',
+					data : {
+						"book" : $('input[name=book]').val()
+					},
+				success : function (res) {
+					console.log(res);
+					
+				},
+				error : function() {
+					alert('요청 실패');
+				}
+				});
+			}
+         
    
       </script>
-         </script>
 </body>

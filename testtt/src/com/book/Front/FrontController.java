@@ -11,7 +11,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.book.DAO.BookDAO;
+import com.book.DAO.T_BookDAO;
 import com.book.DTO.BookDTO;
+import com.book.DTO.T_BookDTO;
 import com.book.inter.Command;
 import com.book.member.DeleteSerivce;
 import com.book.member.JoinService;
@@ -97,7 +99,19 @@ public class FrontController extends HttpServlet {
 			out.print(check);
 			 
 		}else if(command.equals("book.do")) {
+			String name = request.getParameter("name");
 			
+			
+			T_BookDAO dao = new T_BookDAO();
+			
+			// dao의 메서드 사용
+			ArrayList<T_BookDTO> list = dao.selectbook(name);
+			
+			// ArrayList > json
+			Gson gson = new Gson();
+			String json = gson.toJson(list);
+			// 인코딩
+			response.setCharacterEncoding("utf-8");
 		}
 		if (nextpage != null) { 
 			response.sendRedirect(nextpage);

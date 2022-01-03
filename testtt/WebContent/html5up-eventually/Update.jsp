@@ -23,14 +23,14 @@
 			%>
 			<h2><%=dto.getMem_name()%> 회원 정보 수정 </h2>
 			<br>
-		<select name="select">
+		<select name="select" style="width: 500px; margin: 0 auto;">
 			<option value="name">name</option>
 			<option value="pw">pw</option>
 			<option value="tel">tel</option>
 		</select>
-		변경할 패스워드 DATA <input type="text" name="data">
+		변경할 패스워드 DATA <input type="text" name="data" style="width: 500px; margin: 0 auto;">
 		<br>
-		<input type="submit"  value="회원수정" >
+		<input type="submit"  value="회원수정"  >
 	</form>
 			<br>
 			<a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
