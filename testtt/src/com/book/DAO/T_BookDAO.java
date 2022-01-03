@@ -120,7 +120,10 @@ public class T_BookDAO {
 			// 5. SQL명령문을 준비
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, "%" + name + "%");
-			while (rs.next() == true) {
+			rs= psmt.executeQuery();
+			
+			while (rs.next()) {
+				System.out.println("test");
 				String book_nmae = rs.getString(2);
 				int book_price = rs.getInt(3);
 				int book_grade = rs.getInt(4);
@@ -136,6 +139,7 @@ public class T_BookDAO {
 
 				dto = new T_BookDTO(book_nmae, book_price, book_grade, book_publisher, book_category, book_explain,
 						book_author, book_pages, book_img, book_isbn, book_brief, book_date);
+				arr.add(dto);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

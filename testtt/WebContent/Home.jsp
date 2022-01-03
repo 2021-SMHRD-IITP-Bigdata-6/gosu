@@ -230,6 +230,11 @@ button:hover:before,button:hover:after{
 				cnt = visit;
 				session.setAttribute("visit", visit+1);
 			}
+			T_BookDAO dao = new T_BookDAO();
+			ArrayList<T_BookDTO> arr = dao.selectbook();
+			
+		
+			
 		%>
 		
 		
@@ -237,15 +242,22 @@ button:hover:before,button:hover:after{
          <div class="inner">
          <div>
          <div class="search-wrapper">
-    <div class="input-holder">
+  <!--   <div class="input-holder">
         <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" name="book"/>
         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
         
         
-    </div>
+      
+    </div> 
     <span class="close" onclick="searchToggle(this, event);"></span>
+    -->
 </div>
          </div>
+
+	
+
+        <input type="text" placeholder="제목 입력" name="book">
+        <button onclick="webtoonSearch()" > 검색</button>
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
@@ -307,6 +319,8 @@ button:hover:before,button:hover:after{
         	</ul>
          </nav>
       </div>
+      
+    
 
          <script src="assets/js/jquery.min.js"></script>
          <script src="assets/js/jquery.dropotron.min.js"></script>
@@ -389,23 +403,41 @@ button:hover:before,button:hover:after{
             })*/
          })
          
-          function book() {
-				$.ajax({
-					url : 'html5up-eventually/book.do',
-					type : 'get',
-					data : {
-						"book" : $('input[name=book]').val()
-					},
-				success : function (res) {
-					console.log(res);
-					
-				},
-				error : function() {
-					alert('요청 실패');
-				}
-				});
-			}
+        
          
    
       </script>
+      <script type="text/javascript">
+            function webtoonSearch() {
+               
+               $.ajax({
+                  
+                  url : "book.do", // servlet으로 보낼꺼기 때문에 뒤에 확정자를 안붙여도됨.
+                  type : "get",
+                  data : {
+                     webtoon_name : $('input[name=book]').val()
+                  },
+                  dataType : 'json', // JSON 데이터를 가져올때, jsoin으로 꼭 지정해야함.
+                  success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
+                     console.log(res);
+                  
+                     $('#websearch').html(''); // tbody의 html코드를 초기화
+                     for(let i = 0; i < res.length; i++){
+                     
+                        // 태그 만들기
+                        let table = '';
+                        table += "<a href ='webtoonInfoGo.do?webtoon_se="+res[i].webtoon_seq+"&webtoon_ge="+res[i].webtoon_genre+"' >";
+                        $('#websearch').append(table);
+                        
+                     }
+                  
+                     
+                  },
+                  error : function() {
+                     alert("요청 실패!");
+                  }
+                     
+               });
+            }
+            </script>
 </body>
