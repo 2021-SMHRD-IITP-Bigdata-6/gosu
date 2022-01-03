@@ -272,6 +272,16 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
+               <tbody id="tbody">
+               <table border="1">
+               	<tr>
+               		<td>1</td>
+               		<td>2</td>
+               		<td>3</td>
+               	</tr>
+               	</table>
+               </tbody>
+               
             <% if (dto == null) {%>
                <button>
                   <h3>
@@ -319,6 +329,7 @@ button:hover:before,button:hover:after{
         	</ul>
          </nav>
       </div>
+     
       
     
 
@@ -415,21 +426,27 @@ button:hover:before,button:hover:after{
                   url : "book.do", // servlet으로 보낼꺼기 때문에 뒤에 확정자를 안붙여도됨.
                   type : "get",
                   data : {
-                     webtoon_name : $('input[name=book]').val()
+                     "webtoon_name" : $('input[name=book]').val()
                   },
                   dataType : 'json', // JSON 데이터를 가져올때, jsoin으로 꼭 지정해야함.
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
-                     $('#websearch').html(''); // tbody의 html코드를 초기화
-                     for(let i = 0; i < res.length; i++){
-                     
-                        // 태그 만들기
-                        let table = '';
-                        table += "<a href ='webtoonInfoGo.do?webtoon_se="+res[i].webtoon_seq+"&webtoon_ge="+res[i].webtoon_genre+"' >";
-                        $('#websearch').append(table);
-                        
-                     }
+                     $('tbody').html(''); // tbody의 html코드를 초기화
+                     for(var i = 0; i <res.length; i++){
+     					let table = '';
+     					table += '<tr>';
+     					table += '<td>' + 1 + '</td>';
+     					table += '<td>' + 2 + '</td>';
+     					table += '<td>' + 2 + '</td>';
+     					table += '</tr>';
+     					// javascript코드로 html 태그 제작 4가지 방법
+     					// 1.  .html()
+     					// 2.  .after() ->선택한 태그 후에 script작동
+     					// 3.  .before() -> 선택한 태그 전에 script작동
+     					// 4.  .append() -> 선택한 태그 안에 script작동 추가
+     					$('#tbody').append(table);
+     					}//for
                   
                      
                   },
