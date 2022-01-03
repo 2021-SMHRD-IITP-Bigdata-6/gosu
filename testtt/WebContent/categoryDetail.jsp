@@ -12,11 +12,13 @@
 <html>
 	<head>
 	<%
+		 request.setCharacterEncoding("UTF-8");
 		String search = request.getParameter("search");
        T_BookDAO dao = new T_BookDAO();
        ArrayList<T_BookDTO> arr = dao.selectbook();
 	%>
 		<title><%=search %>서점</title>
+
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/category_detail.css" />
@@ -54,30 +56,11 @@
 							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="400">
 							<header>
 								 <a href="BookInfo.jsp" id="info"><%=arr.get(i).getBook_nmae() %></a>
+								 <button onclick="a(<%=i %>)" id="b<%=i%>"><%=arr.get(i).getBook_isbn()%>자세히보기</button>
 							</header>
 							</article>
 							<%} %>
 						<%} %>
-						</section>
-<%-- 						<br>
-						<%for(int i = 0; i <=10; i++){ %>
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">second<%=i %></a></h3>
-							</header>
-						</article>
-						<%} %>
-						<br>
-						<%for(int i = 0; i <=10; i++){ %>
-						<article>
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
-							<header>
-								<h3><a href="#">thrid<%=i %></a></h3>
-							</header>
-						</article>
-						<%} %> --%>
-						</div>
 						</section>
 
 		<!-- Scripts -->
@@ -89,6 +72,14 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script type="text/javascript">
+			 function a(i) {
+					var ISBN = $('#b'+i).html();
+					location.href="BookInfo.jsp?ISBN="+ISBN;
+					//console.log(ISBN);
+				}
+			
+			</script>
 
 	</body>
 </html>
