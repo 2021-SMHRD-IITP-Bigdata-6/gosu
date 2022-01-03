@@ -8,6 +8,11 @@
 <html>
 <head>
 <title>E-BOOK 장르</title>
+<style type="text/css">
+.hidden{
+	background-color: white;
+}
+</style>
 <meta charset="utf-8" />
 <meta name="viewport"
    content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -61,8 +66,9 @@
             <article>
                <img src="<%=arr.get(j).getBook_img()%>" id="image" width="300" height="300">
                <header>
-                  <a id="info"><%=arr.get(j).getBook_nmae() %> ♡</a>
+                  <%-- <a id="info"><%=arr.get(j).getBook_nmae() %></a> --%>
                   <button onclick="a(<%=j %>)" id="b<%=j%>"><%=arr.get(j).getBook_isbn()%></button>
+                  <p>자세히보기</p>
                </header>
             </article>
             <%} %>
@@ -98,7 +104,8 @@
       };
      function a(i) {
 		var ISBN = $('#b'+i).html();
-		location.href="BookInfo.jsp?ISBN="+ISBN;
+		//location.href="BookInfo.jsp?ISBN="+ISBN;
+		/* $('').append("<a href ='http://localhost:8081/project/BookInfo.jsp?ISBN="+ arr.get(j).getBook_isbn() +">"+ "책이름" +"</a>") */
 		//console.log(ISBN);
 	}
       </script>
