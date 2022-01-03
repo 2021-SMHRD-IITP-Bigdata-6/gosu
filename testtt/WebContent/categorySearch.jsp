@@ -67,9 +67,6 @@
                <img src="<%=arr.get(j).getBook_img()%>" id="image" width="300" height="300">
                <header>
                   <%-- <a id="info"><%=arr.get(j).getBook_nmae() %></a> --%>
-                  <form>
-                  
-                  </form>
                   <button onclick="a(<%=j %>)" id="b<%=j%>" style="display: none;"><%=arr.get(j).getBook_isbn()%></button>
                   <p onclick="a(<%=j %>)" style=""><%=arr.get(j).getBook_nmae() %></p>
                </header>
