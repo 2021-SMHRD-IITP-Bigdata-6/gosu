@@ -272,15 +272,15 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
-               <tbody id="tbody">
                <table border="1">
+               <tbody id="tbody">
                	<tr>
                		<td>1</td>
                		<td>2</td>
                		<td>3</td>
                	</tr>
-               	</table>
                </tbody>
+               	</table>
                
             <% if (dto == null) {%>
                <button>
@@ -389,8 +389,6 @@ button:hover:before,button:hover:after{
          var check = false;
          let buttonlist = [];
          
-         
-      
          // 검색버튼 누르면 ajax로 servlet으로 이동
          $('#send_btn').on('click', function(){
             
@@ -425,20 +423,20 @@ button:hover:before,button:hover:after{
                   
                   url : "book.do", // servlet으로 보낼꺼기 때문에 뒤에 확정자를 안붙여도됨.
                   type : "get",
-                  data : {
+                   data : {
                      "webtoon_name" : $('input[name=book]').val()
-                  },
+                  }, 
                   dataType : 'json', // JSON 데이터를 가져올때, jsoin으로 꼭 지정해야함.
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
-                     $('tbody').html(''); // tbody의 html코드를 초기화
+                     //$('#tbody').html(''); // tbody의 html코드를 초기화
                      for(var i = 0; i <res.length; i++){
      					let table = '';
      					table += '<tr>';
-     					table += '<td>' + 1 + '</td>';
-     					table += '<td>' + 2 + '</td>';
-     					table += '<td>' + 2 + '</td>';
+     					table += '<td><img src=\'' + res[i]['book_img'] + '\'/></td>';
+     					table += '<td>' + res[i]['book_nmae'] + '</td>';
+     					table += '<td>' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
@@ -446,11 +444,14 @@ button:hover:before,button:hover:after{
      					// 3.  .before() -> 선택한 태그 전에 script작동
      					// 4.  .append() -> 선택한 태그 안에 script작동 추가
      					$('#tbody').append(table);
+     					$('.reel').append()
      					}//for
-                  
                      
                   },
-                  error : function() {
+                  error : function(a,e,f) {
+                     console.log(a);
+                     console.log(e);
+                     console.log(f);
                      alert("요청 실패!");
                   }
                      
