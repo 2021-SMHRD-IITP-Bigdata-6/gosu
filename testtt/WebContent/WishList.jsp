@@ -28,9 +28,7 @@
 
 			<!-- Inner -->
 			<div class="inner">
-				<header>
-					<h1>찜 목록</h1>
-				</header>
+				
 			</div>
 
 			<!-- Nav -->
@@ -44,30 +42,32 @@
 			</ul>
 			</nav>
 
-		</div>
 
 
-		<h3>내가 찜한 E-BOOK</h3>
+		<h2><a>내가 찜한 E-BOOK</a></h2>
 
 		<!-- Carousel -->
 
 		<% 
 		request.setCharacterEncoding("UTF-8");
 		String book = request.getParameter("book");
-		T_BookDAO dao = new T_BookDAO();
+		T_EvaluationDAO dao = new T_EvaluationDAO();
 		String wish = request.getParameter("wish");
-		ArrayList<T_BookDTO> arr = dao.selectbook();
+		ArrayList<T_EvaluationDTO> arr = dao.wishbook();
+			
+		
 		%>
 		<%
 			for (int i = 0; i < arr.size(); i++) {
 		
 			String name = arr.get(0).getMem_id(); //회원ID
+			String wish1 = arr.get(0).getWish_yn(); //찜목록
 					
 		%>
 		<section class="carousel">
 			<div class="reel">
 				<%
-					for (int j = 0; j <= i; j++) {
+					for (int j = 0; j < i; j++) {
 				%>
 				<article>
 					<a href="BookInfo.jsp" id="su"><%=arr.get(i).getMem_id()%></a>
@@ -83,6 +83,7 @@
 		}
 		%>
 		
+		</div>
 		<!-- Scripts -->
 
 		<script src="assets/js/jquery.min.js"></script>
@@ -93,16 +94,6 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-		<script
-			src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-		<script>
-			var sf = new Snowflakes({
-				color : "#ffffff", // 색상
-				count : 90, // 갯수
-				minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
-				maxOpacity : 0.3
-			// 최대 투명도
-			});
-		</script>
+		
 </body>
 </html>

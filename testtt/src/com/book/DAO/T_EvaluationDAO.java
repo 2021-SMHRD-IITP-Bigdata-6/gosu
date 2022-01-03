@@ -56,8 +56,10 @@ public class T_EvaluationDAO {
 
 				String memid = rs.getString(1);
 				String wish = rs.getString(2);
+				int seq = rs.getInt(2);
+				String isbn = rs.getString(2);
 
-				dto = new T_EvaluationDTO(memid, wish);
+				dto = new T_EvaluationDTO(memid, wish, seq, isbn);
 				arr.add(dto);
 
 				// QueryString
