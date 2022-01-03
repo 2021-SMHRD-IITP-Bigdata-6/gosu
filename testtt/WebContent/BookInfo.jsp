@@ -22,7 +22,7 @@
 		String ISBN = request.getParameter("ISBN");
 		ArrayList<T_BookDTO> arr = dao.selectbook();
 		
-	/* 	for (int i = 0; i < arr.size(); i++) {
+	 	for (int i = 0; i < arr.size(); i++) {
 		}
 		String name = arr.get(0).getBook_nmae(); // 책 제목
 		int price = (int) arr.get(0).getBook_price(); // 책 가격
@@ -73,7 +73,7 @@
 
 		String img1 = arr.get(LottoNumber[0]).getBook_img();
 		String img2 = arr.get(LottoNumber[1]).getBook_img();
-		String img3 = arr.get(LottoNumber[2]).getBook_img(); */
+		String img3 = arr.get(LottoNumber[2]).getBook_img(); 
 		%>
 		<div id="footer">
 			<nav id="nav">
@@ -202,15 +202,16 @@
 									<p>가격정보 ~ 얼마</p>
 								</div>
 							</div>
-							<footer>
-								<a href="#" class="button">Magna Adipiscing</a>
-							</footer>
+								<form  method="post" action="WishList.jsp"style="width: 500px; margin: 0 auto;" >
+							
+				<div align="center"><input id="su" type="submit" value="찜 추가"></div>
+			</form>
 						</section>
 					</div>
 				</div>
 				<hr />
 				<header align="center">추천도서</header>
-				<%-- <div class="row">
+				< <div class="row">
 
 					<article class="col-4 col-12-mobile special">
 						<a href="#" class="image featured"><img src="<%=img1%>"
@@ -254,7 +255,7 @@
 				</div>
 			</div>
 
-		</div> --%>
+		</div> 
 
 		<!-- Footer -->
 		<div id="footer">
