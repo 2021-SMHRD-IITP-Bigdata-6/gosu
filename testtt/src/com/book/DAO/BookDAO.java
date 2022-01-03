@@ -206,7 +206,29 @@ public class BookDAO {
 		}
 		return cnt;
 	}
+	public int Update3(BookDTO dto, String name) {
 
+		int cnt = 0;
+		try {
+			getConn();
+			String sql = "update t_member set mem_name = ?  where mem_id = ? ";
+
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, name);
+
+			psmt.setString(2, dto.getMem_id());
+			cnt = psmt.executeUpdate();
+
+			System.out.println("cnt : " + cnt);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return cnt;
+	}
+	
 	public ArrayList<BookDTO> selectMember() {
 
 		// Select.html 에서 보낸 id 값 받아오기

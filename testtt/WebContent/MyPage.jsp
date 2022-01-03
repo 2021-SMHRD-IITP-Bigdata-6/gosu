@@ -1,3 +1,4 @@
+<%@page import="com.book.DAO.BookDAO"%>
 <%@page import="com.book.DTO.BookDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -5,48 +6,57 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>마이 페이지</title>
-</head>
-<head>
-<title>마이 페이지</title>
+<title>내 정보 보기</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
-<noscript>
-	<link rel="stylesheet" href="assets/css/noscript.css" />
+</head>
+<meta charset="UTF-8">
 
-</noscript>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
 </head>
 <body class="no-sidebar is-preload">
 
-	<div id="header">
+	
 		<%
-	 		BookDTO dto = (BookDTO) session.getAttribute("dto");
-			System.out.println("session 값 : "+dto);
-			
-			int cnt = 0;
-			
-			if(session.getAttribute("visit")==null){
-				session.setAttribute("visit", 1);
-			
-			}else{
-				int visit = (int)session.getAttribute("visit");
-				cnt = visit;
-				session.setAttribute("visit", visit+1);
-			}
+			BookDTO dto = (BookDTO) session.getAttribute("dto");
+		System.out.println("session 값 : " + dto);
+
+		int cnt = 0;
+
+		if (session.getAttribute("visit") == null) {
+			session.setAttribute("visit", 1);
+
+		} else {
+			int visit = (int) session.getAttribute("visit");
+			cnt = visit;
+			session.setAttribute("visit", visit + 1);
+		}
 		%>
 		<!-- Inner -->
-		<div class="inner">
-			<header>
-				<% if (dto == null) {%>
-               <h2><a>마이 페이지</a></h2>
-               <%} else{%>
-               <h2><a><%= dto.getMem_name() %>님의 마이페이지</a></h2>
-               <%} %>
+		<div id="header">
 			
-			</header>
-		</div>
+				<%
+					if (dto == null) {
+				%>
+				<h2>
+					<a>마이 페이지</a>
+				</h2>
+				<%
+					} else {
+				%>
+				<h2>
+					<a><%=dto.getMem_name()%>님의 마이페이지</a>
+				</h2>
+				<%
+					}
+				%>
+
 
 		<!-- Nav -->
 		<nav id="nav">
@@ -59,37 +69,20 @@
 			</ul>
 		</nav>
 
-	</div>
 
-	<!-- Main -->
-	<article id="work" class="wrapper style2">
-		<div class="container">
-			<br>
-			<br>
-			<br>
-			<br>
-			<div class="row aln-center">
+		<!-- Main -->
 
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
+		<br> <br> <br> <br> <a href="UpdateCon.do">
+			<button style="color: black;">내 정보 관리</button>
+				&emsp;&emsp;&emsp;&emsp;&emsp;
+		</a> <a href="WishList.jsp">
+			<button style="color: black;">찜 목록 보기</button>
+		</a>
 
-						<a href="MemberInfo.jsp">
-							<button style="color: black;">내 정보 관리</button>
-						</a>
-					</section>
-				</div>
 
-				<div class="col-4 col-6-medium col-12-small">
-					<section class="box style1">
-						<a href="WishList.jsp">
-							<button style="color: black;">찜 목록 보기</button>
-						</a>
-					</section>
-				</div>
 
-			</div>
+	
 		</div>
-	</article>
 	<footer>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -100,21 +93,17 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
-         <script>
-            var sf = new Snowflakes({
-               color : "#ffffff", // 색상
-               count : 90, // 갯수
-               minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
-               maxOpacity : 0.3
-            // 최대 투명도
-            });
-         </script>
-		
-			<p>&copy; Untitled.</p>
-			Credits:
-			<a>대표 김진우</a>
-		
+			src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+		<script>
+			var sf = new Snowflakes({
+				color : "#ffffff", // 색상
+				count : 90, // 갯수
+				minOpacity : 0.1, // 최소 투명도 0: 투명 | 1: 불투명
+				maxOpacity : 0.3
+			// 최대 투명도
+			});
+		</script>
+
 	</footer>
 	
 

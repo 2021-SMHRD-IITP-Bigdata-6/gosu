@@ -37,7 +37,7 @@ public class JoinService implements Command{
 
 		 cnt = dao.Join(dto);
 
-		// 1. MypageDAO에 해당하는 기능메소드로 값 보내주기(객채생성, 메소드 , 매개변수)
+		// 1. memberDAO에 해당하는 기능메소드로 값 보내주기(객채생성, 메소드 , 매개변수)
 		// 2. cnt값 리터해주기(메소드, 리턴)
 
 		if (cnt > 0) {

@@ -69,7 +69,23 @@ public class UpdateService implements Command {
 				nextpage = "/project/Home.jsp";
 			}
 			
+		} else if (select.equals("id")) {
+			String data = request.getParameter("data");
+			BookDAO dao = new BookDAO();
+			BookDTO vo = (BookDTO) session.getAttribute("dto");
+			int cnt = dao.Update3(dto,data);
+			System.out.println(dto.getMem_id());
+		
+			if (cnt > 0) {
+				vo.setMem_name(data);
+				session.setAttribute("dto", vo);
+				nextpage = "/project/Home.jsp";
+
+			} else {
+				nextpage = "/project/Home.jsp";
+			}
 		}
+		
 		return nextpage;
 	}
 
