@@ -166,12 +166,6 @@ input, select, textarea {
 		transition: background-color 0.35s ease-in-out, color 0.35s ease-in-out, border-bottom-color 0.35s ease-in-out;
 		
 	}
-
-		a:hover {
-			color: #ef8376;
-			border-bottom-color: transparent;
-		}
-
 	sub {
 		position: relative;
 		top: 0.5em;
@@ -513,9 +507,9 @@ input, select, textarea {
 				border-top: 0;
 			}
 
-			.dropotron li:hover {
+			/* .dropotron li:hover {
 				color: #ef8376;
-			}
+			} */
 
 			.dropotron li a, .dropotron li span {
 				display: block;
