@@ -56,7 +56,7 @@
 							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="400">
 							<header>
 								 <a href="BookInfo.jsp" id="info"><%=arr.get(i).getBook_nmae() %></a>
-								 <button onclick="a(<%=i %>)" id="b<%=i%>"><%=arr.get(i).getBook_isbn()%>자세히보기</button>
+								 <button onclick="a(<%=i %>)" id="b<%=i%>"><%=arr.get(i).getBook_isbn()%></button>
 							</header>
 							</article>
 							<%} %>

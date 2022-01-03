@@ -272,11 +272,22 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
+<<<<<<< HEAD
                <tbody id="tbody">
                	<table>
                		<tr>1</tr>
                	</table>
+=======
+               <table border="1">
+               <tbody id="tbody">
+               	<tr>
+               		<td>1</td>
+               		<td>2</td>
+               		<td>3</td>
+               	</tr>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                </tbody>
+               	</table>
                
             <% if (dto == null) {%>
                <button>
@@ -348,8 +359,75 @@ button:hover:before,button:hover:after{
             // 최대 투명도
             });
          </script>
+<<<<<<< HEAD
       
     
+=======
+         <script type="text/javascript">
+         function gogo() {
+				$.ajax({
+					url : 'check.do',
+					type : 'get',
+					data : {
+						"book" : $('input[name=book]').val()
+					},
+				success : function (res) {
+					console.log(res);
+				},
+				error : function() {
+					alert('요청 실패');
+				}
+				});
+			}
+         function searchToggle(obj, evt){
+        	
+        	    var container = $(obj).closest('.search-wrapper');
+        	        if(!container.hasClass('active')){
+        	            container.addClass('active');
+        	            evt.preventDefault();
+        	        }
+        	        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
+        	            container.removeClass('active');
+        	            // clear input
+        	            container.find('.search-input').val('');
+        	        }
+        	}
+         
+       
+         </script>
+           <script type="text/javascript">
+         var count = 0;
+         var check = false;
+         let buttonlist = [];
+         
+         // 검색버튼 누르면 ajax로 servlet으로 이동
+         $('#send_btn').on('click', function(){
+            
+            location.href="categorySearch.jsp?data="+buttonlist;
+            
+            
+            /* $.ajax({
+               url : 'categorySearch.jsp',
+               type : 'post',
+               traditional : true,
+               data : {
+                  checklist : buttonlist
+               },
+               success : function(){
+                  alert('성공');
+                  location.href="categorySearch.jsp";
+               },
+               error : function(){
+                   alert('실패');
+               }
+            })*/
+         })
+         
+        
+         
+   
+      </script>
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
       <script type="text/javascript">
             function webtoonSearch() {
                
@@ -357,29 +435,49 @@ button:hover:before,button:hover:after{
                   
                   url : "book.do", // servlet으로 보낼꺼기 때문에 뒤에 확정자를 안붙여도됨.
                   type : "get",
-                  data : {
+                   data : {
                      "webtoon_name" : $('input[name=book]').val()
-                  },
+                  }, 
                   dataType : 'json', // JSON 데이터를 가져올때, jsoin으로 꼭 지정해야함.
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
+<<<<<<< HEAD
      					
      					
                      $('tbody').html(''); // tbody의 html코드를 초기화
+=======
+                     //$('#tbody').html(''); // tbody의 html코드를 초기화
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                      for(var i = 0; i <res.length; i++){
+<<<<<<< HEAD
+=======
+     					let table = '';
+     					table += '<tr>';
+     					table += '<td><img src=\'' + res[i]['book_img'] + '\'/></td>';
+     					table += '<td>' + res[i]['book_nmae'] + '</td>';
+     					table += '<td>' + res[i]['book_author'] + '</td>';
+     					table += '</tr>';
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
      					// 2.  .after() ->선택한 태그 후에 script작동
      					// 3.  .before() -> 선택한 태그 전에 script작동
      					// 4.  .append() -> 선택한 태그 안에 script작동 추가
      					$('#tbody').append(table);
+     					$('.reel').append()
      					}//for
+<<<<<<< HEAD
                   
                
+=======
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                      
                   },
-                  error : function() {
+                  error : function(a,e,f) {
+                     console.log(a);
+                     console.log(e);
+                     console.log(f);
                      alert("요청 실패!");
                   }
                      
