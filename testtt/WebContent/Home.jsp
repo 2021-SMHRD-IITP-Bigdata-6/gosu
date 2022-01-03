@@ -273,12 +273,8 @@ button:hover:before,button:hover:after{
                <%} %>
                <hr />
                <tbody id="tbody">
-               <table border="1">
-               	<tr>
-               		<td>1</td>
-               		<td>2</td>
-               		<td>3</td>
-               	</tr>
+               	<table>
+               		<tr>1</tr>
                	</table>
                </tbody>
                
@@ -352,72 +348,8 @@ button:hover:before,button:hover:after{
             // 최대 투명도
             });
          </script>
-         <script type="text/javascript">
-         function gogo() {
-				$.ajax({
-					url : 'check.do',
-					type : 'get',
-					data : {
-						"book" : $('input[name=book]').val()
-					},
-				success : function (res) {
-					console.log(res);
-				},
-				error : function() {
-					alert('요청 실패');
-				}
-				});
-			}
-         function searchToggle(obj, evt){
-        	
-        	    var container = $(obj).closest('.search-wrapper');
-        	        if(!container.hasClass('active')){
-        	            container.addClass('active');
-        	            evt.preventDefault();
-        	        }
-        	        else if(container.hasClass('active') && $(obj).closest('.input-holder').length == 0){
-        	            container.removeClass('active');
-        	            // clear input
-        	            container.find('.search-input').val('');
-        	        }
-        	}
-         
-       
-         </script>
-           <script type="text/javascript">
-         var count = 0;
-         var check = false;
-         let buttonlist = [];
-         
-         
       
-         // 검색버튼 누르면 ajax로 servlet으로 이동
-         $('#send_btn').on('click', function(){
-            
-            location.href="categorySearch.jsp?data="+buttonlist;
-            
-            
-            /* $.ajax({
-               url : 'categorySearch.jsp',
-               type : 'post',
-               traditional : true,
-               data : {
-                  checklist : buttonlist
-               },
-               success : function(){
-                  alert('성공');
-                  location.href="categorySearch.jsp";
-               },
-               error : function(){
-                   alert('실패');
-               }
-            })*/
-         })
-         
-        
-         
-   
-      </script>
+    
       <script type="text/javascript">
             function webtoonSearch() {
                
@@ -432,14 +364,10 @@ button:hover:before,button:hover:after{
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
+     					
+     					
                      $('tbody').html(''); // tbody의 html코드를 초기화
                      for(var i = 0; i <res.length; i++){
-     					let table = '';
-     					table += '<tr>';
-     					table += '<td>' + 1 + '</td>';
-     					table += '<td>' + 2 + '</td>';
-     					table += '<td>' + 2 + '</td>';
-     					table += '</tr>';
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
      					// 2.  .after() ->선택한 태그 후에 script작동
@@ -448,6 +376,7 @@ button:hover:before,button:hover:after{
      					$('#tbody').append(table);
      					}//for
                   
+               
                      
                   },
                   error : function() {
