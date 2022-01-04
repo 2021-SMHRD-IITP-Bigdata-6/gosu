@@ -252,26 +252,33 @@ button:hover:before,button:hover:after{
     <span class="close" onclick="searchToggle(this, event);"></span>
     -->
 </div>
+
          </div>
 
 	
 
-        <input type="text" placeholder="제목 입력" name="book">
-        <button onclick="webtoonSearch()" > 검색</button>
+        
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
+                
                <% if (dto == null) {%>
                <p>E-BOOK 알리미에 오신걸 환영합니다.</p>
-               <br><br>
+               <br>
+               <br>
+                <input type="text" placeholder="제목 입력" name="book">
+       			 <button onclick="webtoonSearch()" > 검색</button>
                <br>
                <%} else{%>
                <p><%= dto.getMem_name() %>님 E-BOOK 알리미에 오신걸 환영합니다. </p>
                <br>
                <br>
+               <input type="text" placeholder="제목 입력" name="book">
+       			 <button onclick="webtoonSearch()" > 검색</button>
                <br>
                <%} %>
                <hr />
+<<<<<<< HEAD
                <tbody id="tbody">
                	<table>
                		<tr>1</tr>
@@ -285,6 +292,10 @@ button:hover:before,button:hover:after{
                	</tr>
                </tbody>
                	</table>
+=======
+               
+              
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                
             <% if (dto == null) {%>
                <button>
@@ -334,6 +345,19 @@ button:hover:before,button:hover:after{
          </nav>
       </div>
      
+     <tbody id="tbody">
+               	<table>
+               		
+               	</table>
+               <table border="1" align="center">
+               <tbody id="tbody">
+               	<tr>
+               		<td>췍 이미지</td>
+               		<td>췍 제목</td>
+               		<td>췍 저자</td>
+               	</tr>
+               </tbody>
+               	</table>
       
     
 
@@ -345,8 +369,7 @@ button:hover:before,button:hover:after{
          <script src="assets/js/breakpoints.min.js"></script>
          <script src="assets/js/util.js"></script>
          <script src="assets/js/main.js"></script>
-         <script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상
@@ -356,10 +379,8 @@ button:hover:before,button:hover:after{
             // 최대 투명도
             });
          </script>
-<<<<<<< HEAD
       
     
-=======
          <script type="text/javascript">
          function gogo() {
 				$.ajax({
@@ -424,7 +445,6 @@ button:hover:before,button:hover:after{
          
    
       </script>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
       <script type="text/javascript">
             function webtoonSearch() {
                
@@ -446,9 +466,9 @@ button:hover:before,button:hover:after{
                      for(var i = 0; i <res.length; i++){
      					let table = '';
      					table += '<tr>';
-     					table += '<td><img src=\'' + res[i]['book_img'] + '\'/></td>';
-     					table += '<td>' + res[i]['book_nmae'] + '</td>';
-     					table += '<td>' + res[i]['book_author'] + '</td>';
+     					table += '<td><img src=\'' + res[i]['book_img']+  "'width='400' height='300'"+ '\'/></td>';
+     					table += '<td align="center" >' + res[i]['book_nmae'] + '</td>';
+     					table += '<td align="center">' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
