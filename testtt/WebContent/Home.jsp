@@ -288,7 +288,10 @@ td{
                <br>
                <%} %>
                <hr />
-               
+               <table>
+               <tbody id="tbody">
+               </tbody>
+               	</table>
                
             <% if (dto == null) {%>
                <button>
@@ -339,6 +342,8 @@ td{
       </div>
      <table>
                <tbody id="tbody">
+               
+               </table>
              <tr>
                        <td>책 이미지</td>
                        <td>책 제목</td>
