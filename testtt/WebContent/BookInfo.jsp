@@ -1,3 +1,4 @@
+<%@page import="com.book.DTO.BookDTO"%>
 <%@page import="com.book.DAO.T_PriceDAO"%>
 <%@page import="com.book.DTO.T_PriceDTO"%>
 <%@page import="com.book.DTO.T_PlatformDTO"%>
@@ -20,6 +21,8 @@
 <body class="right-sidebar is-preload">
 	<div id="footer">
 		<%
+		BookDTO dto = (BookDTO) session.getAttribute("dto");
+		System.out.println("session 값 : "+dto);
 			request.setCharacterEncoding("UTF-8");
 		String info = request.getParameter("info");
 		T_BookDAO dao = new T_BookDAO();
@@ -84,9 +87,11 @@
 				<ul>
 					<li><a href="Home.jsp">홈</a></li>
 					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-					<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
 					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-					<li><a href="MyPage.jsp">마이 페이지</a></li>
+					 <% if (dto == null) {%>
+               <%} else{%>
+               <li><a href="MyPage.jsp">마이 페이지</a></li>
+               <%}%>
 				</ul>
 			</nav>
 		</div>

@@ -245,7 +245,7 @@ button:hover:before,button:hover:after{
   <!--   <div class="input-holder">
         <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" name="book"/>
         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-        
+        d
         
       
     </div> 
@@ -278,25 +278,8 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
-<<<<<<< HEAD
-               <tbody id="tbody">
-               	<table>
-               		<tr>1</tr>
-               	</table>
-               <table border="1">
-               <tbody id="tbody">
-               	<tr>
-               		<td>1</td>
-               		<td>2</td>
-               		<td>3</td>
-               	</tr>
-               </tbody>
-               	</table>
-=======
-               
               
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
-               
+             
             <% if (dto == null) {%>
                <button>
                   <h3>
@@ -344,21 +327,21 @@ button:hover:before,button:hover:after{
         	</ul>
          </nav>
       </div>
-     
      <tbody id="tbody">
-               	<table>
-               		
-               	</table>
                <table border="1" align="center">
                <tbody id="tbody">
                	<tr>
-               		<td>췍 이미지</td>
-               		<td>췍 제목</td>
-               		<td>췍 저자</td>
+               		<td>책 이미지</td>
+               		<td>책 제목</td>
+               		<td>책 저자</td>
                	</tr>
+               
+               </table>
+               
                </tbody>
-               	</table>
-      
+               
+               
+               
     
 
          <script src="assets/js/jquery.min.js"></script>
