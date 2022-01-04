@@ -12,43 +12,14 @@
 	content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" href="assets/css/main.css" />
 </head>
-<meta charset="UTF-8">
-
-<meta charset="utf-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, user-scalable=no" />
-<link rel="stylesheet" href="assets/css/main.css" />
-</head>
-</head>
 <body class="no-sidebar is-preload">
-
-	
 		<%
 			BookDAO dao = new BookDAO();
 			BookDTO dto = (BookDTO) session.getAttribute("dto");
-
 		%>
-		<!-- Inner -->
 		<div id="header">
-			
-				<%
-					if (dto == null) {
-				%>
-				<h2>
-					<a>마이 페이지</a>
-				</h2>
-				<%
-					} else {
-				%>
-				<h2>
-					<a><%=dto.getMem_name()%>님의 마이페이지</a>
-				</h2>
-				<%
-					}
-				%>
-
-
-		<!-- Nav -->
+				<h2 style="color:#C4DEFF;">
+				<a><%=dto.getMem_name()%>님의 마이페이지</a></h2>
 		<nav id="nav">
 			<ul>
 				<li><a href="Home.jsp">홈</a></li>
@@ -56,20 +27,12 @@
 			</ul>
 		</nav>
 
-
-		<!-- Main -->
-
-		<br> <br> <br> <br> <a href="MemberInfo.jsp">
-			<button style="color: black;">내 정보 관리</button>
-				&emsp;&emsp;&emsp;&emsp;&emsp;
-		</a> <a href="WishList.jsp">
-			<button style="color: black;">찜 목록 보기</button>
+		<br> <br> <br> <br> 
+		<a href="MemberInfo.jsp">
+			<button type="button" style="color:white; font-size:2em;
+			border-radius:0.5en; padding:5px 15px;">내 정보 보기 및 수정</button>
 		</a>
-
-
-
-	
-		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<footer>
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.dropotron.min.js"></script>
@@ -90,9 +53,7 @@
 			// 최대 투명도
 			});
 		</script>
-
-	</footer>
-	
-
+		</footer>
+		</div>
 </body>
 </html>
