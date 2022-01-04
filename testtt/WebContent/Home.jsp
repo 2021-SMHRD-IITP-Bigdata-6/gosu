@@ -284,7 +284,6 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
-<<<<<<< HEAD
                <tbody id="tbody">
                	<table>
                		<tr>1</tr>
@@ -298,10 +297,6 @@ button:hover:before,button:hover:after{
                	</tr>
                </tbody>
                	</table>
-=======
-               
-              
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                
             <% if (dto == null) {%>
                <button>

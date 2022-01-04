@@ -51,7 +51,7 @@
 		<!-- Scripts -->
 			<script src="assets/js/main.js"></script>
 			<script src="/project/html5up-eventually/assets/js/jquery-3.6.0.min.js"></script>
-					<script type="text/javascript">
+			<script type="text/javascript">
 			function emailCheck() {
 				$.ajax({
 					url : 'check.do',
@@ -63,7 +63,7 @@
 					console.log(res);
 					if(res == 'true'){
 						$('#result').html("중복된 아이디입니다").css('color','red');
-						alert("아이디 중복입니다");
+						alert("이메일 중복입니다");
 					}else{
 						$('#result').html("사용가능한 아이디 입니다").css('color','green');
 						alert("사용가능한 아이디 입니다");
@@ -75,8 +75,7 @@
 				});
 			}
 			</script>
-			<script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+			<script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상

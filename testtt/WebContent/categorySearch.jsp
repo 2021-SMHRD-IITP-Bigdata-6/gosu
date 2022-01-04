@@ -12,6 +12,10 @@
 .hidden{
 	background-color: white;
 }
+
+.cc{
+	color: white;
+}
 </style>
 <meta charset="utf-8" />
 <meta name="viewport"
@@ -57,7 +61,7 @@
             %>
       <%for(int i = 0; i <strArr.length; i++){%>
       <button class="detail" onclick="asdf(<%=i%>)">전체보기</button>
-      <h1 id="category_go<%=i%>"><%=strArr[i] %></h1>
+      <h1 id="category_go<%=i%>" class="cc"><%=strArr[i] %></h1>
 
       <section class="carousel">
          <div class="reel">

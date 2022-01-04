@@ -170,23 +170,7 @@ button:hover:before,button:hover:after{
          $('#send_btn').on('click', function(){
             
             location.href="categorySearch.jsp?data="+buttonlist;
-            
-            
-            /* $.ajax({
-               url : 'categorySearch.jsp',
-               type : 'post',
-               traditional : true,
-               data : {
-                  checklist : buttonlist
-               },
-               success : function(){
-                  alert('성공');
-                  location.href="categorySearch.jsp";
-               },
-               error : function(){
-                   alert('실패');
-               }
-            })*/
+  
          })
    
       </script>
