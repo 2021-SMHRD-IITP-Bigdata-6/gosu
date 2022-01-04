@@ -53,7 +53,6 @@
 
 		for (int i = 0; i < LottoNumber.length; i++) {
 			LottoNumber[i] = (random.nextInt((max - min) + 1) + min);
-			System.out.println("LottoNumber --> " + LottoNumber[i]);
 
 			for (int j = 0; j < i; j++) {
 				if (LottoNumber[i] == LottoNumber[j]) {
