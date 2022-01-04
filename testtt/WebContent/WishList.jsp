@@ -1,3 +1,4 @@
+<%@page import="com.book.DTO.BookDTO"%>
 <%@page import="com.book.DAO.T_EvaluationDAO"%>
 <%@page import="com.book.DTO.T_EvaluationDTO"%>
 <%@page import="com.sun.xml.internal.txw2.Document"%>
@@ -48,20 +49,30 @@
 
 		<!-- Carousel -->
 
-		<% 
-		request.setCharacterEncoding("UTF-8");
-		String book = request.getParameter("book");
-		T_EvaluationDAO dao = new T_EvaluationDAO();
-		String wish = request.getParameter("wish");
-		ArrayList<T_EvaluationDTO> arr = dao.wishbook();
+		<%
+	 		BookDTO dto = (BookDTO) session.getAttribute("dto");
+			System.out.println("session 값 : "+dto);
+			
+			int cnt = 0;
+			
+			if(session.getAttribute("visit")==null){
+				session.setAttribute("visit", 1);
+			
+			}else{
+				int visit = (int)session.getAttribute("visit");
+				cnt = visit;
+				session.setAttribute("visit", visit+1);
+			}
+			T_BookDAO dao = new T_BookDAO();
+			ArrayList<T_BookDTO> arr = dao.selectbook();
 			
 		
+			
 		%>
 		<%
 			for (int i = 0; i < arr.size(); i++) {
 		
 			String name = arr.get(0).getMem_id(); //회원ID
-			String wish1 = arr.get(0).getWish_yn(); //찜목록
 					
 		%>
 		<section class="carousel">

@@ -348,55 +348,7 @@
 		// 최대 투명도
 		});
 	</script>
-	<script type="text/javascript">
-         var count = 0;
-         var check = false;
-         let buttonlist = [];
-         
-         
-         $('.btn').on('click',function(){
-            // 선택한 button의 내용을 가지고 온다. 
-            var text = $(this).text();
-            
-            // 만약에 그 버튼의 class에 choice가 있으면(=이미 선택 되었다는 의미)
-            if($(this).hasClass('choice')){
-               console.log('선택취소');
-               $(this).removeClass("choice");
-               
-               // buttonlist에 선택된 값의 인덱스 번호를 찾아내는 for문 
-               for(var i =0; i<buttonlist.length; i++){
-                  if(buttonlist[i]==text){
-                     // 해당 인덱스 번호로부터 i개를 지우겠다.
-                     buttonlist.splice(i, 1);
-                     i--;
-                  }
-               }
-            }else{ // 만약에 그 버튼의 class에 choice가 없으면(=선택안되어있다는)
-               $(this).addClass("choice");
-               console.log('선택');
-               for(var i=0; i<buttonlist.length; i++){
-                  if(buttonlist[i]==text){
-                     check = true;
-                     break;
-                  }
-               }
-               if(check == false){
-                  buttonlist.push(text);
-               }
-               
-            }
-            
-            console.log(buttonlist);
-         });
-         
-         
-         $('#send_btn').on('click', function(){
-            
-            location.href="WishList.jsp?data="+buttonlist;
-            
-         })
-   
-      </script>
+	
 
 </body>
 </html>

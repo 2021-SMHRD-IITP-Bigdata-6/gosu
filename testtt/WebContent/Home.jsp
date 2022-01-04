@@ -257,7 +257,13 @@ button:hover:before,button:hover:after{
 
 	
 
+<<<<<<< HEAD
+        <input type="text" placeholder="제목 입력" name="book">
+        <button onclick
+        ="webtoonSearch()" > 검색</button>
+=======
         
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>

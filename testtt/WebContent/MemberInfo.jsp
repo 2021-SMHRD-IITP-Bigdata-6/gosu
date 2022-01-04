@@ -21,29 +21,26 @@
 </head>
 <body class="is-preload">
 	<%
+		BookDAO dao = new BookDAO();
 		BookDTO dto = (BookDTO) session.getAttribute("dto");
 	%>
-	<!-- Header -->
 	<div id="header">
-
-		<!-- Signup Form -->
 
 		<form action="UpdateCon.do" method="post" align="center">
 
 			<h2>
-				<a><%=dto.getMem_name()%>님의 정보 수정 </a>
+				<a><%=dto.getMem_name()%>님의 정보 보기 </a>
 			</h2>
 			<br>
-			<br> <input name="email" type="text" placeholder="Email를 입력하세요"
+			<br> <input name="email" type="text" value=""
 				style="width: 500px; margin: 0 auto;">
-			<br> <input name="pw" type="password" placeholder="PW를 입력하세요"
+			<br> <input name="pw" type="password" value=""
 				style="width: 500px; margin: 0 auto;">
-			<br> <input name="name" type="text" placeholder="이름를 입력하세요"
+			<br> <input name="name" type="text" value=""
 				style="width: 500px; margin: 0 auto;">
-			<br> <input name="tel" type="text" placeholder="전화번호를 입력하세요"
+			<br> <input name="tel" type="text" value=""
 				style="width: 500px; margin: 0 auto;">
-			<br> <input type="submit" value="정보 수정 완료"> <br>
-			<br> <a href="/project/Home.jsp" align="center">메인페이지 돌아가기</a>
+			<br> <a href="/project/html5up-eventually/Update.jsp" align="center">정보 수정 하기</a>
 		</form>
 
 		<br>

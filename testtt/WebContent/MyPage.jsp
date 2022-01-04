@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>내 정보 보기</title>
+<title>마이 페이지</title>
 <meta charset="utf-8" />
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -24,19 +24,9 @@
 
 	
 		<%
+			BookDAO dao = new BookDAO();
 			BookDTO dto = (BookDTO) session.getAttribute("dto");
-		System.out.println("session 값 : " + dto);
 
-		int cnt = 0;
-
-		if (session.getAttribute("visit") == null) {
-			session.setAttribute("visit", 1);
-
-		} else {
-			int visit = (int) session.getAttribute("visit");
-			cnt = visit;
-			session.setAttribute("visit", visit + 1);
-		}
 		%>
 		<!-- Inner -->
 		<div id="header">
@@ -62,17 +52,14 @@
 		<nav id="nav">
 			<ul>
 				<li><a href="Home.jsp">홈</a></li>
-				<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
-				<li><a href="BookInfo.jsp">E-BOOK 정보</a></li>
 				<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
-				<li><a href="MyPage.jsp">마이 페이지</a></li>
 			</ul>
 		</nav>
 
 
 		<!-- Main -->
 
-		<br> <br> <br> <br> <a href="UpdateCon.do">
+		<br> <br> <br> <br> <a href="MemberInfo.jsp">
 			<button style="color: black;">내 정보 관리</button>
 				&emsp;&emsp;&emsp;&emsp;&emsp;
 		</a> <a href="WishList.jsp">
