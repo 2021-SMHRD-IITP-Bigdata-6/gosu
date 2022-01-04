@@ -74,7 +74,7 @@ body {
     transition-delay: 0.3s;
 }
 .search-wrapper.active .input-holder .search-input {
-    opacity: 1;
+
     transform: translate(0, 10px);
 }
 .search-wrapper .input-holder .search-icon {
@@ -288,15 +288,7 @@ td{
                <br>
                <%} %>
                <hr />
-               <table border="1">
-               <tbody id="tbody">
-               	<tr>
-               		<td>1</td>
-               		<td>2</td>
-               		<td>3</td>
-               	</tr>
-               </tbody>
-               	</table>
+               
                
             <% if (dto == null) {%>
                <button>
@@ -345,19 +337,16 @@ td{
         	</ul>
          </nav>
       </div>
-     <tbody id="tbody">
-               <table border="1">
+     <table border="1">
                <tbody id="tbody">
-               	<tr>
-               		<td>책 이미지</td>
-               		<td>책 제목</td>
-               		<td>책 저자</td>
-               	</tr>
-               
-               </table>
+             <tr>
+                       <td>책 이미지</td>
+                       <td>책 제목</td>
+                       <td>책 저자</td>
+                        </tr>
                
                </tbody>
-               
+               	</table>
                
                
     
@@ -461,14 +450,17 @@ td{
                      console.log(res);
                   
      					
-     					
+     				
                      $('tbody').html(''); // tbody의 html코드를 초기화
                      //$('#tbody').html(''); // tbody의 html코드를 초기화
                      for(var i = 0; i <res.length; i++){
+          	
      					let table = '';
+     					
+                        
      					table += '<tr>';
      					table += '<td><img src=\'' + res[i]['book_img']+  "'width='400' height='300'"+ '\'/></td>';
-     					table += '<td>' + res[i]['book_nmae'] + '</td>';
+     					table += '<td><a href="BookInfo.jsp?ISBN='+res[i]['book_isbn']+'">' + res[i]['book_nmae'] + '</a></td>';
      					table += '<td>' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
      					// javascript코드로 html 태그 제작 4가지 방법
