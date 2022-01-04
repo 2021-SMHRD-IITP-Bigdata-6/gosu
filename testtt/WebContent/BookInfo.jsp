@@ -13,7 +13,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>대표 김진우</title>
+<title>Bookinfo</title>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="assets/css/book_info.css" />
 </head>
@@ -86,7 +86,6 @@
 			<nav id="nav">
 				<ul>
 					<li><a href="Home.jsp">홈</a></li>
-					<li><a href="categorySearch.jsp">E-BOOK 장르</a></li>
 					<li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
 					 <% if (dto == null) {%>
                <%} else{%>
@@ -224,24 +223,23 @@
 						<%} %><%--for --%>
 					<form  method="post" action="WishList.jsp"style="width: 500px; margin: 0 auto;" >
 							
-				<div><input class="btn" id="su" type="submit" value="찜 추가"></div>
 			</form>
 						</section>
 					</div>
 				</div>
 				<hr />
 				<header align="center">추천도서</header>
-				< <div class="row">
+				 <div class="row">
 
 					<article class="col-4 col-12-mobile special">
 						<a href="#" class="image featured"><img src="<%=img1%>" width="200" height="400" /></a>
 						<header>
 							<h3>
-								<a href="#">책 제목 : <%=name1%></a>
+								<a href="#"><%=name1%></a>
 							</h3>
 						</header>
 						<header>
-							<a> 줄거리 : <%=brief1%>
+							<a> 키워드 : <%=brief1%>
 							</a>
 						</header>
 					</article>
@@ -250,11 +248,11 @@
 							width="200" height="400" /></a>
 						<header>
 							<h3>
-								<a href="#">책 제목 : <%=name2%></a>
+								<a href="#"> <%=name2%></a>
 							</h3>
 						</header>
 						<header>
-							<a> 줄거리 : <%=brief2%>
+							<a> 키워드 : <%=brief2%>
 							</a>
 						</header>
 					</article>
@@ -263,11 +261,11 @@
 							width="200" height="400" /></a>
 						<header>
 							<h3>
-								<a href="#">책 제목 : <%=name3%></a>
+							<a href="#"> <%=name3%></a>
 							</h3>
 						</header>
 						<header>
-							<a> 줄거리 : <%=brief3%>
+							<a> 키워드 : <%=brief3%>
 							</a>
 						</header>
 					</article>
