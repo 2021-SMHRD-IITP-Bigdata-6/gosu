@@ -252,24 +252,35 @@ button:hover:before,button:hover:after{
     <span class="close" onclick="searchToggle(this, event);"></span>
     -->
 </div>
+
          </div>
 
 	
 
+<<<<<<< HEAD
         <input type="text" placeholder="제목 입력" name="book">
         <button onclick
         ="webtoonSearch()" > 검색</button>
+=======
+        
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
+                
                <% if (dto == null) {%>
                <p>E-BOOK 알리미에 오신걸 환영합니다.</p>
-               <br><br>
+               <br>
+               <br>
+                <input type="text" placeholder="제목 입력" name="book">
+       			 <button onclick="webtoonSearch()" > 검색</button>
                <br>
                <%} else{%>
                <p><%= dto.getMem_name() %>님 E-BOOK 알리미에 오신걸 환영합니다. </p>
                <br>
                <br>
+               <input type="text" placeholder="제목 입력" name="book">
+       			 <button onclick="webtoonSearch()" > 검색</button>
                <br>
                <%} %>
                <hr />
@@ -278,7 +289,6 @@ button:hover:before,button:hover:after{
                	<table>
                		<tr>1</tr>
                	</table>
-=======
                <table border="1">
                <tbody id="tbody">
                	<tr>
@@ -286,9 +296,12 @@ button:hover:before,button:hover:after{
                		<td>2</td>
                		<td>3</td>
                	</tr>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                </tbody>
                	</table>
+=======
+               
+              
+>>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                
             <% if (dto == null) {%>
                <button>
@@ -338,6 +351,19 @@ button:hover:before,button:hover:after{
          </nav>
       </div>
      
+     <tbody id="tbody">
+               	<table>
+               		
+               	</table>
+               <table border="1" align="center">
+               <tbody id="tbody">
+               	<tr>
+               		<td>췍 이미지</td>
+               		<td>췍 제목</td>
+               		<td>췍 저자</td>
+               	</tr>
+               </tbody>
+               	</table>
       
     
 
@@ -349,8 +375,7 @@ button:hover:before,button:hover:after{
          <script src="assets/js/breakpoints.min.js"></script>
          <script src="assets/js/util.js"></script>
          <script src="assets/js/main.js"></script>
-         <script
-            src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
+         <script src='https://unpkg.com/magic-snowflakes/dist/snowflakes.min.js'></script>
          <script>
             var sf = new Snowflakes({
                color : "#ffffff", // 색상
@@ -360,10 +385,8 @@ button:hover:before,button:hover:after{
             // 최대 투명도
             });
          </script>
-<<<<<<< HEAD
       
     
-=======
          <script type="text/javascript">
          function gogo() {
 				$.ajax({
@@ -428,7 +451,6 @@ button:hover:before,button:hover:after{
          
    
       </script>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
       <script type="text/javascript">
             function webtoonSearch() {
                
@@ -443,23 +465,17 @@ button:hover:before,button:hover:after{
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
-<<<<<<< HEAD
      					
      					
                      $('tbody').html(''); // tbody의 html코드를 초기화
-=======
                      //$('#tbody').html(''); // tbody의 html코드를 초기화
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                      for(var i = 0; i <res.length; i++){
-<<<<<<< HEAD
-=======
      					let table = '';
      					table += '<tr>';
-     					table += '<td><img src=\'' + res[i]['book_img'] + '\'/></td>';
-     					table += '<td>' + res[i]['book_nmae'] + '</td>';
-     					table += '<td>' + res[i]['book_author'] + '</td>';
+     					table += '<td><img src=\'' + res[i]['book_img']+  "'width='400' height='300'"+ '\'/></td>';
+     					table += '<td align="center" >' + res[i]['book_nmae'] + '</td>';
+     					table += '<td align="center">' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
      					// 2.  .after() ->선택한 태그 후에 script작동
@@ -468,12 +484,6 @@ button:hover:before,button:hover:after{
      					$('#tbody').append(table);
      					$('.reel').append()
      					}//for
-<<<<<<< HEAD
-                  
-               
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
-                     
                   },
                   error : function(a,e,f) {
                      console.log(a);
