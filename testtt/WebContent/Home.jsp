@@ -332,12 +332,12 @@ td{
                <li><a href="categoryStart.jsp">E-BOOK 검색</a></li>
                <% if (dto == null) {%>
                <%} else{%>
-               <li><a href="MyPage.jsp">마이 페이지</a></li>
+               <li><a href="MemberInfo.jsp">마이 페이지</a></li>
                <%}%>
         	</ul>
          </nav>
       </div>
-     <table border="1">
+     <table>
                <tbody id="tbody">
              <tr>
                        <td>책 이미지</td>

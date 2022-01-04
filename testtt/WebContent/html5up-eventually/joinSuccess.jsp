@@ -39,7 +39,6 @@
                         <td>AGE</td>      
                         <td>TEL</td>
                         <td>GENDER</td>
-                        <td>date</td>
                         <!-- <td>date</td>    -->   
                      </tr>                  
                         <tr>
@@ -49,7 +48,6 @@
                         <td><%=dto.getMem_age() %></td>   
                         <td><%=dto.getMem_tel() %>   
                         <td><%=dto.getMem_gender() %>
-                        <td><%=dto.getDate()%>
                         
                      <%--    //<td><%=dto.getDate() %></td>  --%>
                               

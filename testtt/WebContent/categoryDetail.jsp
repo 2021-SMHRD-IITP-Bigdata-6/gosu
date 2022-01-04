@@ -4,11 +4,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
-<!--
-	Helios by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html>
 	<head>
 	<%
@@ -49,14 +44,14 @@
 				</div>
 
 			<!-- Carousel -->
-				<section class="carousel">
+				<section class="carousel" >
 						<%for(int i = 0; i < arr.size(); i++){ 
 							if(search.equals(arr.get(i).getBook_category())){%>
 							<article>
 							<img src="<%=arr.get(i).getBook_img()%>" id="image" width="300" height="400">
 							<header>
 							<button onclick="a(<%=i %>)" id="b<%=i%>" style="display: none;"><%=arr.get(i).getBook_isbn()%></button>
-                			 <p onclick="a(<%=i %>)" style=""><%=arr.get(i).getBook_nmae() %></p>
+                			 <span onclick="a(<%=i %>)" style=""><%=arr.get(i).getBook_nmae() %></span>
 							</header>
 							</article>
 							<%} %>

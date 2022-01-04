@@ -2538,6 +2538,10 @@ input, select, textarea {
 		overflow: hidden;
 		padding: 2em 0 2em 0;
 		margin-bottom: 0;
+			}
+	section.carousel{
+		background-image: url("../../images/header.jpg");
+		
 	}
 
 		.carousel .forward, .carousel .backward {
@@ -2648,6 +2652,12 @@ input, select, textarea {
 			.carousel article p {
 				text-align: center;
 			}
+			.carousel article span {
+				white-space: nowrap;
+			    overflow: hidden;
+			    display: block;
+			    text-overflow: ellipsis;
+			}
 
 /* Wide */
 
@@ -2672,7 +2682,7 @@ input, select, textarea {
 
 				.carousel article {
 					width: 18em;
-					margin: 0 1.25em 0 0;
+					margin: 0 1.5em 3em 0;
 				}
 
 	}

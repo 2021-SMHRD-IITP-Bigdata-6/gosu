@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<title>Eventually by HTML5 UP</title>
+		<title>회원정보 수정</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -30,7 +30,7 @@
 			<option value="tel">tel</option>
 			<option value="gender">gender</option>
 		</select>
-		변경할 패스워드 DATA <input type="text" name="data" style="width: 500px; margin: 0 auto;">
+		변경할  DATA <input type="text" name="data" style="width: 500px; margin: 0 auto;">
 		<br>
 		<input type="submit"  value="회원수정"  >
 	</form>

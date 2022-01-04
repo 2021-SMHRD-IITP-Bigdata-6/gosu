@@ -2647,6 +2647,10 @@ input, select, textarea {
 
 			.carousel article p {
 				text-align: center;
+				white-space: nowrap;
+			    overflow: hidden;
+			    display: block;
+			    text-overflow: ellipsis;
 			}
 
 /* Wide */

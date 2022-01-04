@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-		<title>Eventually by HTML5 UP</title>
+		<title>회원가입</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -18,7 +18,7 @@
 		<!-- Signup Form -->
 			<form  method="post" action="JoinCon.do"style="width: 500px; margin: 0 auto;" >
 				<a align="center"><h1>회원가입</h1></a>
-				이메일<input type="email" name="email"  placeholder="아이디">
+				이메일<input type="email" name="email"  placeholder="이메일">
 				<button type="button" id="Check" align="center" onclick="emailCheck()">중복체크</button>
 									<p id="result"></p>
 				비밀번호<input type="password" name="pw"  placeholder="비밀번호" />
