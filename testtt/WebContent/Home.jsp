@@ -257,7 +257,8 @@ button:hover:before,button:hover:after{
 	
 
         <input type="text" placeholder="제목 입력" name="book">
-        <button onclick="webtoonSearch()" > 검색</button>
+        <button onclick
+        ="webtoonSearch()" > 검색</button>
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>

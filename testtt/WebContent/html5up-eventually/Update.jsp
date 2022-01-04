@@ -26,7 +26,9 @@
 		<select name="select" style="width: 500px; margin: 0 auto;">
 			<option value="name">name</option>
 			<option value="pw">pw</option>
+			<option value="age">age</option>
 			<option value="tel">tel</option>
+			<option value="gender">gender</option>
 		</select>
 		변경할 패스워드 DATA <input type="text" name="data" style="width: 500px; margin: 0 auto;">
 		<br>

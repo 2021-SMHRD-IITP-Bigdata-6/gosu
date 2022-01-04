@@ -20,6 +20,7 @@ import com.book.member.JoinService;
 import com.book.member.LoginService;
 import com.book.member.LogoutService;
 import com.book.member.UpdateService;
+import com.book.member.WishlistService;
 import com.category.DAO.categoryService;
 import com.google.gson.Gson;
 
@@ -36,7 +37,8 @@ public class FrontController extends HttpServlet {
 		String path = request.getContextPath();
 		System.out.println(path);
 		String command=null;
-		
+		Command com = null;
+		String nextpage = null;
 		if(uri.equals("/project/book.do")) {
 			String user_id = request.getParameter("webtoon_name");
 			System.out.println("test"+user_id);
@@ -60,13 +62,17 @@ public class FrontController extends HttpServlet {
 			PrintWriter out = response.getWriter();
 			out.print(json);
 			
-		}else {
+		}
+		else if(uri.equals("/project/UpdateCon.do")) {
+			com = new UpdateService();
+			nextpage = com.execute(request, response);
+		}
+		else {
 			command = uri.substring(path.length()+20);
 			System.out.println("요청기능" + command);
 		}
 		
-		Command com = null;
-		String nextpage = null;
+	
 		
 		
 		try {
@@ -97,6 +103,9 @@ public class FrontController extends HttpServlet {
 				com = new categoryService();
 				nextpage = com.execute(request, response);
 				
+			}else if(command.equals("WishList.do")) {
+				com = (Command) new WishlistService();
+				nextpage = com.execute(request, response);
 			}else if(command.equals("memberSearch.do")) {
 				String email = request.getParameter("email");
 				
