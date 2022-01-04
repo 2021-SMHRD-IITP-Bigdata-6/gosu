@@ -10,12 +10,13 @@ import java.util.ArrayList;
 import com.book.DTO.BookDTO;
 import com.book.DTO.T_EvaluationDTO;
 import com.book.DTO.T_PlatformDTO;
+import com.book.DTO.T_PriceDTO;
 
 
-public class T_PlatfromDAO {
+public class T_PriceDAO {
 	Connection conn = null;
 	PreparedStatement psmt = null;
-	T_PlatformDTO dto1;
+	T_PriceDTO dto2;
 	int cnt = 0;
 
 	ResultSet rs = null;
@@ -65,25 +66,23 @@ public class T_PlatfromDAO {
 		}
 	}
 
-	public ArrayList<T_PlatformDTO> plat() {
-		ArrayList<T_PlatformDTO> arr1 = new ArrayList<T_PlatformDTO>();
+	public ArrayList<T_PriceDTO> price() {
+		ArrayList<T_PriceDTO> arr2 = new ArrayList<T_PriceDTO>();
 		try {
 			getConn();
-			String sql = "select * from t_platform ";
+			String sql = "select * from t_price ";
 			psmt = conn.prepareStatement(sql);
 			rs = psmt.executeQuery();
 
 			// 7. 명령 후 처리
 			while(rs.next() == true) {
 
-				String platform_name = rs.getString("platform_name");
-				String platform_img = rs.getString("platform_img");
-				String platform_url = rs.getString("platform_url");
-				String book_yn = rs.getString("book_yn");
-				String isbn = rs.getString("book_isbn");
-				String book_name = rs.getString("book_name");
-				dto1 = new T_PlatformDTO(platform_name, platform_img , platform_url, book_yn, isbn, book_name);
-				arr1.add(dto1);
+				String book_place = rs.getString("book_place");
+				String book_real_price = rs.getString("book_real_price");
+				String book_isbn = rs.getString("book_isbn");
+				String price_name = rs.getString("price_name");
+				dto2 = new T_PriceDTO(book_real_price,book_place, book_isbn,price_name);
+				arr2.add(dto2);
 
 
 			}
@@ -96,7 +95,7 @@ public class T_PlatfromDAO {
 		}
 
 		
-		return arr1;
+		return arr2;
 	}//plat()
 	
 }

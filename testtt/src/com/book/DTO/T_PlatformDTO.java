@@ -8,12 +8,13 @@ public class T_PlatformDTO {
 	private String platform_url = null;
 	private String isbn = null;
 	private String book_name = null;
-	public T_PlatformDTO(String platform_name, String platform_url, String platform_img, String isbn,
-			String book_name) {
+	private String book_yn = null;
+	public T_PlatformDTO(String platform_name, String platform_img, String platform_url, String book_yn,String isbn, String book_name){
 		super();
 		this.platform_name = platform_name;
-		this.platform_url = platform_url;
 		this.platform_img = platform_img;
+		this.platform_url = platform_url;
+		this.book_yn = book_yn;
 		this.isbn = isbn;
 		this.book_name = book_name;
 	}
@@ -23,17 +24,17 @@ public class T_PlatformDTO {
 	public void setPlatform_name(String platform_name) {
 		this.platform_name = platform_name;
 	}
-	public String getPlatform_url() {
-		return platform_url;
-	}
-	public void setPlatform_url(String platform_url) {
-		this.platform_url = platform_url;
-	}
 	public String getPlatform_img() {
 		return platform_img;
 	}
 	public void setPlatform_img(String platform_img) {
 		this.platform_img = platform_img;
+	}
+	public String getPlatform_url() {
+		return platform_url;
+	}
+	public void setPlatform_url(String platform_url) {
+		this.platform_url = platform_url;
 	}
 	public String getIsbn() {
 		return isbn;
@@ -46,6 +47,12 @@ public class T_PlatformDTO {
 	}
 	public void setBook_name(String book_name) {
 		this.book_name = book_name;
+	}
+	public String getBook_yn() {
+		return book_yn;
+	}
+	public void setBook_yn(String book_yn) {
+		this.book_yn = book_yn;
 	}
 	
 	

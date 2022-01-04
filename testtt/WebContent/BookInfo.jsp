@@ -1,3 +1,5 @@
+<%@page import="com.book.DAO.T_PriceDAO"%>
+<%@page import="com.book.DTO.T_PriceDTO"%>
 <%@page import="com.book.DTO.T_PlatformDTO"%>
 <%@page import="com.book.DAO.T_PlatfromDAO"%>
 <%@page import="java.util.Random"%>
@@ -12,7 +14,7 @@
 <meta charset="UTF-8">
 <title>대표 김진우</title>
 <meta charset="utf-8" />
-<link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/book_info.css" />
 </head>
 <body>
 <body class="right-sidebar is-preload">
@@ -133,52 +135,33 @@
 								<%
 									T_PlatfromDAO dao1 = new T_PlatfromDAO();
 									ArrayList<T_PlatformDTO> arr1 = dao1.plat();
+									String ISBN2 = request.getParameter("ISBN");
 									
 								%>
-									<a href="#">월정액</a>
+									<a>월정액</a>
 								<%for(int i =0; i < arr1.size();i++) {
-										if(ISBN.equals(arr1.get(i).getIsbn())){%>
+									if(ISBN2.equals(arr1.get(i).getIsbn())){%>
 								</h3>
 							</header>
-							<div class="row gtr-50">
-								<div class="col-4">
-									<%-- <a href="<%=arr1.get(i).getBook_name() %>"></a> --%>
-									<%-- <a href="<%=arr1.get(i).getPlatform_url() %>" class="image fit">
-									<img src="<%=arr1.get(i).getPlatform_img() %>"/></a> --%>
-									<%if(arr1.get(i).getPlatform_url().equals("리디셀렉트")){%>
-									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAMmOE%2FbtqCX8G2rdr%2FHEr6HIanLRV1PDEIQI4KtK%2Fimg.png"
-                              width="100" height="100"></a>
-										<p><%=arr1.get(i).getPlatform_name() %></p>
-									<%}else if(arr1.get(i).getPlatform_url().equals("sam베이직")){ %>
-									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
-										<p><%=arr1.get(i).getPlatform_name() %></p>
-									<%}else if(arr1.get(i).getPlatform_url().equals("sam무제한")){ %>
-									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
-										<p><%=arr1.get(i).getPlatform_name() %></p>
-									<%}else if(arr1.get(i).getPlatform_url().equals("yes24북클럽")){ %>
-									<a href="<%=arr1.get(i).getPlatform_img() %>"><img src =""></a>
-										<p><%=arr1.get(i).getPlatform_name() %></p>
-									<%} %>
-									
-								</div>
+							<div align="center">
+									<%if(arr1.get(i).getBook_yn().equals("y")) {%>
+										<%if(arr1.get(i).getPlatform_name().equals("리디셀렉트")){%>
+											<a href="<%=arr1.get(i).getPlatform_url() %>"><img src ="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAMmOE%2FbtqCX8G2rdr%2FHEr6HIanLRV1PDEIQI4KtK%2Fimg.png"
+			        	                      width="100" height="100"></a>
+											<p align="center"><%=arr1.get(i).getPlatform_name() %></p>
+										<%}else if(arr1.get(i).getPlatform_name().equals("sam베이직")){ %>
+											<a href="<%=arr1.get(i).getPlatform_url() %>"><img src ="images/c.png" width="100" height="100"></a>
+											<p align="center"><%=arr1.get(i).getPlatform_name() %></p>
+										<%}else if(arr1.get(i).getPlatform_name().equals("sam무제한")){ %>
+											<a href="<%=arr1.get(i).getPlatform_url() %>"><img src ="images/c.png" width="100" height="100"></a>
+											<p align="center"><%=arr1.get(i).getPlatform_name() %></p>
+										<%}else if(arr1.get(i).getPlatform_name().equals("yes24북클럽")){ %>
+										<a href="<%=arr1.get(i).getPlatform_url() %>"><img src ="images/b.png" width="100" height="100"></a>
+											<p align="center"><%=arr1.get(i).getPlatform_name() %></p>
+										<%} %><%--else if --%>
+									<%} %><%--if --%>
 								<%} %>
-								<%} %>
-								
-								<!-- <div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic11.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic12.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic13.jpg" alt="" /></a>
-										</div>
-										
-										<div class="col-4">
-											<a href="#" class="image fit"><img src="images/pic14.jpg" alt="" /></a>
-										</div> -->
+							<%} %><%--for --%>
 							</div>
 						</section>
 						<hr />
@@ -188,44 +171,52 @@
 									<a href="#">구매</a>
 								</h3>
 							</header>
-							<div class="row gtr-50">
-								<div class="col-4">
-									<a href="#" class="image fit"><img src="images/pic10.jpg"
-										alt="" /></a>
-								</div>
-								<div>
-									<p>가격정보 ~ 얼마</p>
-								</div>
-								<div class="col-4">
-									<a href="#" class="image fit"><img src="images/pic11.jpg"
-										alt="" /></a>
-								</div>
-								<div>
-									<p>가격정보 ~ 얼마</p>
-								</div>
-
-								<div class="col-4">
-									<a href="#" class="image fit"><img src="images/pic12.jpg"
-										alt="" /></a>
-								</div>
-								<div>
-									<p>가격정보 ~ 얼마</p>
-								</div>
-								<div class="col-4">
-									<a href="#" class="image fit"><img src="images/pic13.jpg"
-										alt="" /></a>
-								</div>
-								<div>
-									<p>가격정보 ~ 얼마</p>
-								</div>
-								<div class="col-4">
-									<a href="#" class="image fit"><img src="images/pic14.jpg"
-										alt="" /></a>
-								</div>
-								<div>
-									<p>가격정보 ~ 얼마</p>
-								</div>
-							</div>
+							<% 
+							request.setCharacterEncoding("UTF-8");
+							T_PriceDAO dao2 = new T_PriceDAO();
+							ArrayList<T_PriceDTO> arr2 = dao2.price();
+							String ISBN3 = request.getParameter("ISBN"); 
+							%>
+							<%for(int i =0; i<arr2.size(); i++) {%>
+							<%if(ISBN3.equals(arr2.get(i).getBook_isbn())) {%>
+								<%if(arr2.get(i).getPrice_name().equals("예스24")) {%>
+										<div align="center">
+											<a href="<%=arr2.get(i).getBook_place()%>" >예스24</a>
+										</div>
+										<div>
+											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
+										</div>
+								<%}else if(arr2.get(i).getPrice_name().equals("알라딘")) {%>
+										<div align="center">
+											<a href="<%=arr2.get(i).getBook_place()%>" >알라딘</a>
+										</div>
+										<div align="center">
+											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
+										</div>
+								<%}else if(arr2.get(i).getPrice_name().equals("인터파크 문서")) {%>
+										<div align="center">
+											<a href="<%=arr2.get(i).getBook_place()%>">인터파크 문서</a>
+										</div>
+										<div>
+											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
+										</div>
+								<%}else if(arr2.get(i).getPrice_name().equals("인터넷 교보문고")) {%>
+										<div align="center">
+											<a href="<%=arr2.get(i).getBook_place()%>">인터넷 교보문고</a>
+										</div>
+										<div>
+											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
+										</div>
+								<%}else if(arr2.get(i).getPrice_name().equals("리디북스")) { %><%--if --%>
+										<div align="center">
+											<a href="<%=arr2.get(i).getBook_place()%>">리디북스</a>
+										</div>
+										<div>
+											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
+										</div>
+								<%} %><%--if --%>
+							<%} %><%--if --%>
+						<%} %><%--for --%>
 					<form  method="post" action="WishList.jsp"style="width: 500px; margin: 0 auto;" >
 							
 				<div><input class="btn" id="su" type="submit" value="찜 추가"></div>
@@ -238,8 +229,7 @@
 				< <div class="row">
 
 					<article class="col-4 col-12-mobile special">
-						<a href="#" class="image featured"><img src="<%=img1%>"
-							width="200" height="400" /></a>
+						<a href="#" class="image featured"><img src="<%=img1%>" width="200" height="400" /></a>
 						<header>
 							<h3>
 								<a href="#">책 제목 : <%=name1%></a>

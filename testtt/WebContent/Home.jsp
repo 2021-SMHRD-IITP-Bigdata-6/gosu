@@ -272,12 +272,10 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
-<<<<<<< HEAD
                <tbody id="tbody">
                	<table>
                		<tr>1</tr>
                	</table>
-=======
                <table border="1">
                <tbody id="tbody">
                	<tr>
@@ -285,7 +283,6 @@ button:hover:before,button:hover:after{
                		<td>2</td>
                		<td>3</td>
                	</tr>
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                </tbody>
                	</table>
                
@@ -442,23 +439,17 @@ button:hover:before,button:hover:after{
                   success : function(res){ // 서버에 요청한 결과가 매개변수안에 담김
                      console.log(res);
                   
-<<<<<<< HEAD
      					
      					
                      $('tbody').html(''); // tbody의 html코드를 초기화
-=======
                      //$('#tbody').html(''); // tbody의 html코드를 초기화
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                      for(var i = 0; i <res.length; i++){
-<<<<<<< HEAD
-=======
      					let table = '';
      					table += '<tr>';
      					table += '<td><img src=\'' + res[i]['book_img'] + '\'/></td>';
      					table += '<td>' + res[i]['book_nmae'] + '</td>';
      					table += '<td>' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
      					// 2.  .after() ->선택한 태그 후에 script작동
@@ -467,12 +458,6 @@ button:hover:before,button:hover:after{
      					$('#tbody').append(table);
      					$('.reel').append()
      					}//for
-<<<<<<< HEAD
-                  
-               
-=======
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
-                     
                   },
                   error : function(a,e,f) {
                      console.log(a);
