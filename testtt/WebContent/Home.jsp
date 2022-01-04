@@ -288,8 +288,16 @@ td{
                <br>
                <%} %>
                <hr />
-              
-             
+               <table border="1">
+               <tbody id="tbody">
+               	<tr>
+               		<td>1</td>
+               		<td>2</td>
+               		<td>3</td>
+               	</tr>
+               </tbody>
+               	</table>
+               
             <% if (dto == null) {%>
                <button>
                   <h3>
