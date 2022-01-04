@@ -207,7 +207,18 @@ button:hover:before,button:hover:after{
   width:100%;
   transition:800ms ease all;
 }
-
+td{
+	align : center;
+	valign : midle;
+	text-align: center;
+	font-size: 30px;
+	color: white;
+	padding: 0 0 0 0px;
+	
+	border-collapse : collapse;
+	
+	
+}
 
 </style>
 </head>
@@ -245,7 +256,7 @@ button:hover:before,button:hover:after{
   <!--   <div class="input-holder">
         <input type="text" class="search-input" placeholder="원하는 책 제목 을 입력해주세요" name="book"/>
         <button class="search-icon" onclick="searchToggle(this, event);"><span></span></button>
-        
+        d
         
       
     </div> 
@@ -257,13 +268,6 @@ button:hover:before,button:hover:after{
 
 	
 
-<<<<<<< HEAD
-        <input type="text" placeholder="제목 입력" name="book">
-        <button onclick
-        ="webtoonSearch()" > 검색</button>
-=======
-        
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
             <header>
                <h1 style="color: #BFCCDA;">Booket List</h1>
                <br>
@@ -284,11 +288,6 @@ button:hover:before,button:hover:after{
                <br>
                <%} %>
                <hr />
-<<<<<<< HEAD
-               <tbody id="tbody">
-               	<table>
-               		<tr>1</tr>
-               	</table>
                <table border="1">
                <tbody id="tbody">
                	<tr>
@@ -298,10 +297,6 @@ button:hover:before,button:hover:after{
                	</tr>
                </tbody>
                	</table>
-=======
-               
-              
->>>>>>> branch 'master' of https://github.com/2021-SMHRD-IITP-Bigdata-6/gosu.git
                
             <% if (dto == null) {%>
                <button>
@@ -350,21 +345,21 @@ button:hover:before,button:hover:after{
         	</ul>
          </nav>
       </div>
-     
      <tbody id="tbody">
-               	<table>
-               		
-               	</table>
-               <table border="1" align="center">
+               <table border="1">
                <tbody id="tbody">
                	<tr>
-               		<td>췍 이미지</td>
-               		<td>췍 제목</td>
-               		<td>췍 저자</td>
+               		<td>책 이미지</td>
+               		<td>책 제목</td>
+               		<td>책 저자</td>
                	</tr>
+               
+               </table>
+               
                </tbody>
-               	</table>
-      
+               
+               
+               
     
 
          <script src="assets/js/jquery.min.js"></script>
@@ -473,8 +468,8 @@ button:hover:before,button:hover:after{
      					let table = '';
      					table += '<tr>';
      					table += '<td><img src=\'' + res[i]['book_img']+  "'width='400' height='300'"+ '\'/></td>';
-     					table += '<td align="center" >' + res[i]['book_nmae'] + '</td>';
-     					table += '<td align="center">' + res[i]['book_author'] + '</td>';
+     					table += '<td>' + res[i]['book_nmae'] + '</td>';
+     					table += '<td>' + res[i]['book_author'] + '</td>';
      					table += '</tr>';
      					// javascript코드로 html 태그 제작 4가지 방법
      					// 1.  .html()
