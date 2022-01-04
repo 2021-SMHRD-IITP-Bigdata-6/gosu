@@ -13,7 +13,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Bookinfo</title>
+<% %>
+<title>도서상세 정보 페이지</title>
+<style type="text/css">
+.font{
+	font-size: 30px;
+}
+#recommand{
+	font-size: 30px;
+}
+</style>
 <meta charset="utf-8" />
 <link rel="stylesheet" href="assets/css/book_info.css" />
 </head>
@@ -108,8 +117,8 @@
 										if(ISBN.equals(arr.get(i).getBook_isbn())){%>
 										<a><%out.print(arr.get(i).getBook_nmae());%></a>
 									</h2>
-									<br> <img align="center" src="<%=arr.get(i).getBook_img()%>" width="200"
-										height="300" />
+									<br> <img align="center" src="<%=arr.get(i).getBook_img()%>" width="400"
+										height="500" />
 								</header>
 							</section>
 							<header>
@@ -123,7 +132,7 @@
 							<section>
 								<header>
 									<h3>
-										<a>책소개 : <%=arr.get(i).getBook_explain()%></a>
+										<a id="font"><%=arr.get(i).getBook_explain()%></a>
 									</h3>
 								</header>
 							</section>
@@ -185,39 +194,29 @@
 							<%if(ISBN3.equals(arr2.get(i).getBook_isbn())) {%>
 								<%if(arr2.get(i).getPrice_name().equals("예스24")) {%>
 										<div align="center">
-											<a href="<%=arr2.get(i).getBook_place()%>" >예스24</a>
+											<a href="<%=arr2.get(i).getBook_place()%>" >예스24  &emsp;&emsp; <%=arr2.get(i).getBook_real_price() %>원</a> 
 										</div>
-										<div>
-											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
-										</div>
+										<br>
 								<%}else if(arr2.get(i).getPrice_name().equals("알라딘")) {%>
 										<div align="center">
-											<a href="<%=arr2.get(i).getBook_place()%>" >알라딘</a>
+											<a href="<%=arr2.get(i).getBook_place()%>" >알라딘  &emsp;&emsp; <%=arr2.get(i).getBook_real_price() %>원</a> 
 										</div>
-										<div align="center">
-											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
-										</div>
+										<br>
 								<%}else if(arr2.get(i).getPrice_name().equals("인터파크 문서")) {%>
 										<div align="center">
-											<a href="<%=arr2.get(i).getBook_place()%>">인터파크 문서</a>
+											<a href="<%=arr2.get(i).getBook_place()%>" >인터파크 문서  &emsp;&emsp; <%=arr2.get(i).getBook_real_price() %>원</a> 
 										</div>
-										<div>
-											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
-										</div>
+										<br>
 								<%}else if(arr2.get(i).getPrice_name().equals("인터넷 교보문고")) {%>
 										<div align="center">
-											<a href="<%=arr2.get(i).getBook_place()%>">인터넷 교보문고</a>
+											<a href="<%=arr2.get(i).getBook_place()%>" >인터넷 교보문고  &emsp;&emsp; <%=arr2.get(i).getBook_real_price() %>원</a> 
 										</div>
-										<div>
-											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
-										</div>
+										<br>
 								<%}else if(arr2.get(i).getPrice_name().equals("리디북스")) { %><%--if --%>
 										<div align="center">
-											<a href="<%=arr2.get(i).getBook_place()%>">리디북스</a>
+											<a href="<%=arr2.get(i).getBook_place()%>" >리디북스  &emsp;&emsp; <%=arr2.get(i).getBook_real_price() %>원</a> 
 										</div>
-										<div>
-											<p align="center"><%=arr2.get(i).getBook_real_price() %>원</p>
-										</div>
+										<br>
 								<%} %><%--if --%>
 							<%} %><%--if --%>
 						<%} %><%--for --%>
@@ -228,7 +227,7 @@
 					</div>
 				</div>
 				<hr />
-				<header align="center">추천도서</header>
+				<header align="center" id="recommand">추천도서</header>
 				 <div class="row">
 
 					<article class="col-4 col-12-mobile special">
