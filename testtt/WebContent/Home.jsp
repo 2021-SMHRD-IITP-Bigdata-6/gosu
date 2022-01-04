@@ -290,11 +290,6 @@ td{
                <hr />
                <table border="1">
                <tbody id="tbody">
-               	<tr>
-               		<td>1</td>
-               		<td>2</td>
-               		<td>3</td>
-               	</tr>
                </tbody>
                	</table>
                
@@ -348,11 +343,6 @@ td{
      <tbody id="tbody">
                <table border="1">
                <tbody id="tbody">
-               	<tr>
-               		<td>책 이미지</td>
-               		<td>책 제목</td>
-               		<td>책 저자</td>
-               	</tr>
                
                </table>
                
