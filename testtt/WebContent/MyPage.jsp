@@ -62,9 +62,9 @@
 		<br> <br> <br> <br> <a href="MemberInfo.jsp">
 			<button style="color: black;">내 정보 관리</button>
 				&emsp;&emsp;&emsp;&emsp;&emsp;
-		</a> <a href="WishList.jsp">
+		<!-- </a> <a href="WishList.jsp">
 			<button style="color: black;">찜 목록 보기</button>
-		</a>
+		</a> -->
 
 
 
