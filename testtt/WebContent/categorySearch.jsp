@@ -50,11 +50,11 @@
 
       <%
              request.setCharacterEncoding("UTF-8");
-      
+      	//data라는 KEY 값을 가져온다
          String data = request.getParameter("data");
+      	//배열값으로 담아진 ","를 장르 데이터가 넘어올떄 삭제시킨다
          String[] strArr = data.split(",");
-         System.out.println("dataSize"+strArr.length);
-
+			//책의 DB정보를 조회 
             T_BookDAO dao = new T_BookDAO();
             ArrayList<T_BookDTO> arr = dao.selectbook();
             
@@ -104,13 +104,13 @@
       //$('.detail').on('click',
       function asdf(i){
     	 var dsearch = $('#category_go'+i).html();
+    	 // 전체보기 클릭시 해당 장르의 모든 책을 보여주는 버튼 클릭 이벤트
         location.href="categoryDetail.jsp?search="+dsearch;         
       };
      function a(i) {
 		var ISBN = $('#b'+i).html();
+		//책 제목 클릭 시 책의 고유 값인 ISBN을 가져와 책정보 페이지로 넘겨줌 
 		location.href="BookInfo.jsp?ISBN="+ISBN;
-		/* $('').append("<a href ='http://localhost:8081/project/BookInfo.jsp?ISBN="+ arr.get(j).getBook_isbn() +">"+ "책이름" +"</a>") */
-		//console.log(ISBN);
 	}
       </script>
 
